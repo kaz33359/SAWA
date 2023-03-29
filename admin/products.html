@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>PowerShift | Enquiries</title>
+    <title>PowerShift | Products</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
 
     <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
@@ -18,15 +18,25 @@
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <link href="plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/dashboard/dash_2.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
     <link href="assets/css/components/tabs-accordian/custom-accordions.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/datatables.css">
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/custom_dt_html5.css">
-    <link rel="stylesheet" type="text/css" href="plugins/table/datatable/datatables.css">
     <link rel="stylesheet" type="text/css" href="assets/css/forms/theme-checkbox-radio.css">
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/dt-global_style.css">
     <link rel="stylesheet" type="text/css" href="plugins/table/datatable/custom_dt_custom.css">
 
-    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <link rel="stylesheet" href="plugins/font-icons/fontawesome/css/regular.css">
+    <link rel="stylesheet" href="plugins/font-icons/fontawesome/css/fontawesome.css">
+
+    <link rel="stylesheet" href="plugins/editors/markdown/simplemde.min.css">
+
+
+
 
 </head>
 
@@ -179,7 +189,7 @@
 
                     <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                         <div class="dropdown-item">
-                            <a href="user_profile.html">
+                            <a href="profile.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="feather feather-user">
@@ -189,7 +199,7 @@
                             </a>
                         </div>
                         <div class="dropdown-item">
-                            <a href="apps_mailbox.html">
+                            <a href="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="feather feather-inbox">
@@ -322,19 +332,19 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboad</a></li>
                             <li class="breadcrumb-item active" aria-current="page"><a
-                                    href="javascript:void(0);">Enquiries</a></li>
+                                    href="javascript:void(0);">Products</a></li>
                         </ol>
                     </nav>
                 </div>
 
                 <div class="row layout-top-spacing">
 
-                    <!-- <div class="col-lg-12 layout-spacing">
+                    <div class="col-lg-12 layout-spacing">
                         <div class="statbox widget box box-shadow">
                             <div id="accordionBasic" class="widget-header">
                                 <div class="row">
                                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                        <h4>Add Student</h4>
+                                        <h4>Add Products</h4>
                                     </div>
                                 </div>
                             </div>
@@ -346,10 +356,11 @@
                                                 <div role="menu" class="collapsed" data-toggle="collapse"
                                                     data-target="#defaultAccordionThree" aria-expanded="false"
                                                     aria-controls="defaultAccordionThree">
-                                                        Enter Student Details
-                                                        <div class="icons"><svg xmlns="http://www.w3.org/2000/svg"
-                                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    Enter Products Details
+                                                    <div class="icons"><svg xmlns="http://www.w3.org/2000/svg"
+                                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round"
                                                             class="feather feather-chevron-down">
                                                             <polyline points="6 9 12 15 18 9"></polyline>
                                                         </svg>
@@ -361,27 +372,251 @@
                                             data-parent="#toggleAccordion">
                                             <div class="card-body">
                                                 <form>
-                                                    <div class="form-group mb-4">
-                                                        <input type="text" class="form-control" id="lFullName" placeholder="Full Name">
+                                                    <div class="form-row mb-4">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputEmail4">Product Name</label>
+                                                            <input type="text" class="form-control"
+                                                                id="inputCategoryName" placeholder="Product Name"
+                                                                required>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputPassword4">Product Slug</label>
+                                                            <input type="text" class="form-control" id="inputPassword4"
+                                                                placeholder="Product Slug" required>
+                                                        </div>
                                                     </div>
                                                     <div class="form-group mb-4">
-                                                        <input type="email" class="form-control" id="sEmail" aria-describedby="emailHelp1" placeholder="Email address">
+                                                        <label for="inputState">Products Image</label>
+                                                        <div class="custom-file mb-4">
+                                                            <input type="file" class="custom-file-input" id="customFile"
+                                                                required>
+                                                            <label class="custom-file-label" for="customFile">Choose
+                                                                Image</label>
+                                                        </div>
                                                     </div>
+                                                    <div class="form-row mb-4">
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputState">Category</label>
+                                                            <select id="inputState" class="form-control" required>
+                                                                <option selected>Select Product Category</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputState">Brand</label>
+                                                            <select id="inputState" class="form-control" required>
+                                                                <option selected>Select Brand</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputEmail4">Model</label>
+                                                            <input type="text" class="form-control"
+                                                                id="inputCategoryName" placeholder="Product Model"
+                                                                required>
+                                                        </div>
+
+                                                    </div>
+
                                                     <div class="form-group mb-4">
-                                                        <input type="password" class="form-control" id="sPassword" placeholder="Password">
+                                                        <div id="basic" class="row layout-spacing  layout-top-spacing">
+                                                            <div class="col-lg-12">
+                                                                <div class="statbox widget box box-shadow">
+                                                                    <div class="widget-header">
+                                                                        <div class="row">
+                                                                            <div
+                                                                                class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                                                <h4> Short Description </h4>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="widget-content widget-content-area">
+                                                                        <textarea id="short_description">
+                                                                        </textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+
+                                                    <div class="form-group mb-4">
+                                                        <div id="basic" class="row layout-spacing  layout-top-spacing">
+                                                            <div class="col-lg-12">
+                                                                <div class="statbox widget box box-shadow">
+                                                                    <div class="widget-header">
+                                                                        <div class="row">
+                                                                            <div
+                                                                                class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                                                <h4> Description </h4>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="widget-content widget-content-area">
+                                                                        <textarea id="description">
+                                                                        </textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group mb-4">
+                                                        <label for="exampleFormControlTextarea1">Keywords</label>
+                                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                            rows="3"></textarea>
+                                                    </div>
+
+                                                    <div class="form-group mb-4">
+                                                        <div id="basic" class="row layout-spacing  layout-top-spacing">
+                                                            <div class="col-lg-12">
+                                                                <div class="statbox widget box box-shadow">
+                                                                    <div class="widget-header">
+                                                                        <div class="row">
+                                                                            <div
+                                                                                class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                                                                <h4> Technical Specification </h4>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="widget-content widget-content-area">
+                                                                        <textarea id="technical_specification">
+                                                                                                                            </textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group mb-4">
+                                                        <label for="exampleFormControlTextarea1">Uses</label>
+                                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                            rows="3"></textarea>
+                                                    </div>
+
+                                                    <div class="form-group mb-4">
+                                                        <label for="exampleFormControlTextarea1">Warranty</label>
+                                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                            rows="3"></textarea>
+                                                    </div>
+
+                                                    <div class="form-row mb-4">
+                                                        <div class="form-group col-md-8">
+                                                            <label for="inputEmail4">Lead Time</label>
+                                                            <input type="text" class="form-control"
+                                                                id="inputCategoryName" placeholder="Lead Time" required>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <label for="inputState">Tax</label>
+                                                            <select id="inputState" class="form-control" required>
+                                                                <option selected>Select Tax</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-row mb-4">
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputState">Is Promo</label>
+                                                            <select id="inputState" class="form-control" required>
+                                                                <option selected>Select Promo</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputState">Is Featured</label>
+                                                            <select id="inputState" class="form-control" required>
+                                                                <option selected>Select Featured</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputState">Is Trending</label>
+                                                            <select id="inputState" class="form-control" required>
+                                                                <option selected>Select Trending</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputState">Is Discontinued</label>
+                                                            <select id="inputState" class="form-control" required>
+                                                                <option selected>Select Discontinued</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4">
+                                                        <h4>Products Images</h4>
+                                                    </div>
+                                                    <div class="col-xl-12 col-md-12 col-sm-12 col-12 mb-4">
+                                                        <h4>Products Attributes</h4>
+                                                    </div>
+                                                    <div class="form-row mb-4">
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputEmail4">SKU</label>
+                                                            <input type="text" class="form-control" id="inputCategoryName" placeholder="SKU" required>
+                                                        </div>
+                                                    
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputEmail4">MRP</label>
+                                                            <input type="text" class="form-control" id="inputCategoryName" placeholder="MRP" required>
+                                                        </div>
+                                                    
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputEmail4">Price</label>
+                                                            <input type="text" class="form-control" id="inputCategoryName" placeholder="Price" required>
+                                                        </div>
+                                                    
+                                                        <div class="form-group col-md-3">
+                                                            <label for="inputEmail4">Quantity</label>
+                                                            <input type="text" class="form-control" id="inputCategoryName" placeholder="Quantity" required>
+                                                        </div>
+                                                    
+                                                        <div class="form-group col-md-2">
+                                                            <label for="inputState">Size</label>
+                                                            <select id="inputState" class="form-control" required>
+                                                                <option selected>Select Size</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+                                                    
+                                                        <div class="form-group col-md-2">
+                                                            <label for="inputState">Color</label>
+                                                            <select id="inputState" class="form-control" required>
+                                                                <option selected>Select Color</option>
+                                                                <option>...</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-8">
+                                                            <label for="inputState">Products Image</label>
+                                                            <div class="custom-file mb-4">
+                                                                <input type="file" class="custom-file-input" id="customFile" required>
+                                                                <label class="custom-file-label" for="customFile">Choose
+                                                                    Image</label>
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    </div>
+
+
+
+
+                                                    
+                                                    <button type="submit" class="btn btn-primary mt-3">Sign in</button>
                                                 </form>
-                    
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                        <h4>Customers</h4>
+                        <h4>Products Table</h4>
                     </div>
                     <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
                         <div class="widget-content widget-content-area br-6">
@@ -389,27 +624,57 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Mobile no.</th>
-                                        <th>Message</th>
+                                        <th>Product Name</th>
+                                        <th>Product Slug</th>
+                                        <th>Product Image</th>
+                                        <th class="text-center">Status</th>
                                         <th class="text-center dt-no-sorting">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Test</td>
-                                        <td>test@gmail.com</td>
-                                        <td>7356533359</td>
-                                        <td>Message</td>
+                                        <td>Bike Parts</td>
+                                        <td>OEM Parts</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="usr-img-frame mr-2 rounded-circle">
+                                                    <img alt="avatar" class="img-fluid rounded-circle"
+                                                        src="assets/img/boy-2.png">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success"> Active </span>
+                                            <span class="badge badge-danger"> Deactive </span>
+                                        </td>
                                         <td class="text-center">
                                             <ul class="table-controls">
-                                                <li><a href="enquiry_view.html" class="bs-tooltip"
+                                                <li><a href="products_view.html" class="bs-tooltip"
                                                         data-toggle="tooltip" data-placement="top" title=""
-                                                        data-original-title="View Message"><i data-feather="eye"></i>
-                                                    </a>
-                                                </li>
+                                                        data-original-title="Edit"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-edit-2 p-1 br-6 mb-1">
+                                                            <path
+                                                                d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
+                                                            </path>
+                                                        </svg></a></li>
+                                                <li><a href="javascript:void(0);" class="bs-tooltip"
+                                                        data-toggle="tooltip" data-placement="top" title=""
+                                                        data-original-title="Delete"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-trash p-1 br-6 mb-1">
+                                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                                            <path
+                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                            </path>
+                                                        </svg></a></li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -420,11 +685,13 @@
                     </div>
 
 
+
                 </div>
 
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
-                        <p class="">Copyright © 2021 <a target="_blank" href="https://careerpointglobal.com/">PowerShift</a>,
+                        <p class="">Copyright © 2021 <a target="_blank"
+                                href="https://powershiftmotorsports.com/">PowerShift</a>,
                             All rights reserved.</p>
                     </div>
                     <div class="footer-section f-section-2">
@@ -458,6 +725,11 @@
     </script>
     <script src="assets/js/custom.js"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="plugins/apex/apexcharts.min.js"></script>
+    <script src="assets/js/dashboard/dash_2.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     <script src="assets/js/scrollspyNav.js"></script>
@@ -494,11 +766,15 @@
         });
     </script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-
     <script src="plugins/font-icons/feather/feather.min.js"></script>
     <script type="text/javascript">
         feather.replace();
     </script>
+
+    <script src="plugins/editors/markdown/simplemde.min.js"></script>
+    <script src="plugins/editors/markdown/custom-markdown.js"></script>
+
+
 </body>
 
 

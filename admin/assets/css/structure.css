@@ -176,8 +176,8 @@ code { color: #e7515a; }
 .navbar .nav-logo a.navbar-brand img {
     vertical-align: top;
 
-    width: 34px;
-    height: 34px;
+    /* width: 34px; */
+    height: 50px;
 }
 .navbar .nav-logo a.navbar-brand .navbar-brand-name {
     font-size: 24px !important;
@@ -1468,8 +1468,8 @@ code { color: #e7515a; }
         align-self: center;
     }
     #topbar .theme-brand li.theme-logo img {
-        width: 40px;
-        height: 40px;
+        /* width: 40px; */
+        height: 60px;
     }
     #topbar .theme-brand li.theme-text a {
         font-size: 25px !important;

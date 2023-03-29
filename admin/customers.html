@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>PowerShift | Enquiries</title>
+    <title>PowerShift | Customers</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.png" />
 
     <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
@@ -322,7 +322,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0);">Dashboad</a></li>
                             <li class="breadcrumb-item active" aria-current="page"><a
-                                    href="javascript:void(0);">Enquiries</a></li>
+                                    href="javascript:void(0);">Customers</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -389,27 +389,50 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Mobile no.</th>
-                                        <th>Message</th>
+                                        <th>Customer Name</th>
+                                        <th>Customer Email</th>
+                                        <th>Customer Address</th>
+                                        <th>Customer Pic</th>
+                                        <th class="text-center">Account Status</th>
                                         <th class="text-center dt-no-sorting">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Test</td>
-                                        <td>test@gmail.com</td>
-                                        <td>7356533359</td>
-                                        <td>Message</td>
+                                        <td>Bike Parts</td>
+                                        <td>OEM Parts</td>
+                                        <td>OEM Parts</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="usr-img-frame mr-2 rounded-circle">
+                                                    <img alt="avatar" class="img-fluid rounded-circle"
+                                                        src="assets/img/boy-2.png">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success"> Active </span>
+                                            <span class="badge badge-danger"> Deactive </span>
+                                        </td>
                                         <td class="text-center">
                                             <ul class="table-controls">
-                                                <li><a href="enquiry_view.html" class="bs-tooltip"
+                                                <li><a href="customers_view.html" class="bs-tooltip"
                                                         data-toggle="tooltip" data-placement="top" title=""
-                                                        data-original-title="View Message"><i data-feather="eye"></i>
-                                                    </a>
-                                                </li>
+                                                        data-original-title="View Customer"><i data-feather="eye"></i></a></li>
+                                                <li><a href="javascript:void(0);" class="bs-tooltip"
+                                                        data-toggle="tooltip" data-placement="top" title=""
+                                                        data-original-title="Delete Customer"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            class="feather feather-trash p-1 br-6 mb-1">
+                                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                                            <path
+                                                                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                                                            </path>
+                                                        </svg></a></li>
                                             </ul>
                                         </td>
                                     </tr>

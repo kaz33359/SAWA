@@ -1,6 +1,6 @@
 .widget-content-area {border: 1px solid #0e1726;
     box-shadow: 0 0 40px 0 rgba(94,92,154,.06);
-    padding: 0;
+    /* padding: 0; */
     background-color: #0e1726;
 }
 .no-content:before, .no-content:after { display: none!important; }

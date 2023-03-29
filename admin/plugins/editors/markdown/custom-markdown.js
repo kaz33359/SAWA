@@ -1,7 +1,17 @@
 // Basic
 new SimpleMDE({
-	element: document.getElementById("demo1"),
+	element: document.getElementById("short_description"),
 	spellChecker: false,
+});
+
+new SimpleMDE({
+  element: document.getElementById("description"),
+  spellChecker: false,
+});
+
+new SimpleMDE({
+  element: document.getElementById("technical_specification"),
+  spellChecker: false,
 });
 
 // Autosaving
