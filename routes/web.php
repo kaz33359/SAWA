@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +15,30 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::group(['middleware' => ['AdminAuth']], function () {
+    Route::post('admin/login_pro', [AdminController::class, 'checkadmin'])->name('auth.checkadmin');
+    Route::get('admin/index', [AdminController::class, 'dashboard']);
+    Route::get('admin/enquiry', [AdminController::class, 'enquiry']);
+    Route::get('admin/enquiry_view', [AdminController::class, 'enquiry_view']);
+    Route::get('admin/category', [AdminController::class, 'category']);
+    Route::get('admin/categories_view/{id}',[AdminController::class,'categories_view']);
+    Route::get('admin/customers', [AdminController::class, 'customers']);
+    Route::get('admin/customers_view', [AdminController::class, 'customers_view']);
+    Route::get('admin/products', [AdminController::class, 'products']);
+    Route::get('admin/products_view', [AdminController::class, 'products_view']);
+    Route::get('admin/orders', [AdminController::class, 'orders']);
+    Route::get('admin/orders_view', [AdminController::class, 'orders_view']);
+    Route::post('admin/add_categories', [CategoryController::class, 'add_categories'])->name('admin.addcategory');
+    Route::get('admin/delete/{id}', [CategoryController::class, 'delete']);
+    Route::get('admin/status/{id}', [CategoryController::class, 'status']);
+    Route::post('admin/update/{id}', [CategoryController::class, 'category_update'])->name('admin.updatecategory');
 
-Route::get('/', function () {
-    return view('welcome');
+    //logout
+    Route::get('admin/logout', [AdminController::class, 'logout']);
+    //logout
 });
+
+Route::get('admin/login', [AdminController::class, 'login']);
+Route::get('admin/hash', [AdminController::class, 'hashp']);
+
+
