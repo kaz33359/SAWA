@@ -30,7 +30,7 @@ Route::group(['middleware' => ['AdminAuth']], function () {
     Route::get('admin/orders_view', [AdminController::class, 'orders_view']);
     Route::post('admin/add_categories', [CategoryController::class, 'add_categories'])->name('admin.addcategory');
     Route::get('admin/delete/{id}', [CategoryController::class, 'delete']);
-    Route::get('admin/status/{id}', [CategoryController::class, 'status']);
+    Route::get('admin/status/{status}/{id}', [CategoryController::class, 'status']);
     Route::post('admin/update/{id}', [CategoryController::class, 'category_update'])->name('admin.updatecategory');
 
     //logout
@@ -40,5 +40,3 @@ Route::group(['middleware' => ['AdminAuth']], function () {
 
 Route::get('admin/login', [AdminController::class, 'login']);
 Route::get('admin/hash', [AdminController::class, 'hashp']);
-
-
