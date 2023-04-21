@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -40,3 +41,9 @@ Route::group(['middleware' => ['AdminAuth']], function () {
 
 Route::get('admin/login', [AdminController::class, 'login']);
 Route::get('admin/hash', [AdminController::class, 'hashp']);
+
+
+//User
+Route::get('/', [UserController::class, 'index']);
+Route::get('/login', [UserController::class, 'login']);
+Route::get('/register', [UserController::class, 'register']);
