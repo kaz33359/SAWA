@@ -17,4 +17,7 @@ class UserController extends Controller
     public function register() {
         return view('user/auth/register');
     }
+    public function contact() {
+        return view('user/pages/contact');
+    }
 }

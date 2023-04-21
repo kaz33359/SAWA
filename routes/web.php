@@ -47,3 +47,4 @@ Route::get('admin/hash', [AdminController::class, 'hashp']);
 Route::get('/', [UserController::class, 'index']);
 Route::get('/login', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'register']);
+Route::get('/contact', [UserController::class, 'contact']);
