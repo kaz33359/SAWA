@@ -468,9 +468,9 @@ $categories = array();
                                          <td>{{$category->category_desc}}</td>
                                           <td class="text-center">
                                             @if ($category->status=='0')
-                                               <a href="{{ url('admin/status/1') }}/{{ $category->id }}"><span class="badge badge-danger"> Deactive </span></a> 
+                                               <a href="{{ url('admin/category/status/1') }}/{{ $category->id }}"><span class="badge badge-danger"> Deactive </span></a> 
                                                @else
-                                               <a href="{{ url('admin/status/0') }}/{{ $category->id }}"><span class="badge badge-success"> Active </span></a>
+                                               <a href="{{ url('admin/category/status/0') }}/{{ $category->id }}"><span class="badge badge-success"> Active </span></a>
                                             @endif
                                         </td>
                                        
@@ -492,7 +492,7 @@ $categories = array();
                                                                 d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
                                                             </path>
                                                         </svg></a></li>
-                                              <li><a href="{{ url('admin/delete/') }}/{{ $category->id }}" class="bs-tooltip"
+                                              <li><a href="{{ url('admin/category/delete/') }}/{{ $category->id }}" class="bs-tooltip"
                                                         data-toggle="tooltip" data-placement="top" title=""
                                                         data-original-title="Delete Category"><svg
                                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24"

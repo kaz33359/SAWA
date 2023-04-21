@@ -377,18 +377,19 @@
                             <div class="skills layout-spacing ">
                                 <div class="widget-content widget-content-area">
                                     <h3 class="">Edit Product Info</h3>
-                                    <form>
+                                    <form method="POST" action="{{ route('admin.updateproduct', ['id' => $product->id]) }}">
+                                            @csrf
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-12">
                                                 <label for="inputEmail4">Product Name</label>
                                                 <input type="text" class="form-control" id="inputCategoryName"
-                                                    placeholder="Product Name" required>
+                                                    placeholder="Product Name" name="product_name" value="{{ $product->product_name }}" required>
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
                                             <label for="inputState">Products Image</label>
                                             <div class="custom-file mb-4">
-                                                <input type="file" class="custom-file-input" id="customFile" required>
+                                                <input type="file" class="custom-file-input" id="customFile" name="product_image" value="{{ $product->product_image }}" required>
                                                 <label class="custom-file-label" for="customFile">Choose
                                                     Image</label>
                                             </div>
@@ -396,9 +397,11 @@
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-12">
                                                 <label for="inputState">Category</label>
-                                                <select id="inputState" class="form-control" required>
+                                                <select id="inputState" class="form-control" name="product_category" value="{{ $product->product_category }}" required>
                                                     <option selected>Select Product Category</option>
                                                     <option>...</option>
+                                                    <option>..</option>
+                                                    <option>....</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -415,7 +418,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content widget-content-area">
-                                                            <textarea id="short_description">
+                                                            <textarea id="short_description" name="product_desc1" placeholder="{{ $product->product_desc1 }}">
                                                                                                             </textarea>
                                                         </div>
                                                     </div>
@@ -435,9 +438,12 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content widget-content-area">
-                                                            <textarea id="description">
+                                                            {{-- <textarea id="description" name="product_desc2" rows="3" placeholder="{{ $product->product_desc2 }}">
                                                                                                             </textarea>
+                                                                                                             --}}
+                                                                                                             <textarea class="form-control" name="product_desc2" id="description" rows="7" placeholder="{{ $product->product_desc2 }}"></textarea>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -445,11 +451,11 @@
 
                                         <div class="form-group mb-4">
                                             <label for="exampleFormControlTextarea1">Keywords</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="product_keyword" placeholder="{{ $product->product_keyword }}"
                                                 rows="3"></textarea>
                                         </div>
 
-                                        <button type="submit" class="btn btn-primary mt-3">Sign in</button>
+                                        <button type="submit" class="btn btn-primary mt-3">Update</button>
                                     </form>
                                 </div>
                             </div>

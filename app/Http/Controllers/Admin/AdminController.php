@@ -49,13 +49,17 @@ class AdminController extends Controller
     {
         return view('admin/pages/customers_view');
     }
-    public function products()
-    {
-        return view('admin/pages/products');
+    public function products(Request $request)
+     {
+        $datas['pro'] = DB::table('products')->get();
+        //dd($data);
+        return view('admin.pages.products', $datas);
     }
-    public function products_view()
+    public function products_view(Request $request, $id)
     {
-        return view('admin/pages/products_view');
+        $datas['product'] = DB::table('products')->where('id', '=', $id)->first();
+       
+        return view('admin/pages/products_view', $datas);
     }
     public function orders()
     {
