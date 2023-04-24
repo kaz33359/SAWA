@@ -30,8 +30,8 @@ Route::group(['middleware' => ['AdminAuth']], function () {
     Route::get('admin/orders', [AdminController::class, 'orders']);
     Route::get('admin/orders_view', [AdminController::class, 'orders_view']);
     Route::post('admin/add_categories', [CategoryController::class, 'add_categories'])->name('admin.addcategory');
-    Route::get('admin/delete/{id}', [CategoryController::class, 'delete']);
-    Route::get('admin/status/{status}/{id}', [CategoryController::class, 'status']);
+    Route::get('admin/category/delete/{id}', [CategoryController::class, 'delete']);
+    Route::get('admin/category/status/{status}/{id}', [CategoryController::class, 'status']);
     Route::post('admin/update/{id}', [CategoryController::class, 'category_update'])->name('admin.updatecategory');
     Route::post('admin/add_products', [ProductController::class, 'add_products'])->name('admin.addproduct');
     Route::get('admin/products/delete/{id}', [ProductController::class, 'delete']);

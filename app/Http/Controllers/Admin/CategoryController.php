@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Category;
+use App\Models\Admin\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;                                                       
 use App\Http\Controllers\Controller;
@@ -66,9 +66,14 @@ class CategoryController extends Controller
     public function delete(Request $request, $id)
     {
         $model = category::find($id);
+        
         $model->delete();
-        $request->session()->flash('message', 'Category deleted');
-        return redirect('admin/category');
+        return redirect('admin/category')->with('success', 'Category deleted');
+
+        // $request->session()->flash('message', 'Category deleted');
+
+        
+        // return redirect('admin/category');
     }
     public function status(Request $request, $status, $id)
     {
