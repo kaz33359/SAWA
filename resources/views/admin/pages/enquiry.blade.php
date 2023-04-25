@@ -391,18 +391,20 @@
                                         <th>Id</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>Mobile no.</th>
-                                        <th>Message</th>
+                                        <th>Subject</th>
+                                        <th>Description</th>
                                         <th class="text-center dt-no-sorting">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Test</td>
-                                        <td>test@gmail.com</td>
-                                        <td>7356533359</td>
-                                        <td>Message</td>
+                                     @foreach ($enq as $enquiry)
+    
+                                        <tr>
+                                        <td>{{$enquiry->id}}</td>
+                                        <td>{{$enquiry->name}}</td>
+                                         <td>{{$enquiry->email}}</td>
+                                          <td>{{$enquiry->subject}}</td>
+                                           <td>{{$enquiry->description}}</td>
                                         <td class="text-center">
                                             <ul class="table-controls">
                                                 <li><a href="{{ url('admin/enquiry_view') }}" class="bs-tooltip"
@@ -413,7 +415,7 @@
                                             </ul>
                                         </td>
                                     </tr>
-
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

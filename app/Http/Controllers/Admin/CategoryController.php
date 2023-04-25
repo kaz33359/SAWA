@@ -81,8 +81,9 @@ class CategoryController extends Controller
         $model = category::find($id);
         $model->status = $status;
         $model->save();
-        $request->session()->flash('message', 'Category status updated');
-        return redirect('admin/category');
+        return redirect('admin/category')->with('success', 'Category status updated');
+        //$request->session()->flash('message', 'Category status updated');
+       // return redirect('admin/category');
     }
 
     public function category_update(Request $request, $id)

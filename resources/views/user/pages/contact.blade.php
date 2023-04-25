@@ -227,22 +227,23 @@
                     <div class="col-lg-6 col-md-8 mx-auto">
                         <div class="support-wrap">
                             <h5>Submit a Request</h5>
-                            <form action="#">
+                             <form action="{{ route('user.enquiry') }}" method="post" enctype="multipart/form-data">
+                                 @csrf
                                 <div class="form-group">
                                     <label>First Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your first Name">
+                                    <input type="text" class="form-control" name="name" placeholder="Enter your first Name" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" placeholder="Enter your email address">
+                                    <input type="text" class="form-control"  name="email"placeholder="Enter your email address" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Subject</label>
-                                    <input type="text" class="form-control" placeholder="Enter your Subject">
+                                    <input type="text" class="form-control" name="subject"placeholder="Enter your Subject" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Description</label>
-                                    <textarea class="form-control" placeholder="Write down here" rows="4"></textarea>
+                                    <textarea class="form-control" name="description" placeholder="Write down here" rows="4" required></textarea>
                                 </div>
                                 <button class="btn btn-submit">Submit</button>
                             </form>

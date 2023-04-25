@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\User\ContactController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -52,3 +54,4 @@ Route::get('/', [UserController::class, 'index']);
 Route::get('/login', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'register']);
 Route::get('/contact', [UserController::class, 'contact']);
+Route::post('user/enquiry', [ContactController::class, 'enquiry'])->name('user.enquiry');

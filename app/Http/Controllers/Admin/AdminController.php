@@ -21,9 +21,13 @@ class AdminController extends Controller
         return view('admin/auth/login');
     }
 // login
-    public function enquiry()
+    public function enquiry(Request $request)
     {
-        return view('admin/pages/enquiry');
+
+        $dataenq['enq'] = DB::table('contacts')->get();
+        //dd($dataenq);
+        return view('admin.pages.enquiry', $dataenq);
+      
     }
     public function enquiry_view()
     {
