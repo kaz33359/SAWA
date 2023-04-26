@@ -55,3 +55,4 @@ Route::get('/login', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'register']);
 Route::get('/contact', [UserController::class, 'contact']);
 Route::post('user/enquiry', [ContactController::class, 'enquiry'])->name('user.enquiry');
+Route::get('admin/enquiry/delete/{id}', [ContactController::class, 'delete_enquiry']);
