@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>SAWA | View Product</title>
+    <title>INFODI | View Product</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
@@ -45,7 +45,7 @@
                 </svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="{{ asset('admin/assets/img/.png') }}">SAWA</a>
+                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="{{ asset('admin/assets/img/.png') }}">INFODI</a>
             </div>
 
 
@@ -220,7 +220,7 @@
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-logo">
                         <a href="{{ url('admin/index') }}">
-                            <img src="{{ asset('admin/assets/img/.png') }}" class="navbar-logo" alt="logo">SAWA
+                            <img src="{{ asset('admin/assets/img/.png') }}" class="navbar-logo" alt="logo">INFODI
                         </a>
                     </li>
                     <li class="nav-item theme-text">
@@ -328,17 +328,17 @@
                                 <div class="widget-content widget-content-area">
                                     <div class="d-flex justify-content-between">
                                         <h3 class="javascript:void(0);">Product Info</h3>
-                                        <a href="" class="mt-2 edit-profile"> <svg xmlns="http://www.w3.org/2000/svg"
+                                        {{-- <a href="" class="mt-2 edit-profile"> <svg xmlns="http://www.w3.org/2000/svg"
                                                 width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                                 stroke-linejoin="round" class="feather feather-edit-3">
                                                 <path d="M12 20h9"></path>
                                                 <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z">
                                                 </path>
-                                            </svg></a>
+                                            </svg></a> --}}
                                     </div>
                                     <div class="text-center user-info">
-                                        <img src="{{ asset('admin/assets/img/profile-3.jpg') }}" alt="avatar">
+                                        <img src="{{ asset('product_image') }}/{{$product->product_image}}" alt="avatar">
                                         <p class="">Product Name</p>
                                     </div>
                                     <div class="user-info-list">
@@ -348,14 +348,14 @@
                                                 <li class="contacts-block__item text-center">
                                                     Product Category
                                                 </li>
-                                                <li class="contacts-block__item text-center">
+                                                {{-- <li class="contacts-block__item text-center">
                                                     Product Slug
                                                 </li>
                                                 <li class="contacts-block__item text-center">
                                                     <span class="badge badge-danger"> Deactive </span>
                                                     <span class="badge badge-success"> Active </span>
 
-                                                </li>
+                                                </li> --}}
 
                                             </ul>
                                         </div>
@@ -363,21 +363,21 @@
                                 </div>
                             </div>
 
-                            <div class="education layout-spacing ">
+                            {{-- <div class="education layout-spacing ">
                                 <div class="widget-content widget-content-area">
                                     <h3 class="">Delete Product</h3>
                                     <div class="form-group mb-4 text-center">
                                         <button class="btn btn-outline-danger mb-2">Delete Account</button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="col-xl-8 col-lg-6 col-md-7 col-sm-12 layout-top-spacing">
                             <div class="skills layout-spacing ">
                                 <div class="widget-content widget-content-area">
                                     <h3 class="">Edit Product Info</h3>
-                                    <form method="POST" action="{{ route('admin.updateproduct', ['id' => $product->id]) }}">
+                                    <form action="{{ route('admin.updateproduct', ['id' => $product->id ]) }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-12">
@@ -386,27 +386,38 @@
                                                     placeholder="Product Name" name="product_name" value="{{ $product->product_name }}" required>
                                             </div>
                                         </div>
-                                        <div class="form-group mb-4">
+                                        {{-- <div class="form-group mb-4">
                                             <label for="inputState">Products Image</label>
                                             <div class="custom-file mb-4">
                                                 <input type="file" class="custom-file-input" id="customFile" name="product_image" value="{{ $product->product_image }}" required>
                                                 <label class="custom-file-label" for="customFile">Choose
                                                     Image</label>
                                             </div>
+                                        </div> --}}
+                                        <div class="form-group">
+                                                            <label for="product_image" class="control-label mb-1">Products Image</label>
+                                                            <div class="custom-file mb-4">
+                                                            <input id="product_image" name="product_image" type="file"
+                                                                class="form-control" aria-required="true"
+                                                                aria-invalid="false" value="{{ $product->product_image }}">
+                                                            </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-12">
                                                 <label for="inputState">Category</label>
                                                 <select id="inputState" class="form-control" name="product_category" value="{{ $product->product_category }}" required>
                                                     <option selected>Select Product Category</option>
-                                                    <option>...</option>
-                                                    <option>..</option>
-                                                    <option>....</option>
+                                                   <?php
+                                                                $categories=DB::table('categories')->get();
+                                                                ?>
+                                                                @foreach($categories as $data)
+                                                                <option value="{{ $data->id }}">{{ $data->category_name }}</option>
+                                                                @endforeach
                                                 </select>
                                             </div>
                                         </div>
 
-                                        <div class="form-group mb-4">
+                                        {{-- <div class="form-group mb-4">
                                             <div id="basic" class="row layout-spacing  layout-top-spacing">
                                                 <div class="col-lg-12">
                                                     <div class="statbox widget box box-shadow">
@@ -424,7 +435,20 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
+                                          <div class="form-row mb-4">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="inputEmail4">Short Description</label>
+                                                            <input type="text" class="form-control"
+                                                                id="short_description" placeholder="{{ $product->product_desc1 }}" name="product_desc1"
+                                                                required>
+                                                        </div>
+                                                        {{-- <div class="form-group col-md-6">
+                                                            <label for="inputPassword4">Product Slug</label>
+                                                            <input type="text" class="form-control" id="inputPassword4"
+                                                                placeholder="Product Slug" required>
+                                                        </div> --}}
+                                                    </div>
 
                                         <div class="form-group mb-4">
                                             <div id="basic" class="row layout-spacing  layout-top-spacing">
@@ -455,7 +479,7 @@
                                                 rows="3"></textarea>
                                         </div>
 
-                                        <button type="submit" class="btn btn-primary mt-3">Update</button>
+                                        <button type="submit" value="submit" >Update</button>
                                     </form>
                                 </div>
                             </div>
@@ -465,8 +489,8 @@
                 </div>
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
-                        <p class="">Copyright © 2021 <a target="_blank"
-                                href="https://powershiftmotorsports.com/">SAWA</a>,
+                        <p class="">Copyright © 2023 <a target="_blank"
+                                href="https://powershiftmotorsports.com/">INFODI</a>,
                             All rights reserved.</p>
                     </div>
                     <div class="footer-section f-section-2">

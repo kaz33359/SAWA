@@ -14,6 +14,13 @@ class ProductController extends Controller
 {
     public function add_products(Request $request)
     {
+        $request->validate([
+
+            'product_desc1' => 'required',
+            'product_desc2' => 'required',
+            //    'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
   
      $resultcat = DB::table('products')->get();
 
@@ -69,7 +76,7 @@ class ProductController extends Controller
         $request->session()->flash('message', 'Product status updated');
         return redirect('admin/products');
     }
-    public function product_update(Request $request, $id)
+     public function product_update(Request $request, $id)
     {
         // $updateData = $request->validate([
         //     'product_name' => 'required',
@@ -79,17 +86,34 @@ class ProductController extends Controller
         //     'product_desc2' => 'required',
         //     'product_keywords' => 'required',
         // ]);
-    //   Product::whereId($id)->update($updateData);
-    //     return redirect('admin/products')->with('completed', 'product has been updated');
-    
-      $request->validate([]);
+        //   Product::whereId($id)->update($updateData);
+        //     return redirect('admin/products')->with('completed', 'product has been updated');
+
+        //   $request->validate([]);
         //insert data into database
-        $save = DB::table('products')->where('id', $id)->update(array('product_name' => $request->product_name, 'product_keyword' => $request->product_keyword));
-        // return redirect();
+        
+        $file = $request->file('product_image');
+        $filename = time() . '.' . $file->extension();
+        $file->move(public_path('product_image'), $filename);
+        $save = DB::table('products')->where('id', $id)->update(array('product_name' => $request->product_name,'product_image' => $filename , 'product_category'=> $request->product_category, 'product_desc1'=> $request->product_desc1, 'product_desc2' => $request->product_desc2, 'product_keyword' => $request->product_keyword));
+        // return dd($request);
         if ($save) {
             return redirect('admin/products')->with('success', 'Updated successfully');
         } else {
             return back()->with('fail', 'Something went wrong...try again later');
         }
-    }
+     }
+    // public function product_update(Request $request, $id)
+    // {
+    //     $updateData = $request->validate([
+    //          'product_name' => 'required',
+    //         'product_category' => 'required',
+    //         'product_desc1' => 'required',
+    //         'product_desc2' => 'required',
+    //         'product_keywords' => 'required',
+
+    //     ]);
+    //     Product::whereId($id)->update($updateData);
+    //     return redirect('admin/products')->with('completed', 'category has been updated');
+    // }
 }

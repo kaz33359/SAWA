@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>SAWA | Home</title>
+    <title>INFODI | Home</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
 
     <link href="{{ asset('admin/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
@@ -62,7 +62,7 @@
                 </svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="{{ asset('admin/assets/img/.png') }}">SAWA</a>
+                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="{{ asset('admin/assets/img/.png') }}">INFODI</a>
             </div>
 
 
@@ -493,7 +493,7 @@
 
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
-                        <p class="">Copyright © 2021 <a target="_blank" href="https://powershiftmotorsports.com/">SAWA</a>,
+                        <p class="">Copyright © 2023 <a target="_blank" href="https://powershiftmotorsports.com/">INFODI</a>,
                             All rights reserved.</p>
                     </div>
                     <div class="footer-section f-section-2">

@@ -1,8 +1,8 @@
 // Basic
-new SimpleMDE({
-	element: document.getElementById("short_description"),
-	spellChecker: false,
-});
+// new SimpleMDE({
+// 	element: document.getElementById("short_description"),
+// 	spellChecker: false,
+// });
 
 new SimpleMDE({
   element: document.getElementById("description"),

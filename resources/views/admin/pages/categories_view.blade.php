@@ -10,7 +10,7 @@ $categories = array();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>SAWA | Edit Categories</title>
+    <title>INFODI | Edit Categories</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
 
    
@@ -33,7 +33,7 @@ $categories = array();
                 </svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="assets/img/.png') }}">SAWA</a>
+                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="assets/img/.png') }}">INFODI</a>
             </div>
 
 
@@ -178,7 +178,7 @@ $categories = array();
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-logo">
                         <a href="{{ url('admin/index') }}">
-                            <img src="{{ asset('admin/assets/img/.png') }}" class="navbar-logo" alt="logo">SAWA
+                            <img src="{{ asset('admin/assets/img/.png') }}" class="navbar-logo" alt="logo">INFODI
                         </a>
                     </li>
                     <li class="nav-item theme-text">
@@ -201,7 +201,7 @@ $categories = array();
                     </li>
 
                     <li class="menu single-menu active">
-                        <a href="{{ url('admin/categories') }}" aria-expanded="true" class="dropdown-toggle autodroprown">
+                        <a href="{{ url('admin/category') }}" aria-expanded="true" class="dropdown-toggle autodroprown">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -276,14 +276,15 @@ $categories = array();
                                 <div class="widget-content widget-content-area">
                                     <div class="d-flex justify-content-between">
                                         <h3 class="javascript:void(0);">Category Info</h3>
-                                        <a href="" class="mt-2 edit-profile"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3">
+                                        {{-- <a href="" class="mt-2 edit-profile"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3">
                                                 <path d="M12 20h9"></path>
                                                 <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z">
                                                 </path>
-                                            </svg></a>
+                                            </svg></a> --}}
                                     </div>
                                     <div class="text-center user-info">
-                                        <img src="{{ asset('admin/assets/img/profile-3.jpg') }}" alt="avatar">
+                                        {{-- <img src="{{ asset('admin/assets/img/profile-3.jpg') }}" alt="avatar"> --}}
+                                         <img src="{{ asset('category_image') }}/{{$category->category_image}}" alt="avatar">
                                         <p class="">Category Name</p>
                                     </div>
                                     <div class="user-info-list">
@@ -402,13 +403,13 @@ $categories = array();
                             <div class="skills layout-spacing ">
                                 <div class="widget-content widget-content-area">
                                     <h3 class="">Edit Category Info</h3>
-                                    <form method="POST" action="{{ route('admin.updatecategory', ['id' => $category->id]) }}">
+                                    <form method="POST" action="{{ route('admin.updatecategory', ['id' => $category->id]) }}" enctype="multipart/form-data">
                                             @csrf
                                               {{-- @method('PUT')  --}}
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-12">
                                                 <label for="inputEmail4">Category Name</label>
-                                                <input type="text" name="category_name" class="form-control" id="inputCategoryName" placeholder="Category Name" value="{{ $category->category_name }}">
+                                                <input type="text" name="category_name" class="form-control" id="inputCategoryName" placeholder="Category Name" value="{{ $category->category_name }}" required>
                                             </div>
                                             {{-- <div class="form-group col-md-6">
                                                 <label for="inputPassword4">Category Slug</label>
@@ -424,18 +425,25 @@ $categories = array();
                                         </div> --}}
                                         <div class="form-group">
                                      <label for="exampleFormControlTextarea3">Description</label>
-                                     <textarea class="form-control" name="category_desc" id="exampleFormControlTextarea3" rows="7" placeholder="{{ $category->category_desc }}"></textarea>
+                                     <textarea class="form-control" name="category_desc" id="exampleFormControlTextarea3" rows="7" placeholder="{{ $category->category_desc }}" required></textarea>
                                     </div>
-                                        <div class="form-group mb-4">
+                                        {{-- <div class="form-group mb-4">
                                             <label for="inputState">Category Image</label>
                                             <div class="custom-file mb-4">
-                                                <input type="file" class="custom-file-input" id="customFile" value="{{ $category->category_image }}" >
+                                                <input type="file" class="custom-file-input" id="customFile" value="{{ $category->category_image }}" required >
                                                 <label class="custom-file-label" for="customFile">Choose
                                                     Image</label>
                                             </div>
-                                        </div>
-
+                                        </div> --}}
                                         <div class="form-group">
+                                                            <label for="category_image" class="control-label mb-1">Category Image</label>
+                                                            <div class="custom-file mb-4">
+                                                            <input id="category_image" name="category_image" type="file"
+                                                                class="form-control" aria-required="true"
+                                                                aria-invalid="false" value="{{ $category->category_image }}" required>
+                                                            </div>
+                                                    </div>
+                                        {{-- <div class="form-group">
                                             <div class="form-check pl-0">
                                                 <div class="custom-control custom-checkbox checkbox-info">
                                                     <input type="checkbox" class="custom-control-input" id="gridCheck">
@@ -443,7 +451,7 @@ $categories = array();
                                                         in Home Page</label>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <button type="submit" class="btn btn-primary mt-3">Update</button>
                                     </form>
 
@@ -535,7 +543,7 @@ $categories = array();
                 </div>
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
-                        <p class="">Copyright © 2021 <a target="_blank" href="https://powershiftmotorsports.com/">SAWA</a>,
+                        <p class="">Copyright © 2023 <a target="_blank" href="https://powershiftmotorsports.com/">INFODI</a>,
                             All rights reserved.</p>
                     </div>
                     <div class="footer-section f-section-2">

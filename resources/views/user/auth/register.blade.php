@@ -91,19 +91,24 @@
                             </div>
                         </div>
                         <h1>Sign up</h1>
-                        <form action="https://dreamslms.dreamguystech.com/html/login.html">
+                        <form action="{{ route('auth.save') }}" method="post" enctype="multipart/form-data">
+                        @csrf
                             <div class="form-group">
                                 <label class="form-control-label">Full Name</label>
-                                <input type="text" class="form-control" placeholder="Enter your Full Name">
+                                <input type="text" class="form-control"  name="name" placeholder="Enter your Full Name">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">Email</label>
-                                <input type="email" class="form-control" placeholder="Enter your email address">
+                                <input type="email" class="form-control"  name="email" placeholder="Enter your email address">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Mobile number</label>
+                                <input type="text" class="form-control"  name="mobile" placeholder="Enter your mobile number">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">Password</label>
                                 <div class="pass-group" id="passwordInput">
-                                    <input type="password" class="form-control pass-input"
+                                    <input type="password" class="form-control pass-input" name="password"
                                         placeholder="Enter your password">
                                     <span class="toggle-password feather-eye"></span>
                                     <span class="pass-checked"><i class="feather-check"></i></span>
@@ -116,13 +121,13 @@
                                 </div>
                                 <div id="passwordInfo"></div>
                             </div>
-                            <div class="form-check remember-me">
+                            {{-- <div class="form-check remember-me">
                                 <label class="form-check-label mb-0">
                                     <input class="form-check-input" type="checkbox" name="remember"> I agree to the <a
                                         href="term-condition.html">Terms of Service</a> and <a
                                         href="privacy-policy.html">Privacy Policy.</a>
                                 </label>
-                            </div>
+                            </div> --}}
                             <div class="d-grid">
                                 <button class="btn btn-primary btn-start" type="submit">Create Account</button>
                             </div>

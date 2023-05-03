@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>SAWA | Products</title>
+    <title>INFODI | Products</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
 
     <link href="{{ asset('admin/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
@@ -65,7 +65,7 @@
                 </svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="assets/img/.png">SAWA</a>
+                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="assets/img/.png">INFODI</a>
             </div>
 
 
@@ -386,7 +386,7 @@
                                                                 placeholder="Product Slug" required>
                                                         </div> --}}
                                                     </div>
-                                                    <div class="form-group mb-4">
+                                                    {{-- <div class="form-group mb-4">
                                                         <label for="inputState">Products Image</label>
                                                         <div class="custom-file mb-4">
                                                             <input type="file" class="custom-file-input" id="customFile" name="product_image"
@@ -394,12 +394,20 @@
                                                             <label class="custom-file-label" for="customFile">Choose
                                                                 Image</label>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
+                                                      <div class="form-group">
+                                                            <label for="product_image" class="control-label mb-1">Products Image</label>
+                                                            <div class="custom-file mb-4">
+                                                            <input id="product_image" name="product_image" type="file"
+                                                                class="form-control" aria-required="true"
+                                                                aria-invalid="false" required>
+                                                            </div>
+                                                    </div>
                                                     <div class="form-row mb-12">
-                                                        <div class="form-group col-md-4">
+                                                        <div class="form-group col-md-12">
                                                             <label for="inputState">Category</label>
                                                             <select id="inputState" class="form-control" name="product_category" required>
-                                                                <option selected>Select Product Category</option>
+                                                                <option value="">Select Product Category</option>
                                                                 <?php
                                                                 $categories=DB::table('categories')->get();
                                                                 ?>
@@ -421,29 +429,22 @@
                                                                 id="inputCategoryName" placeholder="Product Model"
                                                                 required>
                                                         </div> --}}
-
                                                     </div>
 
-                                                    <div class="form-group mb-4">
-                                                        <div id="basic" class="row layout-spacing  layout-top-spacing">
-                                                            <div class="col-lg-12">
-                                                                <div class="statbox widget box box-shadow">
-                                                                    <div class="widget-header">
-                                                                        <div class="row">
-                                                                            <div
-                                                                                class="col-xl-12 col-md-12 col-sm-12 col-12">
-                                                                                <h4> Short Description </h4>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="widget-content widget-content-area">
-                                                                        <textarea id="short_description" name="product_desc1">
-                                                                        </textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                    <div class="form-row mb-4">
+                                                        <div class="form-group col-md-12">
+                                                            <label for="inputEmail4">Short Description</label>
+                                                            <input type="text" class="form-control"
+                                                                id="short_description" placeholder="Short Description" name="product_desc1"
+                                                                required>
                                                         </div>
+                                                        {{-- <div class="form-group col-md-6">
+                                                            <label for="inputPassword4">Product Slug</label>
+                                                            <input type="text" class="form-control" id="inputPassword4"
+                                                                placeholder="Product Slug" required>
+                                                        </div> --}}
                                                     </div>
+
 
                                                     <div class="form-group mb-4">
                                                         <div id="basic" class="row layout-spacing  layout-top-spacing">
@@ -458,8 +459,9 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="widget-content widget-content-area">
-                                                                        <textarea id="description" name="product_desc2">
+                                                                        <textarea id="description" name="product_desc2" required >
                                                                         </textarea>
+                                                                          
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -469,7 +471,7 @@
                                                     <div class="form-group mb-4">
                                                         <label for="exampleFormControlTextarea1">Keywords</label>
                                                         <textarea class="form-control" id="exampleFormControlTextarea1" name="product_keyword"
-                                                            rows="3"></textarea>
+                                                            rows="3" required></textarea>
                                                     </div>
 
                                                     <div class="form-group mb-4">
@@ -607,9 +609,6 @@
                                                     
                                                     </div> --}}
 
-
-
-
                                                     
                                                     <button type="submit" class="btn btn-primary mt-3">Add</button>
                                                 </form>
@@ -631,7 +630,7 @@
                                     <tr>
                                         <th>Id</th>
                                         <th>Product Name</th>
-                                        <th>Product Catergory</th>
+                                        <th>Product Category</th>
                                          <th>Product Image</th>
                                          <th class="text-center">Status</th>
                                         <th class="text-center dt-no-sorting">Action</th> 
@@ -642,7 +641,12 @@
                                     <tr>
                                         <td>{{$product->id}}</td>
                                         <td>{{$product->product_name}}</td>
-                                        <td>{{$product->product_category}}</td>
+                                        <?php 
+                                        $category = DB::table('categories')->where('id','=',$product->product_category)->first();
+                                        // return dd($category);
+                                        ?>
+                                        <td>{{ $category->category_name }}</td>
+                                        
                                         <td>
                                             <div class="d-flex">
                                                 <div class="usr-img-frame mr-2 rounded-circle">
@@ -703,7 +707,7 @@
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
                         <p class="">Copyright © 2023 <a target="_blank"
-                                href="https://powershiftmotorsports.com/">SAWA</a>,
+                                href="https://powershiftmotorsports.com/">INFODI</a>,
                             All rights reserved.</p>
                     </div>
                     <div class="footer-section f-section-2">

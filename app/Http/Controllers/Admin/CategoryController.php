@@ -86,14 +86,29 @@ class CategoryController extends Controller
        // return redirect('admin/category');
     }
 
+    //     public function category_update(Request $request, $id)
+    //     {
+    //         $updateData = $request->validate([
+    //             'category_name' => 'required',
+    //             'category_desc' => 'required',
+
+    //         ]);
+
+    //         Category::whereId($id)->update($updateData);
+    //         return redirect('admin/category')->with('completed', 'category has been updated');
+    // }
+
     public function category_update(Request $request, $id)
     {
-        $updateData = $request->validate([
-            'category_name' => 'required',
-            'category_desc' => 'required',
-           
-        ]);
-        Category::whereId($id)->update($updateData);
-        return redirect('admin/category')->with('completed', 'category has been updated');
-}
+     $file = $request->file('category_image');
+        $filename = time() . '.' . $file->extension();
+        $file->move(public_path('category_image'), $filename);
+        $save = DB::table('categories')->where('id', $id)->update(array('category_name' => $request->category_name,'category_image' => $filename , 'category_desc' => $request->category_desc));
+      // return dd($file);
+        if ($save) {
+            return redirect('admin/category')->with('success', 'Updated successfully');
+        } else {
+            return back()->with('fail', 'Something went wrong...try again later');
+        }
+     }
 }

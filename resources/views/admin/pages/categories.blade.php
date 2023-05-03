@@ -10,7 +10,7 @@ $categories = array();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>SAWA | Categories</title>
+    <title>INFODI | Categories</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
 
     <link href="{{ asset('admin/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
@@ -68,7 +68,7 @@ $categories = array();
                 </svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="assets/img/.png">SAWA</a>
+                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="assets/img/.png">INFODI</a>
             </div>
 
 
@@ -243,7 +243,7 @@ $categories = array();
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-logo">
                         <a href="{{ url('admin/index') }}">
-                            <img src="{{ asset('admin/assets/img/.png') }}" class="navbar-logo" alt="logo">SAWA
+                            <img src="{{ asset('admin/assets/img/.png') }}" class="navbar-logo" alt="logo">INFODI
                         </a>
                     </li>
                     <li class="nav-item theme-text">
@@ -390,7 +390,7 @@ $categories = array();
                                                         <div class="form-group col-md-12">
                                                             <label for="inputEmail4">Category Name</label>
                                                             <input type="text" class="form-control"
-                                                                id="inputCategoryName" placeholder="Category Name" name="category_name">
+                                                                id="inputCategoryName" placeholder="Category Name" name="category_name" required>
                                                         </div>
                                                         {{-- <div class="form-group col-md-6">
                                                             <label for="inputPassword4">Category Slug</label>
@@ -401,18 +401,18 @@ $categories = array();
                                                   
                                                     <div class="form-group">
                                                     <label for="exampleFormControlTextarea3">Description</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea3" rows="7" name="category_desc"></textarea>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea3" rows="7" name="category_desc" required></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                             <label for="category_image" class="control-label mb-1">Category Image</label>
                                                             <div class="custom-file mb-4">
                                                             <input id="category_image" name="category_image" type="file"
                                                                 class="form-control" aria-required="true"
-                                                                aria-invalid="false">
+                                                                aria-invalid="false" required>
                                                             </div>
-                                                        </div>
+                                                    </div>
 
-                                                    <div class="form-group">
+                                                    {{-- <div class="form-group">
                                                         <div class="form-check pl-0">
                                                             <div class="custom-control custom-checkbox checkbox-info">
                                                                 <input type="checkbox" class="custom-control-input"
@@ -421,7 +421,7 @@ $categories = array();
                                                                     in Home Page</label>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                     <button type="submit" class="btn btn-primary mt-3">Add</button>
                                                 </form>
 
@@ -521,7 +521,7 @@ $categories = array();
 
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
-                        <p class="">Copyright © 2021 <a target="_blank" href="https://powershiftmotorsports.com/">SAWA</a>,
+                        <p class="">Copyright © 2023 <a target="_blank" href="https://powershiftmotorsports.com/">INFODI</a>,
                             All rights reserved.</p>
                     </div>
                     <div class="footer-section f-section-2">

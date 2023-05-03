@@ -16,8 +16,14 @@ class AdminController extends Controller
         return view('admin/pages/index');
     }
     //login and 
-    public function login()
+    public function login(Request $request)
     {
+        if ($request->session()->has('ADMIN_LOGIN')) {
+            return redirect('admin/index');
+        } else {
+            return view('admin.auth.login');
+        }
+       // return view('admin.login');
         return view('admin/auth/login');
     }
 // login
@@ -33,7 +39,7 @@ class AdminController extends Controller
     {
         return view('admin/pages/enquiry_view');
     }
-    public function category(Request $request)
+    public function category(Request $request)                                                                                        
     {
         $data['cat'] = DB::table('categories')->get();
         //dd($data);
@@ -48,8 +54,11 @@ class AdminController extends Controller
     }
     public function customers()
     {
-        return view('admin/pages/customers');
+        $datacus['cus'] = DB::table('users')->get();
+        //dd($datacus);
+        return view('admin.pages.customers', $datacus);
     }
+    
     public function customers_view()
     {
         return view('admin/pages/customers_view');

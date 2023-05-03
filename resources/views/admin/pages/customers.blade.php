@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>SAWA | Customers</title>
+    <title>INFODI | Customers</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/favicon.png') }}" />
 
     <link href="{{ asset('admin/assets/css/loader.css" rel="stylesheet" type="text/css') }}" />
@@ -55,7 +55,7 @@
                 </svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="{{ asset('admin/assets/img/.png') }}">SAWA</a>
+                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="{{ asset('admin/assets/img/.png') }}">INFODI</a>
             </div>
 
 
@@ -230,7 +230,7 @@
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-logo">
                         <a href="{{ url('admin/index') }}">
-                            <img src="{{ asset('admin/assets/img/.png') }}" class="navbar-logo" alt="logo">SAWA
+                            <img src="{{ asset('admin/assets/img/.png') }}" class="navbar-logo" alt="logo">INFODI
                         </a>
                     </li>
                     <li class="nav-item theme-text">
@@ -391,36 +391,40 @@
                                         <th>Id</th>
                                         <th>Customer Name</th>
                                         <th>Customer Email</th>
-                                        <th>Customer Address</th>
-                                        <th>Customer Pic</th>
+                                        <th>Customer Mobile</th>
+                                       
                                         <th class="text-center">Account Status</th>
                                         <th class="text-center dt-no-sorting">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Bike Parts</td>
-                                        <td>OEM Parts</td>
-                                        <td>OEM Parts</td>
-                                        <td>
+                                    @foreach ($cus as $user)
+                                  <tr>
+                                        <td>{{$user->id}}</td>
+                                        <td>{{$user->name}}</td>
+                                        <td>{{$user->email}}</td>
+                                         <td>{{$user->mobile}}</td>
+                                         
+                                        {{-- <td>
                                             <div class="d-flex">
                                                 <div class="usr-img-frame mr-2 rounded-circle">
                                                     <img alt="avatar" class="img-fluid rounded-circle"
                                                         src="{{ asset('admin/assets/img/boy-2.png') }}">
                                                 </div>
                                             </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="badge badge-success"> Active </span>
-                                            <span class="badge badge-danger"> Deactive </span>
-                                        </td>
+                                        </td> --}}
+                                       <td class="text-center">
+                                            @if ($user->status=='0')
+                                               <a href="{{ url('admin/customer/status/1') }}/{{ $user->id }}"><span class="badge badge-danger"> Deactive </span></a> 
+                                               @else
+                                               <a href="{{ url('admin/customer/status/0') }}/{{ $user->id }}"><span class="badge badge-success"> Active </span></a>
+                                            @endif
                                         <td class="text-center">
                                             <ul class="table-controls">
                                                 <li><a href="{{ url('admin/customers_view') }}" class="bs-tooltip"
                                                         data-toggle="tooltip" data-placement="top" title=""
                                                         data-original-title="View Customer"><i data-feather="eye"></i></a></li>
-                                                <li><a href="javascript:void(0);" class="bs-tooltip"
+                                                <li><a href="{{ url('admin/customer/delete/') }}/{{ $user->id }}" class="bs-tooltip"
                                                         data-toggle="tooltip" data-placement="top" title=""
                                                         data-original-title="Delete Customer"><svg
                                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -436,7 +440,7 @@
                                             </ul>
                                         </td>
                                     </tr>
-
+                                  @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -447,7 +451,7 @@
 
                 <div class="footer-wrapper">
                     <div class="footer-section f-section-1">
-                        <p class="">Copyright © 2021 <a target="_blank" href="https://careerpointglobal.com/">SAWA</a>,
+                        <p class="">Copyright © 2023 <a target="_blank" href="https://careerpointglobal.com/">INFODI</a>,
                             All rights reserved.</p>
                     </div>
                     <div class="footer-section f-section-2">
