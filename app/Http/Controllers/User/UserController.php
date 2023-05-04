@@ -25,6 +25,10 @@ class UserController extends Controller
     public function contact() {
         return view('user/pages/contact');
     }
+    public function product()
+    {
+        return view('user/pages/product');
+    }
     //Register
     public function save(Request $request)
     {

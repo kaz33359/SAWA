@@ -5,7 +5,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Dreams LMS</title>
+   <title>INFODI</title>
+	<meta name="title" content="SAWA">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="SAWA">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://thedaxads.com/">
+	<meta property="og:title" content="SAWA">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="assets/images/image.jpeg"/>
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://thedaxads.com/">
+	<meta property="twitter:title" content="SAWA">
+	<meta property="twitter:description" content="">
+	<meta property="twitter:image" content="assets/images/image.jpeg"/>
+  <!-- Primary Meta Tags End -->
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
 

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
   <!-- Primary Meta Tags -->
-	<title>SAWA</title>
+	<title>INFODI</title>
 	<meta name="title" content="SAWA">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
