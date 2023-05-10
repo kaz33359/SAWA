@@ -29,6 +29,24 @@ class UserController extends Controller
     {
         return view('user/pages/product');
     }
+    public function coursegrid()
+    {
+        return view('user/pages/course-grid');
+    }
+     public function coursedetails()
+    {
+        return view('user/pages/course-details');
+    }
+    public function checkout()
+    {
+        return view('user/pages/checkout');
+    }
+    public function cart()
+    {
+        return view('user/pages/cart');
+    }
+    
+    
     //Register
     public function save(Request $request)
     {
@@ -94,4 +112,40 @@ class UserController extends Controller
 
         // return redirect('admin/category');
     }
+
+    public function check(Request $request)
+    {
+
+        //validate
+        $request->validate([
+
+            'email' => 'required|email',
+            'password' => 'required|min:5|max:12',
+        ]);
+        //validate
+        //checking login info
+        $userinfo = user::where('email', '=', $request->email)->first();
+
+        if (!$userinfo) {
+            return redirect()->back()->with('fail', 'We do not recognise your email address');
+        } else {
+            //check password
+            if (Hash::check($request->password, $userinfo->password)) {
+                $request->session()->put('LoggedUser', $userinfo->id);
+                return redirect('/');
+            } else {
+                return redirect()->back()->with('fail', 'Invalid password');
+            }
+        }
+    }
+    //Login
+    //logout
+    public function logout()
+    {
+        if (session()->has('LoggedUser')) {
+            session()->pull('LoggedUser');
+            return redirect('/')->with('success', 'Logout successful');;
+        }
+    }
+    //logout
 }

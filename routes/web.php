@@ -50,14 +50,23 @@ Route::get('admin/hash', [AdminController::class, 'hashp']);
 
 
 //User
+Route::post('user/registration_process', [UserController::class, 'save'])->name('auth.save');
+
+Route::post('user/login_process', [UserController::class, 'check'])->name('auth.check');
 Route::get('/', [UserController::class, 'index']);
 Route::get('/login', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'register']);
 Route::get('/contact', [UserController::class, 'contact']);
 Route::get('/product', [UserController::class, 'product']);
+Route::get('/course-grid', [UserController::class, 'coursegrid']);
+Route::get('/course-details', [UserController::class, 'coursedetails']);
+Route::get('/checkout', [UserController::class, 'checkout']);
+Route::get('/cart', [UserController::class, 'cart']);
 Route::post('user/enquiry', [ContactController::class, 'enquiry'])->name('user.enquiry');
+
 Route::get('admin/enquiry/delete/{id}', [ContactController::class, 'delete_enquiry']);
-Route::post('user/registration_process', [UserController::class, 'save'])->name('auth.save');
+
 Route::get('admin/customer/status/{status}/{id}', [UserController::class, 'status']);
 Route::get('admin/customer/delete/{id}', [UserController::class, 'delete']);
 
+ Route::get('user/logout', [UserController::class, 'logout'])->name('auth.logout');

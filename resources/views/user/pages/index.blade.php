@@ -9,24 +9,24 @@
 
   <!-- Primary Meta Tags -->
 	<title>INFODI</title>
-	<meta name="title" content="SAWA">
+	<meta name="title" content="INFODI">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<meta name="author" content="SAWA">
+	<meta name="author" content="INFODI">
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://thedaxads.com/">
-	<meta property="og:title" content="SAWA">
+	<meta property="og:title" content="INFODI">
 	<meta property="og:description" content="">
-	<meta property="og:image" content="assets/images/image.jpeg"/>
+	<meta property="og:image" content="{{ asset('user/assets/images/image.jpeg') }}"/>
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://thedaxads.com/">
-	<meta property="twitter:title" content="SAWA">
+	<meta property="twitter:title" content="INFODI">
 	<meta property="twitter:description" content="">
-	<meta property="twitter:image" content="assets/images/image.jpeg"/>
+	<meta property="twitter:image" content="{{ asset('user/assets/images/image.jpeg') }}"/>
   <!-- Primary Meta Tags End -->
 	
   <!-- Global Links -->
@@ -76,7 +76,7 @@
                                 </a>
                             </div>
                             <ul class="main-nav">
-                                <li class="menu-effect active"><a href="index.html">Home </a></li>
+                                <li class="menu-effect active"><a href="{{ url('/') }}">Home </a></li>
                                     <!-- <ul class="submenu">
                                         <li><a href="index.html">Home</a></li>
                                         <li class="active"><a href="index-two.html">Home Two</a></li>
@@ -109,7 +109,7 @@
                                         <li><a href="instructor-linked-account.html">Linked Accounts</a></li>
                                     </ul>
                                 </li> -->
-                                <li class="menu-effect"><a href="product.html">Products </a></li>
+                                <li class="menu-effect"><a href="{{ url('/product') }}">Products </a></li>
                                     <!-- <ul class="submenu first-submenu">
                                         <li class="has-submenu ">
                                             <a href="students-list.html">Student</a>
@@ -133,7 +133,7 @@
                                     </ul>
                                 </li> -->
                                 <li class="menu-effect">
-                                    <a href="contact.html">Contact </a>
+                                    <a href="{{ url('/contact') }}">Contact </a>
                                     </li>
                                     <!-- <ul class="submenu">
                                         <li><a href="notifications.html">Notification</a></li>
@@ -184,7 +184,53 @@
                                 </li> -->
                             </ul>
                         </div>
+                         <?php
+                                $data = DB::table('users')->where('id', '=', session('LoggedUser'))->get();
+                                // print($data);
+                                ?>
+                       
                         <ul class="nav header-navbar-rht">
+                             @if (session()->has('LoggedUser'))
+                             @foreach ($data as $item)
+                            <li class="nav-item cart-nav">
+                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                                    <img src="{{ asset('user/assets/img/icon/cart.svg') }}" alt="img">
+                                </a>
+                                <div class="wishes-list dropdown-menu dropdown-menu-right">
+                                    <ul>
+                                        <li><a class="dropdown-item" href="{{ url('user/cart') }}">View Cart</a></li>
+                                        <li><a class="dropdown-item" href="{{ url('user/checkout') }}">Checkout</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item user-nav">
+                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                                    <span class="user-img">
+                                        <img src="{{ asset('user/assets/img/user/user11.jpg') }}" alt="">
+                                        <span class="status online"></span>
+                                    </span>
+                                </a>
+                                <div class="users dropdown-menu dropdown-menu-right" data-popper-placement="bottom-end">
+                                    <div class="user-header">
+                                        <div class="avatar avatar-sm">
+                                            <img src="{{ asset('user/assets/img/user/user11.jpg') }}" alt="User Image"
+                                                class="avatar-img rounded-circle">
+                                        </div>
+                                        <div class="user-text">
+                                            <h6>Hi , {{ $item->name }}</h6>
+                                            <p class="text-muted mb-0">Student</p>
+                                        </div>
+                                    </div>
+                                    <a class="dropdown-item" href="setting-edit-profile.html"><i
+                                            class="feather-user me-1"></i> Profile</a>                
+                                    <a class="dropdown-item" href="{{ url('user/logout') }}"><i class="feather-log-out me-1"></i>
+                                        Logout</a>
+                                </div>
+                            </li>
+                             @endforeach
+                        </ul>
+                          @else
+                           <ul class="nav header-navbar-rht">
                             <li class="nav-item">
                                 <a class="login-head button" href="{{ url('/login') }}">Login</a>
                             </li>
@@ -192,6 +238,7 @@
                                 <a class="signin-head" href="{{ url('/register') }}">Sign up</a>
                             </li>
                         </ul>
+                          @endif
                     </div>
                 </nav>
             </div>

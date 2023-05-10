@@ -15,27 +15,27 @@
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://thedaxads.com/">
-	<meta property="og:title" content="SAWA">
+	<meta property="og:title" content="INFODI">
 	<meta property="og:description" content="">
-	<meta property="og:image" content="assets/images/image.jpeg"/>
+	<meta property="og:image" content="{{ asset('user/assets/images/image.jpeg') }}"/>
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
 	<meta property="twitter:url" content="https://thedaxads.com/">
-	<meta property="twitter:title" content="SAWA">
+	<meta property="twitter:title" content="INFODI">
 	<meta property="twitter:description" content="">
-	<meta property="twitter:image" content="assets/images/image.jpeg"/>
+	<meta property="twitter:image" content="{{ asset('user/assets/images/image.jpeg') }}"/>
   <!-- Primary Meta Tags End -->
 
   <!-- Global Links -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('User/assets/img/Dax_dark.png') }}">
-    <link rel="stylesheet" href="{{ asset('User/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('User/assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('User/assets/plugins/fontawesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('User/assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('User/assets/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('User/assets/plugins/feather/feather.css') }}">
-    <link rel="stylesheet" href="{{ asset('User/assets/css/style.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('user/assets/img/Dax_dark.png') }}">
+    <link rel="stylesheet" href="{{ asset('user/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/assets/plugins/fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/assets/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/assets/plugins/feather/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('user/assets/css/style.css') }}">
   <!-- Global Links -->
 
 </head>
@@ -49,7 +49,7 @@
                 <div class="owl-carousel login-slide owl-theme">
                     <div class="welcome-login">
                         <div class="login-banner">
-                            <img src="{{ asset('User/assets/img/login-img.png') }}" class="img-fluid" alt="Logo">
+                            <img src="{{ asset('user/assets/img/login-img.png') }}" class="img-fluid" alt="Logo">
                         </div>
                         <div class="mentor-course text-center">
                             <h2>Welcome to <br>DreamsLMS Courses.</h2>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="welcome-login">
                         <div class="login-banner">
-                            <img src="{{ asset('User/assets/img/login-img.png') }}" class="img-fluid" alt="Logo">
+                            <img src="{{ asset('user/assets/img/login-img.png') }}" class="img-fluid" alt="Logo">
                         </div>
                         <div class="mentor-course text-center">
                             <h2>Welcome to <br>DreamsLMS Courses.</h2>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="welcome-login">
                         <div class="login-banner">
-                            <img src="{{ asset('User/assets/img/login-img.png') }}" class="img-fluid" alt="Logo">
+                            <img src="{{ asset('user/assets/img/login-img.png') }}" class="img-fluid" alt="Logo">
                         </div>
                         <div class="mentor-course text-center">
                             <h2>Welcome to <br>DreamsLMS Courses.</h2>
@@ -85,7 +85,7 @@
                 <div class="login-wrapper">
                     <div class="loginbox">
                         <div class="img-logo">
-                            <img src="{{ asset('User/assets/img/logo.svg') }}" class="img-fluid" alt="Logo">
+                            <img src="{{ asset('user/assets/img/logo.svg') }}" class="img-fluid" alt="Logo">
                             <div class="back-home">
                                 <a href="{{ url('/') }}">Back to Home</a>
                             </div>
@@ -137,9 +137,9 @@
                         <span><a href="#">Or sign in with</a></span>
                         <div class="sign-google">
                             <ul>
-                                <li><a href="#"><img src="{{ asset('User/assets/img/net-icon-01.png') }}" class="img-fluid" alt="Logo"> Sign
+                                <li><a href="#"><img src="{{ asset('user/assets/img/net-icon-01.png') }}" class="img-fluid" alt="Logo"> Sign
                                         In using Google</a></li>
-                                <li><a href="#"><img src="{{ asset('User/assets/img/net-icon-02.png') }}" class="img-fluid" alt="Logo">Sign
+                                <li><a href="#"><img src="{{ asset('user/assets/img/net-icon-02.png') }}" class="img-fluid" alt="Logo">Sign
                                         In using Facebook</a></li>
                             </ul>
                         </div>
