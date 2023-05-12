@@ -204,7 +204,7 @@
                                             <p class="text-muted mb-0">Student</p>
                                         </div>
                                     </div>
-                                    <a class="dropdown-item" href="setting-edit-profile.html"><i
+                                    <a class="dropdown-item" href="{{ url('/user-profile')}}"><i
                                             class="feather-user me-1"></i> Profile</a>
                                     <a class="dropdown-item" href="{{ url('user/logout') }}"><i class="feather-log-out me-1"></i>
                                         Logout</a>
@@ -256,10 +256,10 @@
                             <div class="footer-widget footer-menu">
                                 <h2 class="footer-title">Explore</h2>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="product.html">Products</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{{ url('/')}}">Home</a></li>
+                                    <li><a href="{{ url('/about')}}">About</a></li>
+                                    <li><a href="{{ url('/product')}}">Products</a></li>
+                                    <li><a href="{{ url('/contact')}}">Contact</a></li>
                                     <!-- <li><a href="deposit-instructor-dashboard.html"> Dashboard</a></li> -->
                                 </ul>
                             </div>
@@ -271,9 +271,9 @@
                                 <h2 class="footer-title">Quick links</h2>
                                 <ul>
                                 
-                                    <li><a href="term-condition.html">Terms & Condition</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="{{ url('/term-condition')}}">Terms & Condition</a></li>
+                                    <li><a href="{{ url('/privacy-policy')}}">Privacy Policy</a></li>
+                                    <li><a href="{{ url('/faq')}}">FAQ</a></li>
                                     <!-- <li><a href="register.html">Register</a></li>
                                  <li><a href="students-list.html">Student</a></li>
                                  <li><a href="deposit-student-dashboard.html"> Dashboard</a></li> -->

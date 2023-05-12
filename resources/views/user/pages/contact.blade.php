@@ -22,7 +22,7 @@
                             <nav aria-label="breadcrumb" class="page-breadcrumb">
                                 <ol class="breadcrumb">
                                 
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ url('/')}}">Home</a></li>
                                     <!-- <li class="breadcrumb-item">Pages</li> -->
                                     <li class="breadcrumb-item">Contact</li>
                                 </ol>
@@ -83,16 +83,16 @@
                         </div>
                         <div class="footer-contact-info">
                             <div class="footer-address">
-                                <img src="assets/img/icon/icon-20.svg" alt="" class="img-fluid">
+                                <img src="{{ asset('user/assets/img/icon/icon-20.svg') }}" alt="" class="img-fluid">
                                 <p> 3556 Beech Street, San Francisco,<br> California, CA 94108 </p>
                             </div>
                             <p>
-                                <img src="assets/img/icon/icon-19.svg" alt="" class="img-fluid">
+                                <img src="{{ asset('user/assets/img/icon/icon-19.svg') }}" alt="" class="img-fluid">
                                 <a href="https://dreamslms.dreamguystech.com/cdn-cgi/l/email-protection" class="__cf_email__"
                                     data-cfemail="f4908691959987989987b4918c9599849891da979b99">[email&#160;protected]</a>
                             </p>
                             <p class="mb-0">
-                                <img src="assets/img/icon/icon-21.svg" alt="" class="img-fluid">
+                                <img src="{{ asset('user/assets/img/icon/icon-21.svg') }}" alt="" class="img-fluid">
                                 +19 123-456-7890
                             </p>
                         </div>

@@ -50,7 +50,7 @@
                                             <div class="course-box course-design list-course d-flex">
                                                 <div class="product">
                                                     <div class="product-img">
-                                                        <a href="course-details.html">
+                                                        <a href="{{ url('/course-details')}}">
                                                             <img class="img-fluid" alt=""
                                                                 src="{{ asset('user/assets/img/course/course-10.jpg')}}">
                                                         </a>
@@ -60,7 +60,7 @@
                                                     </div>
                                                     <div class="product-content">
                                                         <div class="head-course-title">
-                                                            <h3 class="title"><a href="course-details.html">Information
+                                                            <h3 class="title"><a href="{{ url('/course-details')}}">Information
                                                                     About UI/UX Design Degree</a></h3>
                                                         </div>
                                                         <div
@@ -94,7 +94,7 @@
                                             <div class="course-box course-design list-course d-flex ">
                                                 <div class="product">
                                                     <div class="product-img">
-                                                        <a href="course-details.html">
+                                                        <a href="{{ url('/course-details')}}">
                                                             <img class="img-fluid" alt=""
                                                                 src="{{ asset('user/assets/img/course/course-11.jpg')}}">
                                                         </a>
@@ -104,7 +104,7 @@
                                                     </div>
                                                     <div class="product-content">
                                                         <div class="head-course-title">
-                                                            <h3 class="title"><a href="course-details.html">Wordpress
+                                                            <h3 class="title"><a href="{{ url('/course-details')}}">Wordpress
                                                                     for Beginners - Master Wordpress Quickly</a></h3>
                                                         </div>
                                                         <div
@@ -138,7 +138,7 @@
                                             <div class="course-box course-design list-course d-flex mb-0">
                                                 <div class="product">
                                                     <div class="product-img">
-                                                        <a href="course-details.html">
+                                                        <a href="{{ url('/course-details')}}">
                                                             <img class="img-fluid" alt=""
                                                                 src="{{ asset('user/assets/img/course/course-12.jpg')}}">
                                                         </a>
@@ -148,7 +148,7 @@
                                                     </div>
                                                     <div class="product-content">
                                                         <div class="head-course-title">
-                                                            <h3 class="title"><a href="course-details.html">Sketch from
+                                                            <h3 class="title"><a href="{{ url('/course-details')}}">Sketch from
                                                                     A to Z (2022): Become an app designer</a></h3>
                                                         </div>
                                                         <div

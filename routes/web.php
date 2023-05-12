@@ -57,13 +57,18 @@ Route::get('/', [UserController::class, 'index']);
 Route::get('/login', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'register']);
 Route::get('/contact', [UserController::class, 'contact']);
-Route::get('/product', [UserController::class, 'product']);
+Route::get('/product', [UserController::class, 'product'])->name('user.product');
 Route::get('/course-grid', [UserController::class, 'coursegrid']);
 Route::get('/course-details', [UserController::class, 'coursedetails']);
+Route::get('/job-category', [UserController::class, 'jobcategory']);
 Route::get('/checkout', [UserController::class, 'checkout']);
 Route::get('/cart', [UserController::class, 'cart']);
+Route::get('/faq', [UserController::class, 'faq']);
+Route::get('/privacy-policy', [UserController::class, 'privacypolicy']);
+Route::get('/term-condition', [UserController::class, 'termcondition']);
 Route::post('user/enquiry', [ContactController::class, 'enquiry'])->name('user.enquiry');
-
+Route::get('/user-profile', [UserController::class, 'userprofile']);
+Route::get('/user-order', [UserController::class, 'userorder']);
 Route::get('admin/enquiry/delete/{id}', [ContactController::class, 'delete_enquiry']);
 
 Route::get('admin/customer/status/{status}/{id}', [UserController::class, 'status']);

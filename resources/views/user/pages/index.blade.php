@@ -198,8 +198,8 @@
                                 </a>
                                 <div class="wishes-list dropdown-menu dropdown-menu-right">
                                     <ul>
-                                        <li><a class="dropdown-item" href="{{ url('user/cart') }}">View Cart</a></li>
-                                        <li><a class="dropdown-item" href="{{ url('user/checkout') }}">Checkout</a></li>
+                                        <li><a class="dropdown-item" href="{{ url('cart') }}">View Cart</a></li>
+                                        <li><a class="dropdown-item" href="{{ url('checkout') }}">Checkout</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -221,7 +221,7 @@
                                             <p class="text-muted mb-0">Student</p>
                                         </div>
                                     </div>
-                                    <a class="dropdown-item" href="setting-edit-profile.html"><i
+                                    <a class="dropdown-item" href="{{ url('/user-profile')}}"><i
                                             class="feather-user me-1"></i> Profile</a>                
                                     <a class="dropdown-item" href="{{ url('user/logout') }}"><i class="feather-log-out me-1"></i>
                                         Logout</a>
@@ -255,8 +255,8 @@
                                 <h1>Engaging & Accessible Online Courses For All</h1>
                             </div>
                             <div class="banner-content">
-                                <form class="form" name="store" id="store" method="post"
-                                    action="https://dreamslms.dreamguystech.com/html/course-list.html">
+                                <form class="form" name="store" id="store" method="get"
+                                    action="{{ route('user.product') }}">
                                     <div class="form-inner">
                                         <div class="input-group">
                                             <span class="drop-detail">
@@ -495,7 +495,7 @@
 
                 <div class="col-lg-12">
                     <div class="more-details text-center" data-aos="fade-down">
-                        <a href="job-category.html" class="discover-btn">View all Category <i
+                        <a href="{{ url('/job-category')}}" class="discover-btn">View all Category <i
                                 class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -796,7 +796,7 @@
 
                 <div class="col-lg-12" data-aos="fade-up">
                     <div class="more-details text-center">
-                        <a href="course-list.html" class="discover-btn">View all Products <i
+                        <a href="{{ url('/product')}}" class="discover-btn">View all Products <i
                                 class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -832,7 +832,7 @@
                             </div>
                         </div>
                         <div class="about-button more-details">
-                            <a href="register.html" class="discover-btn">Join Today <i
+                            <a href="{{ url('/register')}}" class="discover-btn">Join Today <i
                                     class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
@@ -1167,7 +1167,7 @@
 
                 <div class="col-lg-12" data-aos="fade-up">
                     <div class="more-details text-center">
-                        <a href="course-list.html" class="discover-btn">View all Product <i
+                        <a href="{{ url('/product')}}" class="discover-btn">View all Product <i
                                 class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>

@@ -22,7 +22,7 @@
                         <div class="breadcrumb-list">
                             <nav aria-label="breadcrumb" class="page-breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ url('/')}}">Home</a></li>
                                     <li class="breadcrumb-item" aria-current="page">Courses</li>
                                     <li class="breadcrumb-item" aria-current="page">All Courses</li>
                                     <li class="breadcrumb-item" aria-current="page">The Complete Web Developer Course
@@ -496,7 +496,7 @@
                                                             class="feather-share-2"></i> Share</a>
                                                 </div>
                                             </div>
-                                            <a href="checkout.html" class="btn btn-enroll w-100">Enroll Now</a>
+                                            <a href="{{ url('/checkout')}}" class="btn btn-enroll w-100">Enroll Now</a>
                                         </div>
                                     </div>
                                 </div>

@@ -37,6 +37,10 @@ class UserController extends Controller
     {
         return view('user/pages/course-details');
     }
+    public function jobcategory()
+    {
+        return view('user/pages/job-category');
+    }
     public function checkout()
     {
         return view('user/pages/checkout');
@@ -45,8 +49,26 @@ class UserController extends Controller
     {
         return view('user/pages/cart');
     }
-    
-    
+      public function faq()
+    {
+        return view('user/pages/faq');
+    }
+    public function termcondition()
+    {
+        return view('user/pages/term-condition');
+    }
+    public function privacypolicy()
+    {
+        return view('user/pages/privacy-policy');
+    }
+    public function userprofile()
+    {
+        return view('user/pages/instructor-edit-profile');
+    }
+    public function userorder()
+    {
+        return view('user/pages/instructor-order');
+    }
     //Register
     public function save(Request $request)
     {

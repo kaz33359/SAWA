@@ -91,7 +91,7 @@
                                 <div class="course-box course-design d-flex ">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-10.jpg')}}">
                                             </a>
                                             <div class="price">
@@ -114,7 +114,7 @@
                                                     <a href="#rate"><i class="fa-regular fa-heart"></i></a>
                                                 </div>
                                             </div>
-                                            <h3 class="title"><a href="course-details.html">Information About UI/UX
+                                            <h3 class="title"><a href="{{ url('/course-details')}}">Information About UI/UX
                                                     Design Degree</a></h3>
                                             <div class="course-info d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
@@ -135,7 +135,7 @@
                                                 <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
                                             </div>
                                             <div class="all-btn all-category d-flex align-items-center">
-                                                <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                             </div>
                                         </div>
                                     </div>
@@ -145,7 +145,7 @@
                                 <div class="course-box course-design d-flex ">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-11.jpg')}}">
                                             </a>
                                             <div class="price">
@@ -168,7 +168,7 @@
                                                     <a href="#rate"><i class="fa-regular fa-heart"></i></a>
                                                 </div>
                                             </div>
-                                            <h3 class="title"><a href="course-details.html">Wordpress for Beginners -
+                                            <h3 class="title"><a href="{{ url('/course-details')}}">Wordpress for Beginners -
                                                     Master Wordpress Quickly</a></h3>
                                             <div class="course-info d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
@@ -189,7 +189,7 @@
                                                 <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
                                             </div>
                                             <div class="all-btn all-category d-flex align-items-center">
-                                                <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                             </div>
                                         </div>
                                     </div>
@@ -199,7 +199,7 @@
                                 <div class="course-box course-design d-flex ">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-12.jpg')}}">
                                             </a>
                                             <div class="price">
@@ -222,7 +222,7 @@
                                                     <a href="#rate"><i class="fa-regular fa-heart"></i></a>
                                                 </div>
                                             </div>
-                                            <h3 class="title"><a href="course-details.html">Sketch from A to Z (2022):
+                                            <h3 class="title"><a href="{{ url('/course-details')}}">Sketch from A to Z (2022):
                                                     Become an app designer</a></h3>
                                             <div class="course-info d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
@@ -243,7 +243,7 @@
                                                 <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
                                             </div>
                                             <div class="all-btn all-category d-flex align-items-center">
-                                                <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                             </div>
                                         </div>
                                     </div>
@@ -253,7 +253,7 @@
                                 <div class="course-box course-design d-flex ">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-13.jpg')}}">
                                             </a>
                                             <div class="price">
@@ -277,7 +277,7 @@
                                                             class="fa-regular fa-heart"></i></a>
                                                 </div>
                                             </div>
-                                            <h3 class="title"><a href="course-details.html">Learn Angular Fundamentals
+                                            <h3 class="title"><a href="{{ url('/course-details')}}">Learn Angular Fundamentals
                                                     From ...</a></h3>
                                             <div class="course-info d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
@@ -298,7 +298,7 @@
                                                 <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
                                             </div>
                                             <div class="all-btn all-category d-flex align-items-center">
-                                                <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                             </div>
                                         </div>
                                     </div>
@@ -308,7 +308,7 @@
                                 <div class="course-box course-design d-flex ">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-14.jpg')}}">
                                             </a>
                                             <div class="price">
@@ -332,7 +332,7 @@
                                                             class="fa-regular fa-heart"></i></a>
                                                 </div>
                                             </div>
-                                            <h3 class="title"><a href="course-details.html">Build Responsive Real World
+                                            <h3 class="title"><a href="{{ url('/course-details')}}">Build Responsive Real World
                                                     Websites with ...</a></h3>
                                             <div class="course-info d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
@@ -353,7 +353,7 @@
                                                 <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
                                             </div>
                                             <div class="all-btn all-category d-flex align-items-center">
-                                                <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                             </div>
                                         </div>
                                     </div>
@@ -363,7 +363,7 @@
                                 <div class="course-box course-design d-flex ">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-15.jpg')}}">
                                             </a>
                                             <div class="price">
@@ -387,7 +387,7 @@
                                                             class="fa-regular fa-heart"></i></a>
                                                 </div>
                                             </div>
-                                            <h3 class="title"><a href="course-details.html">C# Developers Double Your
+                                            <h3 class="title"><a href="{{ url('/course-details')}}">C# Developers Double Your
                                                     Coding Speed with ...</a></h3>
                                             <div class="course-info d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
@@ -408,7 +408,7 @@
                                                 <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
                                             </div>
                                             <div class="all-btn all-category d-flex align-items-center">
-                                                <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                             </div>
                                         </div>
                                     </div>
@@ -418,7 +418,7 @@
                                 <div class="course-box course-design d-flex ">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-16.jpg')}}">
                                             </a>
                                             <div class="price">
@@ -440,7 +440,7 @@
                                                     <a href="#rate"><i class="fa-regular fa-heart"></i></a>
                                                 </div>
                                             </div>
-                                            <h3 class="title"><a href="course-details.html">Learn JavaScript and Express
+                                            <h3 class="title"><a href="{{ url('/course-details')}}">Learn JavaScript and Express
                                                     to become a...</a></h3>
                                             <div class="course-info d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
@@ -461,7 +461,7 @@
                                                 <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
                                             </div>
                                             <div class="all-btn all-category d-flex align-items-center">
-                                                <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                             </div>
                                         </div>
                                     </div>
@@ -471,7 +471,7 @@
                                 <div class="course-box course-design d-flex ">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-13.jpg')}}">
                                             </a>
                                             <div class="price">
@@ -494,7 +494,7 @@
                                                     <a href="#rate"><i class="fa-regular fa-heart"></i></a>
                                                 </div>
                                             </div>
-                                            <h3 class="title"><a href="course-details.html">Learn and Understand
+                                            <h3 class="title"><a href="{{ url('/course-details')}}">Learn and Understand
                                                     AngularJS to become a ...</a></h3>
                                             <div class="course-info d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
@@ -515,7 +515,7 @@
                                                 <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
                                             </div>
                                             <div class="all-btn all-category d-flex align-items-center">
-                                                <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                             </div>
                                         </div>
                                     </div>
@@ -525,7 +525,7 @@
                                 <div class="course-box course-design d-flex ">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/icon/icon-02.svg')}}" alt="">
                                                     <p>9hr 30min</p>
                                             </a>
@@ -549,7 +549,7 @@
                                                     <a href="#rate"><i class="fa-regular fa-heart"></i></a>
                                                 </div>
                                             </div>
-                                            <h3 class="title"><a href="course-details.html">Responsive Web Design
+                                            <h3 class="title"><a href="{{ url('/course-details')}}">Responsive Web Design
                                                     Essentials HTML5 CSS3 ...</a></h3>
                                             <div class="course-info d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
@@ -570,7 +570,7 @@
                                                 <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
                                             </div>
                                             <div class="all-btn all-category d-flex align-items-center">
-                                                <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                             </div>
                                         </div>
                                     </div>

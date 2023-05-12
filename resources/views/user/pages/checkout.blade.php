@@ -26,7 +26,7 @@
                         <div class="breadcrumb-list">
                             <nav aria-label="breadcrumb" class="page-breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ url('/')}}">Home</a></li>
                                     <!-- <li class="breadcrumb-item" aria-current="page">Pages</li> -->
                                     <li class="breadcrumb-item" aria-current="page">Checkout</li>
                                 </ol>
@@ -233,7 +233,7 @@
                                     </ul>
                                 </div>
                                 <div class="plan-change">
-                                    <a href="pricing-plan.html" class="btn btn-primary">Change the Plan</a>
+                                    <a href="pricing-plan" class="btn btn-primary">Change the Plan</a>
                                 </div>
                             </div>
                         </div>

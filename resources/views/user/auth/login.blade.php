@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
   <!-- Primary Meta Tags -->
-	<title>SAWA</title>
+	<title>INFODI</title>
 	<meta name="title" content="INFODI">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
@@ -138,7 +138,7 @@
                                         In using Facebook</a></li>
                             </ul>
                         </div>
-                        <p class="mb-0">New User ? <a href="register.html">Create an Account</a></p>
+                        <p class="mb-0">New User ? <a href="{{ url('/register')}}">Create an Account</a></p>
                     </div>
                 </div>
 

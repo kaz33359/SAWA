@@ -24,7 +24,7 @@
                         <div class="breadcrumb-list">
                             <nav aria-label="breadcrumb" class="page-breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ url('/')}}">Home</a></li>
                                     <li class="breadcrumb-item" aria-current="page">Category</li>
                                     <li class="breadcrumb-item active" aria-current="page">All Category</li>
                                 </ol>
@@ -145,7 +145,7 @@
                                 <div class="course-box course-design list-course d-flex">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-11.jpg') }}">
                                             </a>
                                             <div class="price">
@@ -154,19 +154,19 @@
                                         </div>
                                         <div class="product-content">
                                             <div class="head-course-title">
-                                                <h3 class="title"><a href="course-details.html">Sketch from A to Z
+                                                <h3 class="title"><a href="{{ url('/course-details')}}">Sketch from A to Z
                                                         (2022): Become an app designer</a></h3>
                                                 <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                                 </div>
                                             </div>
                                             <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
-                                                    <img src="assets/img/icon/icon-01.svg" alt="">
+                                                    <img src="{{ asset('user/assets/img/icon/icon-01.svg') }}" alt="">
                                                     <p>12+ Lesson</p>
                                                 </div>
                                                 <div class="course-view d-flex align-items-center">
-                                                    <img src="assets/img/icon/icon-02.svg" alt="">
+                                                    <img src="{{ asset('user/assets/img/icon/icon-02.svg') }}" alt="">
                                                     <p>9hr 30min</p>
                                                 </div>
                                             </div>
@@ -181,7 +181,7 @@
                                             <div class="course-group d-flex mb-0">
                                                 <div class="course-group-img d-flex">
                                                     <a href="instructor-profile.html"><img
-                                                            src="assets/img/user/user2.jpg" alt=""
+                                                            src="{{ asset('user/assets/img/user/user2.jpg') }}" alt=""
                                                             class="img-fluid"></a>
                                                     <div class="course-name">
                                                         <h4><a href="instructor-profile.html">Jesse Stevens</a></h4>
@@ -201,7 +201,7 @@
                                 <div class="course-box course-design list-course d-flex">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-12.jpg') }}">
                                             </a>
                                             <div class="price">
@@ -210,10 +210,10 @@
                                         </div>
                                         <div class="product-content">
                                             <div class="head-course-title">
-                                                <h3 class="title"><a href="course-details.html">Learn Angular
+                                                <h3 class="title"><a href="{{ url('/course-details')}}">Learn Angular
                                                         Fundamentals From beginning to advance lavel</a></h3>
                                                 <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                                 </div>
                                             </div>
                                             <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
@@ -257,7 +257,7 @@
                                 <div class="course-box course-design list-course d-flex">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-13.jpg') }}">
                                             </a>
                                             <div class="price">
@@ -266,10 +266,10 @@
                                         </div>
                                         <div class="product-content">
                                             <div class="head-course-title">
-                                                <h3 class="title"><a href="course-details.html">Build Responsive Real
+                                                <h3 class="title"><a href="{{ url('/course-details')}}">Build Responsive Real
                                                         World Websites with HTML5 and CSS3</a></h3>
                                                 <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                                 </div>
                                             </div>
                                             <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
@@ -313,7 +313,7 @@
                                 <div class="course-box course-design list-course d-flex">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-14.jpg') }}">
                                             </a>
                                             <div class="price">
@@ -322,10 +322,10 @@
                                         </div>
                                         <div class="product-content">
                                             <div class="head-course-title">
-                                                <h3 class="title"><a href="course-details.html">C# Developers Double
+                                                <h3 class="title"><a href="{{ url('/course-details')}}">C# Developers Double
                                                         Your Coding Speed with Visual Studio</a></h3>
                                                 <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                                 </div>
                                             </div>
                                             <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
@@ -369,7 +369,7 @@
                                 <div class="course-box course-design list-course d-flex">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-15.jpg') }}">
                                             </a>
                                             <div class="price">
@@ -378,10 +378,10 @@
                                         </div>
                                         <div class="product-content">
                                             <div class="head-course-title">
-                                                <h3 class="title"><a href="course-details.html">Learn JavaScript and
+                                                <h3 class="title"><a href="{{ url('/course-details')}}">Learn JavaScript and
                                                         Express to become a professional JavaScript</a></h3>
                                                 <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                                 </div>
                                             </div>
                                             <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
@@ -425,7 +425,7 @@
                                 <div class="course-box course-design list-course d-flex">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-16.jpg') }}">
                                             </a>
                                             <div class="price">
@@ -434,10 +434,10 @@
                                         </div>
                                         <div class="product-content">
                                             <div class="head-course-title">
-                                                <h3 class="title"><a href="course-details.html">Learn and Understand
+                                                <h3 class="title"><a href="{{ url('/course-details')}}">Learn and Understand
                                                         AngularJS to become a professional developer</a></h3>
                                                 <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                                 </div>
                                             </div>
                                             <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
@@ -481,7 +481,7 @@
                                 <div class="course-box course-design list-course d-flex">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-13.jpg') }}">
                                             </a>
                                             <div class="price">
@@ -490,10 +490,10 @@
                                         </div>
                                         <div class="product-content">
                                             <div class="head-course-title">
-                                                <h3 class="title"><a href="course-details.html">Responsive Web Design
+                                                <h3 class="title"><a href="{{ url('/course-details')}}">Responsive Web Design
                                                         Essentials HTML5 CSS3 and Bootstrap</a></h3>
                                                 <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                                 </div>
                                             </div>
                                             <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
@@ -537,7 +537,7 @@
                                 <div class="course-box course-design list-course d-flex">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="course-details.html">
+                                            <a href="{{ url('/course-details')}}">
                                                 <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-17.jpg') }}">
                                             </a>
                                             <div class="price">
@@ -546,10 +546,10 @@
                                         </div>
                                         <div class="product-content">
                                             <div class="head-course-title">
-                                                <h3 class="title"><a href="course-details.html">The Complete App Design
+                                                <h3 class="title"><a href="{{ url('/course-details')}}">The Complete App Design
                                                         Course - UX, UI and Design Thinking</a></h3>
                                                 <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="checkout.html" class="btn btn-primary">BUY NOW</a>
+                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
                                                 </div>
                                             </div>
                                             <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
@@ -573,7 +573,7 @@
                                             <div class="course-group d-flex mb-0">
                                                 <div class="course-group-img d-flex">
                                                     <a href="instructor-profile.html"><img
-                                                            src="assets/img/user/user6.jpg" alt=""
+                                                            src="{{ asset('user/assets/img/user/user6.jpg') }}" alt=""
                                                             class="img-fluid"></a>
                                                     <div class="course-name">
                                                         <h4><a href="instructor-profile.html">Lavern M.</a></h4>
