@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\User\ContactController;
+use App\Http\Controllers\User\CartController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -51,27 +52,32 @@ Route::get('admin/hash', [AdminController::class, 'hashp']);
 
 //User
 Route::post('user/registration_process', [UserController::class, 'save'])->name('auth.save');
-
 Route::post('user/login_process', [UserController::class, 'check'])->name('auth.check');
+Route::group(['middleware' => ['UserAuth']], function () {
+
+
+Route::get('/checkout', [UserController::class, 'checkout']);
+Route::get('/cart', [CartController::class, 'cart']);
+
+Route::post('user/enquiry', [ContactController::class, 'enquiry'])->name('user.enquiry');
+Route::get('/user-profile', [UserController::class, 'userprofile']);
+Route::get('/user-order', [UserController::class, 'userorder']);
+ Route::get('user/logout', [UserController::class, 'logout'])->name('auth.logout');
+
+});
 Route::get('/', [UserController::class, 'index']);
 Route::get('/login', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'register']);
 Route::get('/contact', [UserController::class, 'contact']);
 Route::get('/product', [UserController::class, 'product'])->name('user.product');
 Route::get('/course-grid', [UserController::class, 'coursegrid']);
-Route::get('/course-details', [UserController::class, 'coursedetails']);
+Route::get('/course-details/{id}', [UserController::class, 'coursedetails']);
 Route::get('/job-category', [UserController::class, 'jobcategory']);
-Route::get('/checkout', [UserController::class, 'checkout']);
-Route::get('/cart', [UserController::class, 'cart']);
 Route::get('/faq', [UserController::class, 'faq']);
 Route::get('/privacy-policy', [UserController::class, 'privacypolicy']);
 Route::get('/term-condition', [UserController::class, 'termcondition']);
-Route::post('user/enquiry', [ContactController::class, 'enquiry'])->name('user.enquiry');
-Route::get('/user-profile', [UserController::class, 'userprofile']);
-Route::get('/user-order', [UserController::class, 'userorder']);
+Route::post('/addcart/{id}', [CartController::class, 'addcart']);
+
 Route::get('admin/enquiry/delete/{id}', [ContactController::class, 'delete_enquiry']);
-
-Route::get('admin/customer/status/{status}/{id}', [UserController::class, 'status']);
-Route::get('admin/customer/delete/{id}', [UserController::class, 'delete']);
-
- Route::get('user/logout', [UserController::class, 'logout'])->name('auth.logout');
+Route::get('admin/customer/status/{status}/{id}', [AdminController::class, 'status']);
+Route::get('admin/customer/delete/{id}', [AdminController::class, 'delete']);

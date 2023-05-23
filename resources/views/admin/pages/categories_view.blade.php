@@ -440,9 +440,10 @@ $categories = array();
                                                             <div class="custom-file mb-4">
                                                             <input id="category_image" name="category_image" type="file"
                                                                 class="form-control" aria-required="true"
-                                                                aria-invalid="false" value="{{ $category->category_image }}" required>
+                                                                aria-invalid="false" value="{{ $category->category_image }}" >
                                                             </div>
                                                     </div>
+                                              
                                         {{-- <div class="form-group">
                                             <div class="form-check pl-0">
                                                 <div class="custom-control custom-checkbox checkbox-info">

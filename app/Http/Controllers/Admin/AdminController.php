@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User\User;
 use App\Models\Admin\Category;
 use App\Models\Admin\Admin;
 use Illuminate\Http\Request;
@@ -139,5 +140,27 @@ class AdminController extends Controller
             ]);
 
         dd($paw, $pa);
+    }
+    public function status(Request $request, $status, $id)
+    {
+
+        $model = user::find($id);
+        $model->status = $status;
+        $model->save();
+        return redirect('admin/customers')->with('success', 'Customer status updated');
+        //$request->session()->flash('message', 'Category status updated');
+        // return redirect('admin/category');
+    }
+    public function delete(Request $request, $id)
+    {
+        $model = user::find($id);
+
+        $model->delete();
+        return redirect('admin/customers')->with('success', 'Customer deleted');
+
+        // $request->session()->flash('message', 'Category deleted');
+
+
+        // return redirect('admin/category');
     }
 }

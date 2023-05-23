@@ -35,6 +35,7 @@ class ProductController extends Controller
         //insert data into database
         // $category = new category();
          $product->product_name = $request->post('product_name');
+        $product->product_price = $request->post('product_price');
          $product->product_desc1 = $request->post('product_desc1');
         $product->product_desc2 = $request->post('product_desc2');
         $product->product_category = $request->post('product_category');
@@ -91,11 +92,16 @@ class ProductController extends Controller
 
         //   $request->validate([]);
         //insert data into database
-        
+        $single_product = DB::table('products')->where('id','=',$id)->first();
+        $filename = $single_product->product_image;
         $file = $request->file('product_image');
+        if(isset($file))
+        {
         $filename = time() . '.' . $file->extension();
         $file->move(public_path('product_image'), $filename);
-        $save = DB::table('products')->where('id', $id)->update(array('product_name' => $request->product_name,'product_image' => $filename , 'product_category'=> $request->product_category, 'product_desc1'=> $request->product_desc1, 'product_desc2' => $request->product_desc2, 'product_keyword' => $request->product_keyword));
+        }
+        
+        $save = DB::table('products')->where('id', $id)->update(array('product_name' => $request->product_name,'product_image' => $filename , 'product_category'=> $request->product_category, 'product_price' => $request->product_price,'product_desc1'=> $request->product_desc1, 'product_desc2' => $request->product_desc2, 'product_keyword' => $request->product_keyword));
         // return dd($request);
         if ($save) {
             return redirect('admin/products')->with('success', 'Updated successfully');

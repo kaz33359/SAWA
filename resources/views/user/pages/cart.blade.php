@@ -58,12 +58,16 @@
                                                             <h3 class="free-color">FREE</h3>
                                                         </div>
                                                     </div>
+                                                  @php
+                                                       dd($car);
+                                                       @endphp
+                                                     @foreach ($car as $single_car) 
+                                                       
                                                     <div class="product-content">
                                                         <div class="head-course-title">
-                                                            <h3 class="title"><a href="{{ url('/course-details')}}">Information
-                                                                    About UI/UX Design Degree</a></h3>
+                                                            <h3 class="title">{{ $single_car->product_price }}</a></h3>
                                                         </div>
-                                                        <div
+                                                        {{-- <div
                                                             class="course-info d-flex align-items-center border-bottom-0 pb-0">
                                                             <div class="rating-img d-flex align-items-center">
                                                                 <img src="{{ asset('user/assets/img/icon/icon-01.svg')}}" alt="">
@@ -73,8 +77,8 @@
                                                                 <img src="{{ asset('user/assets/img/icon/icon-02.svg')}}" alt="">
                                                                 <p>9hr 30min</p>
                                                             </div>
-                                                        </div>
-                                                        <div class="rating">
+                                                        </div> --}}
+                                                        {{-- <div class="rating">
                                                             <i class="fas fa-star filled"></i>
                                                             <i class="fas fa-star filled"></i>
                                                             <i class="fas fa-star filled"></i>
@@ -82,15 +86,16 @@
                                                             <i class="fas fa-star"></i>
                                                             <span class="d-inline-block average-rating"><span>4.0</span>
                                                                 (15)</span>
-                                                        </div>
+                                                        </div> --}}
                                                     </div>
-                                                    <div class="cart-remove">
+                                                    {{-- <div class="cart-remove">
                                                         <a href="javascript:;" class="btn btn-primary">Remove</a>
-                                                    </div>
+                                                    </div> --}}
+                                                    @endforeach
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-12 col-md-12 d-flex">
+                                        {{-- <div class="col-lg-12 col-md-12 d-flex">
                                             <div class="course-box course-design list-course d-flex ">
                                                 <div class="product">
                                                     <div class="product-img">
@@ -179,7 +184,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="cart-total">
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">

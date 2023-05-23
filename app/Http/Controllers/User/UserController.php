@@ -33,9 +33,13 @@ class UserController extends Controller
     {
         return view('user/pages/course-grid');
     }
-     public function coursedetails()
+     public function coursedetails(Request $request,$id)
     {
-        return view('user/pages/course-details');
+        // return dd($id);
+       // $result['id'] = $id;
+        $datas['product'] = DB::table('products')->where('id', '=', $id)->first();
+
+        return view('user/pages/course-details', $datas);
     }
     public function jobcategory()
     {
@@ -45,10 +49,7 @@ class UserController extends Controller
     {
         return view('user/pages/checkout');
     }
-    public function cart()
-    {
-        return view('user/pages/cart');
-    }
+   
       public function faq()
     {
         return view('user/pages/faq');
@@ -112,28 +113,7 @@ class UserController extends Controller
 
     //     // return redirect('admin/category');
     // }
-    public function status(Request $request, $status, $id)
-    {
-
-        $model = user::find($id);
-        $model->status = $status;
-        $model->save();
-        return redirect('admin/customers')->with('success', 'Customer status updated');
-        //$request->session()->flash('message', 'Category status updated');
-        // return redirect('admin/category');
-    }
-    public function delete(Request $request, $id)
-    {
-        $model = user::find($id);
-
-        $model->delete();
-        return redirect('admin/customers')->with('success', 'Customer deleted');
-
-        // $request->session()->flash('message', 'Category deleted');
-
-
-        // return redirect('admin/category');
-    }
+    
 
     public function check(Request $request)
     {

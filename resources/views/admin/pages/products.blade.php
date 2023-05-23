@@ -416,6 +416,10 @@
                                                                 @endforeach
                                                             </select>
                                                         </div>
+                                                         <div class="form-group col-md-3">
+                                                            <label for="inputEmail4">Price</label>
+                                                            <input type="number" class="form-control" name="product_price" id="inputCategoryName" placeholder="Price" required >
+                                                        </div>
                                                         {{-- <div class="form-group col-md-4">
                                                             <label for="inputState">Brand</label>
                                                             <select id="inputState" class="form-control" required>
@@ -632,6 +636,7 @@
                                         <th>Product Name</th>
                                         <th>Product Category</th>
                                          <th>Product Image</th>
+                                         <th>Product Price</th>
                                          <th class="text-center">Status</th>
                                         <th class="text-center dt-no-sorting">Action</th> 
                                     </tr>
@@ -655,6 +660,7 @@
                                                 </div>
                                             </div>
                                         </td>
+                                        <td>{{$product->product_price}}</td>
                                        <td class="text-center">
                                              @if ($product->status == '0')
                                             <a href="{{ url('admin/product/status/1') }}/{{ $product->id }}"><span

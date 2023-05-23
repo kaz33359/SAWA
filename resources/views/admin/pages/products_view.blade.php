@@ -386,6 +386,7 @@
                                                     placeholder="Product Name" name="product_name" value="{{ $product->product_name }}" required>
                                             </div>
                                         </div>
+                                        
                                         {{-- <div class="form-group mb-4">
                                             <label for="inputState">Products Image</label>
                                             <div class="custom-file mb-4">
@@ -416,7 +417,10 @@
                                                 </select>
                                             </div>
                                         </div>
-
+                                           <div class="form-group col-md-3">
+                                                            <label for="inputEmail4">Price</label>
+                                                            <input type="number" class="form-control" name="product_price" id="inputCategoryName" placeholder="Price" required >
+                                                        </div>
                                         {{-- <div class="form-group mb-4">
                                             <div id="basic" class="row layout-spacing  layout-top-spacing">
                                                 <div class="col-lg-12">
@@ -476,7 +480,7 @@
                                         <div class="form-group mb-4">
                                             <label for="exampleFormControlTextarea1">Keywords</label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" name="product_keyword" placeholder="{{ $product->product_keyword }}"
-                                                rows="3"></textarea>
+                                                rows="3" required></textarea>
                                         </div>
 
                                         <button type="submit" value="submit" >Update</button>

@@ -83,36 +83,44 @@
                                 </div>
                             </div>
                         </div>
-
+    <?php      
+                        $products = DB::table('products')->get();
+                         ?>
+                         @foreach ($products as $single_product) 
+                        
                         <div class="row">
                             <div class="col-lg-12 col-md-12 d-flex">
                                 <div class="course-box course-design list-course d-flex">
                                     <div class="product">
                                         <div class="product-img">
-                                            <a href="{{ url('/course-details')}}">
-                                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-10.jpg') }}">
+                                         
+                                            <a href="{{ url('/course-details')}}/{{ $single_product->id }}">
+                                                <img class="img-fluid" alt="" src="{{ asset('product_image') }}/{{ $single_product->product_image }}">
                                             </a>
                                             <div class="price">
-                                                <h3>$300 <span>$99.00</span></h3>
+                                                <h3>${{ $single_product->product_price }}</h3>
                                             </div>
                                         </div>
+                                         <?php 
+                                                        $category=DB::table('categories')->where('id','=',$single_product->product_category)->first();
+                                                        ?>
                                         <div class="product-content">
                                             <div class="head-course-title">
-                                                <h3 class="title"><a href="{{ url('/course-details')}}">Information About UI/UX
-                                                        Design Degree</a></h3>
+                                                <h3 class="title"><a href="{{ url('/course-details')}}/{{ $single_product->id }}">{{ $single_product->product_name }}</a></h3>
+                                                       
                                                 <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
+                                                    <a href="{{ url('/course-details')}}/{{ $single_product->id }}" class="btn btn-primary">BUY NOW</a>
                                                 </div>
                                             </div>
                                             <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
                                                 <div class="rating-img d-flex align-items-center">
                                                     <img src="{{ asset('user/assets/img/icon/icon-01.svg') }}" alt="">
-                                                    <p>12+ Lesson</p>
+                                                    <p>{{ $category->category_name }}</p>
                                                 </div>
-                                                <div class="course-view d-flex align-items-center">
+                                                {{-- <div class="course-view d-flex align-items-center">
                                                     <img src="{{ asset('user/assets/img/icon/icon-02.svg') }}" alt="">
                                                     <p>9hr 30min</p>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="rating">
                                                 <i class="fas fa-star filled"></i>
@@ -122,7 +130,7 @@
                                                 <i class="fas fa-star"></i>
                                                 <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
                                             </div>
-                                            <div class="course-group d-flex mb-0">
+                                            {{-- <div class="course-group d-flex mb-0">
                                                 <div class="course-group-img d-flex">
                                                     <a href="instructor-profile.html"><img
                                                             src="{{ asset('user/assets/img/user/user1.jpg') }}" alt=""
@@ -136,461 +144,15 @@
                                                     class="course-share d-flex align-items-center justify-content-center">
                                                     <a href="#rate"><i class="fa-regular fa-heart"></i></a>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-md-12 d-flex">
-                                <div class="course-box course-design list-course d-flex">
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <a href="{{ url('/course-details')}}">
-                                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-11.jpg') }}">
-                                            </a>
-                                            <div class="price">
-                                                <h3>$300 <span>$99.00</span></h3>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="head-course-title">
-                                                <h3 class="title"><a href="{{ url('/course-details')}}">Sketch from A to Z
-                                                        (2022): Become an app designer</a></h3>
-                                                <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
-                                                </div>
-                                            </div>
-                                            <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
-                                                <div class="rating-img d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-01.svg') }}" alt="">
-                                                    <p>12+ Lesson</p>
-                                                </div>
-                                                <div class="course-view d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-02.svg') }}" alt="">
-                                                    <p>9hr 30min</p>
-                                                </div>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
-                                            </div>
-                                            <div class="course-group d-flex mb-0">
-                                                <div class="course-group-img d-flex">
-                                                    <a href="instructor-profile.html"><img
-                                                            src="{{ asset('user/assets/img/user/user2.jpg') }}" alt=""
-                                                            class="img-fluid"></a>
-                                                    <div class="course-name">
-                                                        <h4><a href="instructor-profile.html">Jesse Stevens</a></h4>
-                                                        <p>Instructor</p>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course-share d-flex align-items-center justify-content-center">
-                                                    <a href="#rate"><i class="fa-regular fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 d-flex">
-                                <div class="course-box course-design list-course d-flex">
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <a href="{{ url('/course-details')}}">
-                                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-12.jpg') }}">
-                                            </a>
-                                            <div class="price">
-                                                <h3>$300 <span>$99.00</span></h3>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="head-course-title">
-                                                <h3 class="title"><a href="{{ url('/course-details')}}">Learn Angular
-                                                        Fundamentals From beginning to advance lavel</a></h3>
-                                                <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
-                                                </div>
-                                            </div>
-                                            <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
-                                                <div class="rating-img d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-01.svg') }}" alt="">
-                                                    <p>12+ Lesson</p>
-                                                </div>
-                                                <div class="course-view d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-02.svg') }}" alt="">
-                                                    <p>9hr 30min</p>
-                                                </div>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
-                                            </div>
-                                            <div class="course-group d-flex mb-0">
-                                                <div class="course-group-img d-flex">
-                                                    <a href="instructor-profile.html"><img
-                                                            src="{{ asset('user/assets/img/user/user3.jpg') }}" alt=""
-                                                            class="img-fluid"></a>
-                                                    <div class="course-name">
-                                                        <h4><a href="instructor-profile.html">Jesse Stevens</a></h4>
-                                                        <p>Instructor</p>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course-share d-flex align-items-center justify-content-center">
-                                                    <a href="#rate"><i class="fa-regular fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 d-flex">
-                                <div class="course-box course-design list-course d-flex">
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <a href="{{ url('/course-details')}}">
-                                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-13.jpg') }}">
-                                            </a>
-                                            <div class="price">
-                                                <h3>$300 <span>$99.00</span></h3>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="head-course-title">
-                                                <h3 class="title"><a href="{{ url('/course-details')}}">Build Responsive Real
-                                                        World Websites with HTML5 and CSS3</a></h3>
-                                                <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
-                                                </div>
-                                            </div>
-                                            <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
-                                                <div class="rating-img d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-01.svg') }}" alt="">
-                                                    <p>12+ Lesson</p>
-                                                </div>
-                                                <div class="course-view d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-02.svg') }}" alt="">
-                                                    <p>9hr 30min</p>
-                                                </div>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
-                                            </div>
-                                            <div class="course-group d-flex mb-0">
-                                                <div class="course-group-img d-flex">
-                                                    <a href="instructor-profile.html"><img
-                                                            src="{{ asset('user/assets/img/user/user3.jpg') }}" alt=""
-                                                            class="img-fluid"></a>
-                                                    <div class="course-name">
-                                                        <h4><a href="instructor-profile.html">John Smith</a></h4>
-                                                        <p>Instructor</p>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course-share d-flex align-items-center justify-content-center">
-                                                    <a href="#rate"><i class="fa-regular fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 d-flex">
-                                <div class="course-box course-design list-course d-flex">
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <a href="{{ url('/course-details')}}">
-                                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-14.jpg') }}">
-                                            </a>
-                                            <div class="price">
-                                                <h3>$300 <span>$99.00</span></h3>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="head-course-title">
-                                                <h3 class="title"><a href="{{ url('/course-details')}}">C# Developers Double
-                                                        Your Coding Speed with Visual Studio</a></h3>
-                                                <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
-                                                </div>
-                                            </div>
-                                            <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
-                                                <div class="rating-img d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-01.svg') }}" alt="">
-                                                    <p>12+ Lesson</p>
-                                                </div>
-                                                <div class="course-view d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-02.svg') }}" alt="">
-                                                    <p>9hr 30min</p>
-                                                </div>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
-                                            </div>
-                                            <div class="course-group d-flex mb-0">
-                                                <div class="course-group-img d-flex">
-                                                    <a href="instructor-profile.html"><img
-                                                            src="{{ asset('user/assets/img/user/user4.jpg') }}" alt=""
-                                                            class="img-fluid"></a>
-                                                    <div class="course-name">
-                                                        <h4><a href="instructor-profile.html">Stella Johnson</a></h4>
-                                                        <p>Instructor</p>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course-share d-flex align-items-center justify-content-center">
-                                                    <a href="#rate"><i class="fa-regular fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 d-flex">
-                                <div class="course-box course-design list-course d-flex">
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <a href="{{ url('/course-details')}}">
-                                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-15.jpg') }}">
-                                            </a>
-                                            <div class="price">
-                                                <h3>$300 <span>$99.00</span></h3>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="head-course-title">
-                                                <h3 class="title"><a href="{{ url('/course-details')}}">Learn JavaScript and
-                                                        Express to become a professional JavaScript</a></h3>
-                                                <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
-                                                </div>
-                                            </div>
-                                            <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
-                                                <div class="rating-img d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-01.svg') }}" alt="">
-                                                    <p>12+ Lesson</p>
-                                                </div>
-                                                <div class="course-view d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-02.svg') }}" alt="">
-                                                    <p>9hr 30min</p>
-                                                </div>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
-                                            </div>
-                                            <div class="course-group d-flex mb-0">
-                                                <div class="course-group-img d-flex">
-                                                    <a href="instructor-profile.html"><img
-                                                            src="{{ asset('user/assets/img/user/user5.jpg') }}" alt=""
-                                                            class="img-fluid"></a>
-                                                    <div class="course-name">
-                                                        <h4><a href="instructor-profile.html">John Michael</a></h4>
-                                                        <p>Instructor</p>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course-share d-flex align-items-center justify-content-center">
-                                                    <a href="#rate"><i class="fa-regular fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 d-flex">
-                                <div class="course-box course-design list-course d-flex">
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <a href="{{ url('/course-details')}}">
-                                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-16.jpg') }}">
-                                            </a>
-                                            <div class="price">
-                                                <h3>$300 <span>$99.00</span></h3>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="head-course-title">
-                                                <h3 class="title"><a href="{{ url('/course-details')}}">Learn and Understand
-                                                        AngularJS to become a professional developer</a></h3>
-                                                <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
-                                                </div>
-                                            </div>
-                                            <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
-                                                <div class="rating-img d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-01.svg') }}" alt="">
-                                                    <p>12+ Lesson</p>
-                                                </div>
-                                                <div class="course-view d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-02.svg') }}" alt="">
-                                                    <p>9hr 30min</p>
-                                                </div>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
-                                            </div>
-                                            <div class="course-group d-flex mb-0">
-                                                <div class="course-group-img d-flex">
-                                                    <a href="instructor-profile.html"><img
-                                                            src="{{ asset('user/assets/img/user/user6.jpg') }}" alt=""
-                                                            class="img-fluid"></a>
-                                                    <div class="course-name">
-                                                        <h4><a href="instructor-profile.html">Nicole Brown</a></h4>
-                                                        <p>Instructor</p>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course-share d-flex align-items-center justify-content-center">
-                                                    <a href="#rate"><i class="fa-regular fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 d-flex">
-                                <div class="course-box course-design list-course d-flex">
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <a href="{{ url('/course-details')}}">
-                                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-13.jpg') }}">
-                                            </a>
-                                            <div class="price">
-                                                <h3>$300 <span>$99.00</span></h3>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="head-course-title">
-                                                <h3 class="title"><a href="{{ url('/course-details')}}">Responsive Web Design
-                                                        Essentials HTML5 CSS3 and Bootstrap</a></h3>
-                                                <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
-                                                </div>
-                                            </div>
-                                            <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
-                                                <div class="rating-img d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-01.svg') }}" alt="">
-                                                    <p>12+ Lesson</p>
-                                                </div>
-                                                <div class="course-view d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-02.svg') }}" alt="">
-                                                    <p>9hr 30min</p>
-                                                </div>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
-                                            </div>
-                                            <div class="course-group d-flex mb-0">
-                                                <div class="course-group-img d-flex">
-                                                    <a href="instructor-profile.html"><img
-                                                            src="{{ asset('user/assets/img/user/user4.jpg') }}" alt=""
-                                                            class="img-fluid"></a>
-                                                    <div class="course-name">
-                                                        <h4><a href="instructor-profile.html">Monroe Parker</a></h4>
-                                                        <p>Instructor</p>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course-share d-flex align-items-center justify-content-center">
-                                                    <a href="#rate"><i class="fa-regular fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 d-flex">
-                                <div class="course-box course-design list-course d-flex">
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <a href="{{ url('/course-details')}}">
-                                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/course-17.jpg') }}">
-                                            </a>
-                                            <div class="price">
-                                                <h3>$300 <span>$99.00</span></h3>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <div class="head-course-title">
-                                                <h3 class="title"><a href="{{ url('/course-details')}}">The Complete App Design
-                                                        Course - UX, UI and Design Thinking</a></h3>
-                                                <div class="all-btn all-category d-flex align-items-center">
-                                                    <a href="{{ url('/checkout')}}" class="btn btn-primary">BUY NOW</a>
-                                                </div>
-                                            </div>
-                                            <div class="course-info border-bottom-0 pb-0 d-flex align-items-center">
-                                                <div class="rating-img d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-01.svg') }}" alt="">
-                                                    <p>12+ Lesson</p>
-                                                </div>
-                                                <div class="course-view d-flex align-items-center">
-                                                    <img src="{{ asset('user/assets/img/icon/icon-02.svg') }}" alt="">
-                                                    <p>9hr 30min</p>
-                                                </div>
-                                            </div>
-                                            <div class="rating">
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star filled"></i>
-                                                <i class="fas fa-star"></i>
-                                                <span class="d-inline-block average-rating"><span>4.0</span> (15)</span>
-                                            </div>
-                                            <div class="course-group d-flex mb-0">
-                                                <div class="course-group-img d-flex">
-                                                    <a href="instructor-profile.html"><img
-                                                            src="{{ asset('user/assets/img/user/user6.jpg') }}" alt=""
-                                                            class="img-fluid"></a>
-                                                    <div class="course-name">
-                                                        <h4><a href="instructor-profile.html">Lavern M.</a></h4>
-                                                        <p>Instructor</p>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="course-share d-flex align-items-center justify-content-center">
-                                                    <a href="#rate"><i class="fa-regular fa-heart"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
-
+                         @endforeach
+                       
                         <div class="row">
                             <div class="col-md-12">
                                 <ul class="pagination lms-page">

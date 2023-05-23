@@ -92,43 +92,12 @@
                         <div class="card overview-sec">
                             <div class="card-body">
                                 <h5 class="subs-title">Overview</h5>
-                                <h6>Course Description</h6>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                    unknown printer took a galley of type and scrambled it to make a type specimen book.
-                                    It has survived not only five centuries, but also the leap into electronic
-                                    typesetting, remaining essentially unchanged.</p>
-                                <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-                                    Ipsum passages, and more recently with desktop publishing software like Aldus
-                                    PageMaker including versions of Lorem Ipsum.</p>
-                                <h6>What you'll learn</h6>
+                             
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>Become a UX designer.</li>
-                                            <li>You will be able to add UX designer to your CV</li>
-                                            <li>Become a UI designer.</li>
-                                            <li>Build & test a full website design.</li>
-                                            <li>Build & test a full mobile app.</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>Learn to design websites & mobile phone apps.</li>
-                                            <li>You'll learn how to choose colors.</li>
-                                            <li>Prototype your designs with interactions.</li>
-                                            <li>Export production ready assets.</li>
-                                            <li>All the techniques used by UX professionals</li>
-                                        </ul>
-                                    </div>
+                                    
+                                     <h3>{{ $product->product_desc1 }}</h3>
                                 </div>
-                                <h6>Requirements</h6>
-                                <ul class="mb-0">
-                                    <li>You will need a copy of Adobe XD 2019 or above. A free trial can be downloaded
-                                        from Adobe.</li>
-                                    <li>No previous design experience is needed.</li>
-                                    <li class="mb-0">No previous Adobe XD skills are needed.</li>
-                                </ul>
+                                
                             </div>
                         </div>
 
@@ -496,52 +465,25 @@
                                                             class="feather-share-2"></i> Share</a>
                                                 </div>
                                             </div>
-                                            <a href="{{ url('/checkout')}}" class="btn btn-enroll w-100">Enroll Now</a>
+                                            <form action="{{ url('/addcart',$product->id)}}" class="cart-form" method="POST">
+                                                @csrf
+                                                 <label for="quantity">Quantity:</label>
+  <select id="quantity" name="quantity" class="quantity-select">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+     <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+                                            <button  type="submit" class="btn btn-enroll w-100">Add to cart</button>
+                                            </form>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-
-                            <div class="card include-sec">
-                                <div class="card-body">
-                                    <div class="cat-title">
-                                        <h4>Includes</h4>
-                                    </div>
-                                    <ul>
-                                        <li><img src="{{ asset('user/assets/img/icon/import.svg')}}" class="me-2" alt=""> 11 hours
-                                            on-demand video</li>
-                                        <li><img src="{{ asset('user/assets/img/icon/play.svg')}}" class="me-2" alt=""> 69 downloadable
-                                            resources</li>
-                                        <li><img src="{{ asset('user/assets/img/icon/key.svg')}}" class="me-2" alt=""> Full lifetime access
-                                        </li>
-                                        <li><img src="{{ asset('user/assets/img/icon/mobile.svg')}}" class="me-2" alt=""> Access on mobile
-                                            and TV</li>
-                                        <li><img src="{{ asset('user/assets/img/icon/cloud.svg')}}" class="me-2" alt=""> Assignments</li>
-                                        <li><img src="{{ asset('user/assets/img/icon/teacher.svg')}}" class="me-2" alt=""> Certificate of
-                                            Completion</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-
-                            <div class="card feature-sec">
-                                <div class="card-body">
-                                    <div class="cat-title">
-                                        <h4>Includes</h4>
-                                    </div>
-                                    <ul>
-                                        <li><img src="{{ asset('user/assets/img/icon/users.svg')}}" class="me-2" alt=""> Enrolled: <span>32
-                                                students</span></li>
-                                        <li><img src="{{ asset('user/assets/img/icon/timer.svg')}}" class="me-2" alt=""> Duration: <span>20
-                                                hours</span></li>
-                                        <li><img src="{{ asset('user/assets/img/icon/chapter.svg')}}" class="me-2" alt=""> Chapters:
-                                            <span>15</span></li>
-                                        <li><img src="{{ asset('user/assets/img/icon/video.svg')}}" class="me-2" alt=""> Video:<span> 12
-                                                hours</span></li>
-                                        <li><img src="{{ asset('user/assets/img/icon/chart.svg')}}" class="me-2" alt=""> Level:
-                                            <span>Beginner</span></li>
-                                    </ul>
                                 </div>
                             </div>
 

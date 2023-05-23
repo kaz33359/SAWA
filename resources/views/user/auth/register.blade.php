@@ -90,6 +90,11 @@
                                 <a href="{{ url('/') }}">Back to Home</a>
                             </div>
                         </div>
+                        @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
                         <h1>Sign up</h1>
                         <form action="{{ route('auth.save') }}" method="post" enctype="multipart/form-data">
                         @csrf
@@ -133,6 +138,8 @@
                             </div>
                         </form>
                     </div>
+                    
+
                     <div class="google-bg text-center">
                         <span><a href="#">Or sign in with</a></span>
                         <div class="sign-google">

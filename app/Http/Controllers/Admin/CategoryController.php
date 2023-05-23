@@ -100,9 +100,17 @@ class CategoryController extends Controller
 
     public function category_update(Request $request, $id)
     {
-     $file = $request->file('category_image');
-        $filename = time() . '.' . $file->extension();
-        $file->move(public_path('category_image'), $filename);
+        $single_cat = DB::table('categories')->where('id', '=', $id)->first();
+        $filename = $single_cat->category_image;
+        $file = $request->file('category_image');
+        if (isset($file)) {
+            $filename = time() . '.' . $file->extension();
+            $file->move(public_path('category_image'), $filename);
+        }
+    //  $file = $request->file('category_image');
+    //     $filename = time() . '.' . $file->extension();
+    //     $file->move(public_path('category_image'), $filename);
+        
         $save = DB::table('categories')->where('id', $id)->update(array('category_name' => $request->category_name,'category_image' => $filename , 'category_desc' => $request->category_desc));
       // return dd($file);
         if ($save) {
