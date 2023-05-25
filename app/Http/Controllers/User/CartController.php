@@ -39,8 +39,8 @@ class CartController extends Controller
     {
         // dd(session('LoggedUser'));
         $id= session('LoggedUser');
-        $datar['car'] = DB::table('carts')->where('id', '=', $id)->get();
-        dd($datar['car']);
+        $datar['care'] = DB::table('carts')->where('id', '=', $id)->get();
+        dd($datar['care']);
         // if ($request->session()->has('LoggedUser')) {
             return view('user/pages/cart', $datar);
 
