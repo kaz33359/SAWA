@@ -77,111 +77,12 @@
                             </div>
                             <ul class="main-nav">
                                 <li class="menu-effect active"><a href="{{ url('/') }}">Home </a></li>
-                                    <!-- <ul class="submenu">
-                                        <li><a href="index.html">Home</a></li>
-                                        <li class="active"><a href="index-two.html">Home Two</a></li>
-                                        <li><a href="index-three.html">Home Three</a></li>
-                                        <li><a href="index-four.html">Home Four</a></li>
-                                    </ul>
-                                </li> -->
                                 <li class="menu-effect"><a href="about.html">About</i></a></li>
-                                    <!-- <ul class="submenu">
-                                        <li><a href="instructor-dashboard.html">Dashboard</a></li>
-                                        <li class="has-submenu">
-                                            <a href="instructor-list.html">Instructor</a>
-                                            <ul class="submenu">
-                                                <li><a href="instructor-list.html">List</a></li>
-                                                <li><a href="instructor-grid.html">Grid</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="instructor-course.html">My Course</a></li>
-                                        <li><a href="instructor-reviews.html">Reviews</a></li>
-                                        <li><a href="instructor-earnings.html">Earnings</a></li>
-                                        <li><a href="instructor-orders.html">Orders</a></li>
-                                        <li><a href="instructor-payouts.html">Payouts</a></li>
-                                        <li><a href="instructor-tickets.html">Support Ticket</a></li>
-                                        <li><a href="instructor-edit-profile.html">Instructor Profile</a></li>
-                                        <li><a href="instructor-security.html">Security</a></li>
-                                        <li><a href="instructor-social-profiles.html">Social Profiles</a></li>
-                                        <li><a href="instructor-notification.html">Notifications</a></li>
-                                        <li><a href="instructor-profile-privacy.html">Profile Privacy</a></li>
-                                        <li><a href="instructor-delete-profile.html">Delete Profile</a></li>
-                                        <li><a href="instructor-linked-account.html">Linked Accounts</a></li>
-                                    </ul>
-                                </li> -->
                                 <li class="menu-effect"><a href="{{ url('/product') }}">Products </a></li>
-                                    <!-- <ul class="submenu first-submenu">
-                                        <li class="has-submenu ">
-                                            <a href="students-list.html">Student</a>
-                                            <ul class="submenu">
-                                                <li><a href="students-list.html">List</a></li>
-                                                <li><a href="students-grid.html">Grid</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="setting-edit-profile.html">Student Profile</a></li>
-                                        <li><a href="setting-student-security.html">Security</a></li>
-                                        <li><a href="setting-student-social-profile.html">Social profile</a></li>
-                                        <li><a href="setting-student-notification.html">Notification</a></li>
-                                        <li><a href="setting-student-privacy.html">Profile Privacy</a></li>
-                                        <li><a href="setting-student-accounts.html">Link Accounts</a></li>
-                                        <li><a href="setting-student-referral.html">Referal</a></li>
-                                        <li><a href="setting-student-subscription.html">Subscribtion</a></li>
-                                        <li><a href="setting-student-billing.html">Billing</a></li>
-                                        <li><a href="setting-student-payment.html">Payment</a></li>
-                                        <li><a href="setting-student-invoice.html">Invoice</a></li>
-                                        <li><a href="setting-support-tickets.html">Support Tickets</a></li>
-                                    </ul>
-                                </li> -->
-                                <li class="menu-effect">
-                                    <a href="{{ url('/contact') }}">Contact </a>
-                                    </li>
-                                    <!-- <ul class="submenu">
-                                        <li><a href="notifications.html">Notification</a></li>
-                                        <li><a href="pricing-plan.html">Pricing Plan</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li class="has-submenu">
-                                            <a href="course-list.html">Course</a>
-                                            <ul class="submenu">
-                                                <li><a href="add-course.html">Add Course</a></li>
-                                                <li><a href="course-list.html">Course List</a></li>
-                                                <li><a href="course-grid.html">Course Grid</a></li>
-                                                <li><a href="course-details.html">Course Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-submenu">
-                                            <a href="come-soon.html">Error</a>
-                                            <ul class="submenu">
-                                                <li><a href="come-soon.html">Comeing soon</a></li>
-                                                <li><a href="error-404.html">404</a></li>
-                                                <li><a href="error-500.html">500</a></li>
-                                                <li><a href="under-construction.html">Under Construction</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="support.html">Support</a></li>
-                                        <li><a href="job-category.html">Category</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
-                                        <li><a href="forgot-password.html">Forgot Password</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu menu-effect"> -->
-                                    <!-- <li class="has-submenu menu-effect">
-                                    <a href="category.html">Category</a>
-                                    </li> -->
-                                    <!-- <ul class="submenu">
-                                        <li><a href="blog-list.html">Blog List</a></li>
-                                        <li><a href="blog-grid.html">Blog Grid</a></li>
-                                        <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                        <li><a href="blog-modern.html">Blog Modern</a></li>
-                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                    </ul>
-                                </li> -->
-                                <!-- <li class="login-link">
-                                    <a href="login.html">Login / Signup</a>
-                                </li> -->
+                                <li class="menu-effect"><a href="{{ url('/contact') }}">Contact </a></li>
+                                <li class="login-link">
+                                    <a href="{{ url('/login') }}">Login / Signup</a>
+                                </li> 
                             </ul>
                         </div>
                          <?php
@@ -1685,10 +1586,10 @@
                             <div class="footer-widget footer-menu footer-menu-two">
                                 <h2 class="footer-title">Explore</h2>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="product.html">Products</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                     <li><a href="{{ url('/')}}">Home</a></li>
+                                    <li><a href="{{ url('/about')}}">About</a></li>
+                                    <li><a href="{{ url('/product')}}">Products</a></li>
+                                    <li><a href="{{ url('/contact')}}">Contact</a></li>
                                     <!-- <li><a href="deposit-instructor-dashboard.html"> Dashboard</a></li> -->
                                 </ul>
                             </div>
@@ -1700,9 +1601,9 @@
                                 <h2 class="footer-title">Quick links</h2>
                                 <ul>
                                     
-                                    <li><a href="term-condition.html">Terms & Condition</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
+                                  <li><a href="{{ url('/term-condition')}}">Terms & Condition</a></li>
+                                    <li><a href="{{ url('/privacy-policy')}}">Privacy Policy</a></li>
+                                    <li><a href="{{ url('/faq')}}">FAQ</a></li>
                                     <!-- <li><a href="register.html">Register</a></li>
                                     <li><a href="students-list.html">Student</a></li>
                                     <li><a href="deposit-student-dashboard.html"> Dashboard</a></li> -->
@@ -1710,25 +1611,32 @@
                             </div>
 
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                       
 
-                            <div class="footer-widget footer-contact footer-contact-two">
+                            <div class="col-lg-4 col-md-6">
+
+                            <div class="footer-widget footer-contact">
                                 <h2 class="footer-title">Address</h2>
-                                <div class="footer-contact-widget">
+                                <div class="news-letter">
+                                    <!-- <form>
+                                        <input type="text" class="form-control" placeholder="Enter your email address"
+                                            name="email">
+                                    </form> -->
+                                </div>
+                                <div class="footer-contact-info">
                                     <div class="footer-address">
-                                        <h6>Location</h6>
+                                        <img src="{{ asset('user/assets/img/icon/icon-20.svg') }}" alt="" class="img-fluid">
                                         <p> 3556 Beech Street, San Francisco,<br> California, CA 94108 </p>
                                     </div>
-                                    <h6>Email Address</h6>
                                     <p>
-                                        <a
-                                            href="https://dreamslms.dreamguystech.com/cdn-cgi/l/email-protection#8ce8fee9ede1ffe0e1ffcce9f4ede1fce0e9a2efe3e1"><span
-                                                class="__cf_email__"
-                                                data-cfemail="43273126222e302f2e3003263b222e332f266d202c2e">[email&#160;protected]</span></a>
+                                        <img src="{{ asset('user/assets/img/icon/icon-19.svg') }}" alt="" class="img-fluid">
+                                        <a href="https://dreamslms.dreamguystech.com/cdn-cgi/l/email-protection"
+                                            class="__cf_email__"
+                                            data-cfemail="afcbddcacec2dcc3c2dcefcad7cec2dfc3ca81ccc0c2">[email&#160;protected]</a>
                                     </p>
-                                    <h6>Phone number</h6>
                                     <p class="mb-0">
-                                        <a href="tel:+191234567890">+19 123-456-7890</a>
+                                        <img src="{{ asset('user/assets/img/icon/icon-21.svg') }}" alt="" class="img-fluid">
+                                        +19 123-456-7890
                                     </p>
                                 </div>
                             </div>
