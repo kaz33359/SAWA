@@ -14,7 +14,7 @@
         200px">
 
         <h2>Your Payment has been Successfull</h2>
-        <a class="btn btn-info" href="/placed">OKk</a>
+        <a class="btn btn-info" href="/placed">OK</a>
 
     </div>
     
