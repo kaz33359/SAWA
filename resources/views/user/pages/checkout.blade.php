@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{{ asset('user/assets/plugins/select2/css/select2.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('user/assets/css/style.css') }}">
-    
 @endsection
 
 @section('container')
@@ -115,64 +114,79 @@
                                 ->get();
                             // dd($grpid);
                         @endphp
-                        <div class="order-summary-wrapper sticky-sidebar">
-                            <h3 class="title text-uppercase ls-10">Your Order</h3>
-                            <div class="order-summary">
-                                <table class="order-table">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="2">
-                                                <b>Product</b>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @php
-                                            $totalPrice = 0;
-                                        @endphp
-                                        @foreach ($cartData as $list)
-                                            @php
-                                                $productData = DB::table('products')
-                                                    ->where('id', '=', $list->product_id)
-                                                    ->first();
-                                                $totalPrice = $totalPrice + $list->product_price * $list->quantity;
-                                            @endphp
-                                            <tr class="bb-no">
-                                                <td class="product-name">
-                                                    {{ $productData->product_name }}
-                                                    <i class="fas fa-times"></i>
-                                                    <span class="product-quantity">{{ $list->quantity }}</span>
-                                                </td><br>
-                                                <td class="product-total">INR {{ $list->product_price * $list->quantity }}
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                        <tr class="cart-subtotal bb-no">
-                                            <td><b>Subtotal</b></td>
-                                            <td><b>₹ {{ $totalPrice }}</b></td>
-                                        </tr>
-                                    </tbody>
 
-                                </table>
-                                <div class="payment-methods" id="payment_method">
-                                    <h4 class="title font-weight-bold ls-25 pb-0 mb-1">Payment</h4>
-                                    <div class="accordion payment-accordion">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="payment" id="payment_cod" value="cod" required>
-                                            <label class="form-check-label" for="payment_cod">Cash On Delivery</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="payment" id="payment_online" value="online" required>
-                                            <label class="form-check-label" for="payment_online">Online Payment</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5 mb-4 sticky-sidebar-wrapper">
+            <div class="order-summary-wrapper sticky-sidebar">
+                <h3 class="title text-uppercase ls-10">Your Order</h3>
+                <div class="order-summary">
+                    <table class="order-table">
+                        <thead>
+                            <tr>
+                                <th colspan="2">
+                                    <b>Product</b>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                            $totalPrice = 0;
+                            @endphp
+                            @foreach ($cartData as $list)
+                            @php
+                            $productData = DB::table('products')
+                            ->where('id', '=', $list->product_id)
+                            ->first();
+                            $totalPrice = $totalPrice + $list->product_price * $list->quantity;
+                            @endphp
+                            <tr class="bb-no">
+                                <td class="product-name">
+                                    {{ $productData->product_name }}
+                                    <i class="fas fa-times"></i>
+                                    <span class="product-quantity">{{ $list->quantity }}</span>
+                                </td>
+                                <td class="product-total">INR {{ $list->product_price * $list->quantity }}</td>
+                            </tr>
+                            @endforeach
+                            <tr class="cart-subtotal bb-no">
+                                <td><b>Subtotal</b></td>
+                                <td><b>₹ {{ $totalPrice }}</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                                <input type="hidden" value="{{ $totalPrice }}" name="tprice">
-                                <input type="hidden" value="{{ $id }}" name="userid">
-                                <input type="hidden" value="{{ $grpid }}" name="grpidd">
-                                {{-- <div class="payment-methods" id="payment_method">
+                    <div class="payment-methods" id="payment_method">
+                        <h4 class="title font-weight-bold ls-25 pb-0 mb-1">Payment</h4>
+                        <div class="accordion payment-accordion">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="payment" id="payment_cod" value="cod" required>
+                                <label class="form-check-label" for="payment_cod">Cash On Delivery</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="payment" id="payment_online" value="online" required>
+                                <label class="form-check-label" for="payment_online">Online Payment</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <input type="hidden" value="{{ $totalPrice }}" name="tprice">
+                    <input type="hidden" value="{{ $id }}" name="userid">
+                    <input type="hidden" value="{{ $grpid }}" name="grpidd">
+
+                    <input type="hidden" name="reset" value="true">
+                    <div class="form-group place-order pt-6">
+                        <button type="submit" class="btn btn-dark btn-block btn-rounded">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                        {{-- <div class="payment-methods" id="payment_method">
                                     <h4 class="title font-weight-bold ls-25 pb-0 mb-1">Payment</h4>
                                     <div class="accordion payment-accordion">
 
@@ -190,12 +204,7 @@
 
                                     </div>
                                 </div> --}}
-                                <input type="hidden" name="reset" value="true">
-                                <div class="form-group place-order pt-6">
-                                    <button type="submit" class="btn btn-dark btn-block btn-rounded">Place Order</button>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 @csrf
