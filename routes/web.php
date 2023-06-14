@@ -64,12 +64,14 @@ Route::group(['middleware' => ['UserAuth']], function () {
     Route::get('/removeCart/{id}', [CartController::class, 'removeCart']);
     Route::get('/checkout/{id}/{grpid}', [UserController::class, 'checkout']);
 
+
+    Route::get('success', [UserController::class, 'success']);
+    Route::get('placed', [UserController::class, 'placed']);
+    Route::post('payment', [UserController::class, 'payment']);
+    Route::post('pay', [UserController::class, 'pay']);
+
 });
 
-Route::get('success',[UserController::class,'success']);
-Route::get('placed',[UserController::class,'placed']); 
-Route::post('payment',[UserController::class,'payment']);
-Route::post('pay',[UserController::class,'pay']);
 
 Route::get('/', [UserController::class, 'index']);
 Route::get('/login', [UserController::class, 'login']);
@@ -82,7 +84,7 @@ Route::get('/job-category', [UserController::class, 'jobcategory']);
 Route::get('/faq', [UserController::class, 'faq']);
 Route::get('/privacy-policy', [UserController::class, 'privacypolicy']);
 Route::get('/term-condition', [UserController::class, 'termcondition']);
-Route::post('/addcart/{id}', [CartController::class, 'addcart']);
+// Route::post('/addcart/{id}', [CartController::class, 'addcart']);
 
 
 Route::get('admin/enquiry/delete/{id}', [ContactController::class, 'delete_enquiry']);
