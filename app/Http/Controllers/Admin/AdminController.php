@@ -88,16 +88,16 @@ class AdminController extends Controller
     public function checkadmin(Request $request)
     {
 
-        // //validate
         // $request->validate([
 
         //     'email' => 'required',
         //     'password' => 'required|max:12',
         // ]);
-        //validate
         $result = DB::table('admins')->where(['email' => $request->email])->first();
         $db_pw = $request->password;
         // return dd($result);
+        if($result)
+        {
         $d = $result->password;
         // $db_pw = Crypt::decrypt($db_pwd);
         // $db_pwd = Crypt::decrypt($result[0]->password);
@@ -118,6 +118,10 @@ class AdminController extends Controller
         } else {
             return redirect()->back()->with('fail', 'We do not recognise your email address');
         }
+    }
+    else{
+        return redirect()->back()->with('fail', 'We do not recognise your account');
+    }
     }
     //logout
     public function logout()
