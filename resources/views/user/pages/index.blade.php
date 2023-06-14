@@ -69,26 +69,42 @@
                         <div class="main-menu-wrapper">
                             <div class="menu-header">
                                 <a href="index.html" class="menu-logo">
-                                    <img src="{{ asset('user/assets/img/logo.svg')}}" class="img-fluid" alt="Logo">
+                                    <img src="{{ asset('user/assets/img/logo.svg') }}" class="img-fluid" alt="Logo">
                                 </a>
                                 <a id="menu_close" class="menu-close" href="javascript:void(0);">
                                     <i class="fas fa-times"></i>
                                 </a>
                             </div>
-                            <ul class="main-nav">
-                                <li class="menu-effect active"><a href="{{ url('/') }}">Home </a></li>
-                                <li class="menu-effect"><a href="about.html">About</i></a></li>
-                                <li class="menu-effect"><a href="{{ url('/product') }}">Products </a></li>
-                                <li class="menu-effect"><a href="{{ url('/contact') }}">Contact </a></li>
-                                {{-- <li class="login-link">
-                                    <a href="{{ url('/login') }}">Login / Signup</a>
-                                </li>  --}}
-                            </ul>
-                        </div>
-                         <?php
+                            <?php
                                 $data = DB::table('users')->where('id', '=', session('LoggedUser'))->get();
                                 // print($data);
                                 ?>
+                                
+                            <ul class="main-nav">
+                                <li class="menu-effect"><a href="{{ url('/') }}">Home </a></li>
+                                <li class="menu-effect"><a href="about.html">About </a></li>
+                                <li class="menu-effect"><a href="{{ url('/product') }}">Products</a></li>
+                                <li class="menu-effect"><a href="{{ url('/contact') }}">Contact</a></li>
+                                @if (session()->has('LoggedUser'))
+                                @foreach ($data as $item)
+                                <li class="has-submenu">
+                                    <a href="#">Hi {{ $item->name }} <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="submenu ">
+                                        <li class="">
+                                        <a href="students-list.html">Profile</a>
+                                        <a href="students-list.html">Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                @endforeach
+                                @else
+                                <li class="login-link">
+                                    <a href="{{ url('/login') }}">Login / Signup</a>
+                                </li>
+                                @endif
+                            </ul>
+                        </div>
+                         
                        
                         <ul class="nav header-navbar-rht">
                              @if (session()->has('LoggedUser'))

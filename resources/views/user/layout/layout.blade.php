@@ -62,23 +62,39 @@
                                     <i class="fas fa-times"></i>
                                 </a>
                             </div>
+                            <?php
+                                $data = DB::table('users')->where('id', '=', session('LoggedUser'))->get();
+                                // print($data);
+                                ?>
+                                
                             <ul class="main-nav">
                                 <li class="menu-effect"><a href="{{ url('/') }}">Home </a></li>
                                 <li class="menu-effect"><a href="about.html">About </a></li>
                                 <li class="menu-effect"><a href="{{ url('/product') }}">Products</a></li>
                                 <li class="menu-effect"><a href="{{ url('/contact') }}">Contact</a></li>
-                                <li class="login-link">
-                                    <a href="login.html">Login / Signup</a>
+                                @if (session()->has('LoggedUser'))
+                                @foreach ($data as $item)
+                                <li class="has-submenu">
+                                    <a href="#">Hi {{ $item->name }} <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="submenu ">
+                                        <li class="">
+                                        <a href="students-list.html">Profile</a>
+                                        <a href="students-list.html">Logout</a>
+                                        </li>
+                                    </ul>
                                 </li>
+                                @endforeach
+                                @else
+                                <li class="login-link">
+                                    <a href="{{ url('/login') }}">Login / Signup</a>
+                                </li>
+                                @endif
                             </ul>
                         </div>
-                            <?php
-                                $data = DB::table('users')->where('id', '=', session('LoggedUser'))->get();
-                                // print($data);
-                                ?>
+                            
                             <ul class="nav header-navbar-rht">
-                                 @if (session()->has('LoggedUser'))
-                             @foreach ($data as $item)
+                            @if (session()->has('LoggedUser'))
+                                @foreach ($data as $item)
                             <li class="nav-item cart-nav">
                                 <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                                     <img src="{{ asset('user/assets/img/icon/cart.svg') }}" alt="img">
@@ -114,8 +130,8 @@
                                         Logout</a>
                                 </div>
                             </li>
-                            @endforeach
                         </ul>
+                        @endforeach
                         @else
                             <ul class="nav header-navbar-rht">
                                 <li class="nav-item">
@@ -125,7 +141,8 @@
                                 <a class="nav-link header-login" href="{{ url('/register') }}">Signup</a>
                                 </li>
                             </ul>
-                            @endif
+                        @endif
+                    
                         
                         
                     </div>
