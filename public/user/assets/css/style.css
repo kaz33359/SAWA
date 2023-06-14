@@ -30728,4 +30728,18 @@ input[type=password]::-ms-clear {
         gap: 20px;
         margin-bottom: 50px;
     }
+    .product-details {
+        display: flex;
+        align-items: center;
+    }
+    
+    .product-name {
+        text-align: left;
+    }
+    .product-price {
+        text-align: right;
+    }
+    
+    
 }
+
