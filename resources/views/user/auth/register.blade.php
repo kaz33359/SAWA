@@ -6,28 +6,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <!-- Primary Meta Tags -->
-    <title>SAWA</title>
-    <meta name="title" content="SAWA">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="SAWA">
+	<title>SAWA</title>
+	<meta name="title" content="SAWA">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="SAWA">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thedaxads.com/">
-    <meta property="og:title" content="INFODI">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="{{ asset('user/assets/images/image.jpeg') }}" />
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://thedaxads.com/">
+	<meta property="og:title" content="INFODI">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="{{ asset('user/assets/images/image.jpeg') }}"/>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://thedaxads.com/">
-    <meta property="twitter:title" content="INFODI">
-    <meta property="twitter:description" content="">
-    <meta property="twitter:image" content="{{ asset('user/assets/images/image.jpeg') }}" />
-    <!-- Primary Meta Tags End -->
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://thedaxads.com/">
+	<meta property="twitter:title" content="INFODI">
+	<meta property="twitter:description" content="">
+	<meta property="twitter:image" content="{{ asset('user/assets/images/image.jpeg') }}"/>
+  <!-- Primary Meta Tags End -->
 
-    <!-- Global Links -->
+  <!-- Global Links -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('user/assets/img/Dax_dark.png') }}">
     <link rel="stylesheet" href="{{ asset('user/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('user/assets/css/bootstrap.min.css') }}">
@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="{{ asset('user/assets/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('user/assets/plugins/feather/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('user/assets/css/style.css') }}">
-    <!-- Global Links -->
+  <!-- Global Links -->
 
 </head>
 
@@ -90,37 +90,25 @@
                                 <a href="{{ url('/') }}">Back to Home</a>
                             </div>
                         </div>
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
+                        @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
                         <h1>Sign up</h1>
                         <form action="{{ route('auth.save') }}" method="post" enctype="multipart/form-data">
-                            @csrf
+                        @csrf
                             <div class="form-group">
                                 <label class="form-control-label">Full Name</label>
-                                <input type="text" class="form-control" name="name"
-                                    placeholder="Enter your Full Name">
-                                @error('name')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror
+                                <input type="text" class="form-control"  name="name" placeholder="Enter your Full Name">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">Email</label>
-                                <input type="email" class="form-control" name="email"
-                                    placeholder="Enter your email address">
-                                    @error('email')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+                                <input type="email" class="form-control"  name="email" placeholder="Enter your email address">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">Mobile number</label>
-                                <input type="text" class="form-control" name="mobile"
-                                    placeholder="Enter your mobile number">
-                                    @error('mobile')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+                                <input type="text" class="form-control"  name="mobile" placeholder="Enter your mobile number">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label">Password</label>
@@ -150,17 +138,15 @@
                             </div>
                         </form>
                     </div>
-
+                    
 
                     <div class="google-bg text-center">
                         <span><a href="#">Or sign in with</a></span>
                         <div class="sign-google">
                             <ul>
-                                <li><a href="#"><img src="{{ asset('user/assets/img/net-icon-01.png') }}"
-                                            class="img-fluid" alt="Logo"> Sign
+                                <li><a href="#"><img src="{{ asset('user/assets/img/net-icon-01.png') }}" class="img-fluid" alt="Logo"> Sign
                                         In using Google</a></li>
-                                <li><a href="#"><img src="{{ asset('user/assets/img/net-icon-02.png') }}"
-                                            class="img-fluid" alt="Logo">Sign
+                                <li><a href="#"><img src="{{ asset('user/assets/img/net-icon-02.png') }}" class="img-fluid" alt="Logo">Sign
                                         In using Facebook</a></li>
                             </ul>
                         </div>
@@ -178,7 +164,7 @@
     <script src="{{ asset('user/assets/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('user/assets/js/validation.js') }}"></script>
     <script src="{{ asset('user/assets/js/script.js') }}"></script>
-
+    
 </body>
 
 

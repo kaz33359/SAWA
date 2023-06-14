@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('user_type');
-            $table->integer('grpid');
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('product_price');
             $table->integer('quantity')->default(1);
