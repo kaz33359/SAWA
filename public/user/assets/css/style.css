@@ -1110,7 +1110,7 @@ button.bg-danger:hover {
 }
 
 .main-nav li.login-link {
-	/* display: none; */
+    /* display: none; */
 }
 
 .logo {
@@ -21497,7 +21497,7 @@ input[type=password]::-ms-clear {
 
 
 @media (min-width: 992px) {
-    
+
 
     .main-nav>li {
         margin-right: 15px;
@@ -21640,6 +21640,11 @@ input[type=password]::-ms-clear {
 }
 
 @media (min-width: 576px) {
+
+    .main-nav>li.has-submenu {
+        display: block;
+    }
+
     .modal-styles .modal-dialog {
         max-width: 860px;
     }
@@ -22059,6 +22064,7 @@ input[type=password]::-ms-clear {
     .main-nav>li {
         margin-right: 30px;
     }
+
     .main-nav>li.has-submenu {
         display: none;
     }
@@ -23652,6 +23658,10 @@ input[type=password]::-ms-clear {
 
 @media (max-width: 991.98px) {
     .main-nav li.login-link {
+        display: block;
+    }
+
+    .main-nav>li.has-submenu {
         display: block;
     }
 
@@ -30719,4 +30729,3 @@ input[type=password]::-ms-clear {
         margin-bottom: 50px;
     }
 }
-
