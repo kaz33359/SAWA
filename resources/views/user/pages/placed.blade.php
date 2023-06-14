@@ -14,7 +14,7 @@
         200px">
 
         <h2>Your Order Placed Successfully</h2>
-        <a class="btn btn-info" href="/">Backk</a>
+        <a class="btn btn-info" href="/">Back</a>
 
     </div>
     

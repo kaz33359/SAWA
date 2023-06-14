@@ -318,7 +318,7 @@ class UserController extends Controller
     public function pay(Request $request)
     {
         $data = $request->all();
-        dd($data);
+        // dd($data);
 
         $rand = Session::get('codpid');
         $payment = Session::get('payment');
