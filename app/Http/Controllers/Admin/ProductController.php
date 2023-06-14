@@ -14,16 +14,17 @@ class ProductController extends Controller
 {
     public function add_products(Request $request)
     {
+        
         $request->validate([
 
             'product_desc1' => 'required',
             'product_desc2' => 'required',
-            //    'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 
         ]);
-  
      $resultcat = DB::table('products')->get();
 
+    //  dd($resultcat);
          if ($request->post('id') > 0) {
              $product = product::find($request->post('id'));
             // $msg = "Category updated";
