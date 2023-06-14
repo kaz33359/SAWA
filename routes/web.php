@@ -25,7 +25,7 @@ Route::group(['middleware' => ['AdminAuth']], function () {
     Route::get('admin/enquiry', [AdminController::class, 'enquiry']);
     Route::get('admin/enquiry_view', [AdminController::class, 'enquiry_view']);
     Route::get('admin/category', [AdminController::class, 'category']);
-    Route::get('admin/categories_view/{id}',[AdminController::class,'categories_view']);
+    Route::get('admin/categories_view/{id}', [AdminController::class, 'categories_view']);
     Route::get('admin/customers', [AdminController::class, 'customers']);
     Route::get('admin/customers_view', [AdminController::class, 'customers_view']);
     Route::get('admin/products', [AdminController::class, 'products']);
@@ -49,22 +49,28 @@ Route::group(['middleware' => ['AdminAuth']], function () {
 Route::get('admin/login', [AdminController::class, 'login']);
 Route::get('admin/hash', [AdminController::class, 'hashp']);
 
-
 //User
 Route::post('user/registration_process', [UserController::class, 'save'])->name('auth.save');
 Route::post('user/login_process', [UserController::class, 'check'])->name('auth.check');
+
 Route::group(['middleware' => ['UserAuth']], function () {
 
-
-Route::get('/checkout', [UserController::class, 'checkout']);
-Route::get('/cart', [CartController::class, 'cart']);
-
-Route::post('user/enquiry', [ContactController::class, 'enquiry'])->name('user.enquiry');
-Route::get('/user-profile', [UserController::class, 'userprofile']);
-Route::get('/user-order', [UserController::class, 'userorder']);
- Route::get('user/logout', [UserController::class, 'logout'])->name('auth.logout');
+    Route::post('user/enquiry', [ContactController::class, 'enquiry'])->name('user.enquiry');
+    Route::get('/user-profile', [UserController::class, 'userprofile']);
+    Route::get('/user-order', [UserController::class, 'userorder']);
+    Route::get('user/logout', [UserController::class, 'logout'])->name('auth.logout');
+    Route::post('/addtocart/{id}', [CartController::class, 'addtocart']);
+    Route::get('/cart', [CartController::class, 'cart']);
+    Route::get('/removeCart/{id}', [CartController::class, 'removeCart']);
+    Route::get('/checkout/{id}/{grpid}', [UserController::class, 'checkout']);
 
 });
+
+Route::get('success',[UserController::class,'success']);
+Route::get('placed',[UserController::class,'placed']);
+Route::post('payment',[UserController::class,'payment']);
+Route::post('pay',[UserController::class,'pay']);
+
 Route::get('/', [UserController::class, 'index']);
 Route::get('/login', [UserController::class, 'login']);
 Route::get('/register', [UserController::class, 'register']);
@@ -77,6 +83,7 @@ Route::get('/faq', [UserController::class, 'faq']);
 Route::get('/privacy-policy', [UserController::class, 'privacypolicy']);
 Route::get('/term-condition', [UserController::class, 'termcondition']);
 Route::post('/addcart/{id}', [CartController::class, 'addcart']);
+
 
 Route::get('admin/enquiry/delete/{id}', [ContactController::class, 'delete_enquiry']);
 Route::get('admin/customer/status/{status}/{id}', [AdminController::class, 'status']);

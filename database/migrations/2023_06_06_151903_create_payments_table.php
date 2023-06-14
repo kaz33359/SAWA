@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('carts', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('user_type');
-            $table->integer('grpid');
-            $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('product_price');
-            $table->integer('quantity')->default(1);
+            $table->integer('user_id');
+            $table->string('name');
+            $table->integer('amount');
+            $table->string('payment_id')->nullable();
+            $table->string('razorpay_id')->nullable();
+            $table->boolean('payment_done')->default(false);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('carts');
+        Schema::dropIfExists('payments');
     }
 };
