@@ -103,7 +103,7 @@ class UserController extends Controller
 
         // $request->session()->put('USER_ID', $user->id);
         if ($save) {
-            return back()->with('success', 'Registered successfully');
+            return redirect('login')->with('success', 'Registered successfully');
         } else {
             return back()->with('fail', 'Something went wrong...try again later');
         }
