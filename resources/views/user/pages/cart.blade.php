@@ -76,6 +76,7 @@
                                                             <h3 class="free-color">{{ $cart->product_price}}</h3>
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="product-content">
                                                         <div class="head-course-title">
                                                             <h3 class="title"><a
