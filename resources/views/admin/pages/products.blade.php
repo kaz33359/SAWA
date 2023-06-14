@@ -371,7 +371,7 @@
                                         <div id="defaultAccordionThree" class="collapse" aria-labelledby="headingThree1"
                                             data-parent="#toggleAccordion">
                                             <div class="card-body">
-                                                 <form action="{{ route('admin.addproduct') }}" method="post" enctype="multipart/form-data">
+                                                 <form id="myForm" action="{{ route('admin.addproduct') }}" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="form-row mb-4">
                                                         <div class="form-group col-md-12">
@@ -463,9 +463,11 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="widget-content widget-content-area">
-                                                                        <textarea id="description" name="product_desc2" required >
+                                                                        <textarea id="description" name="product_desc2">
                                                                         </textarea>
-                                                                          
+                                                                          @error('product_desc2')
+                                                                              <div class="alert alert-danger">{{ $message }}</div>
+                                                                          @enderror
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -740,6 +742,26 @@
     <script src="{{ asset('admin/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('admin/plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/app.js') }}"></script>
+    <script>
+        // Get a reference to the form and textarea element
+        const form = document.getElementById('myForm');
+        const textarea = document.getElementById('description');
+      
+        // Add event listener to the form's submit event
+        form.addEventListener('submit', function(event) {
+          // Prevent the form from submitting by default
+          event.preventDefault();
+      
+          // Check if the textarea value is empty or contains only whitespace
+          if (textarea.value.trim() === '') {
+            // If the textarea is empty, display an error message or perform any desired action
+            alert('Please fill out the Main description field.');
+          } else {
+            // If the textarea is not empty, you can proceed with form submission
+            form.submit();
+          }
+        });
+      </script>
     <script>
         $(document).ready(function () {
             App.init();
