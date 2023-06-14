@@ -14,7 +14,6 @@ class ProductController extends Controller
 {
     public function add_products(Request $request)
     {
-        
         $request->validate([
 
             'product_desc1' => 'required',

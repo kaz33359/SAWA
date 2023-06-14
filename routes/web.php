@@ -67,7 +67,7 @@ Route::group(['middleware' => ['UserAuth']], function () {
 });
 
 Route::get('success',[UserController::class,'success']);
-Route::get('placed',[UserController::class,'placed']);
+Route::get('placed',[UserController::class,'placed']); 
 Route::post('payment',[UserController::class,'payment']);
 Route::post('pay',[UserController::class,'pay']);
 

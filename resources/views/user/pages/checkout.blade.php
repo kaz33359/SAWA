@@ -113,7 +113,6 @@
                             $cartData = DB::table('carts')
                                 ->where('user_id', '=', $id)
                                 ->get();
-                            // dd($cartData);
                             // dd($grpid);
                         @endphp
                         <div class="order-summary-wrapper sticky-sidebar">

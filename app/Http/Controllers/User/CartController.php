@@ -105,7 +105,6 @@ class CartController extends Controller
 
         $data['car'] = DB::table('carts')->where('user_id', '=', $id)->get();
         $data['id'] = $id;
-        // dd($data['car']);
         return view('user/pages/cart', $data);
 
     }

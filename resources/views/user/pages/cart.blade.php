@@ -71,7 +71,7 @@
                                                         <a href="course-details.html">
                                                         <img class="img-fluid" alt=""
                                                             src="{{ asset('product_image/' . $pdt->product_image )}}">
-                                                    </a>
+                                                    </a> 
                                                         <div class="price">
                                                             <h3 class="free-color">{{ $cart->product_price}}</h3>
                                                         </div>
