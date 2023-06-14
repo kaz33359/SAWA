@@ -25508,14 +25508,11 @@ input[type=password]::-ms-clear
         display: flex;
         align-items: center;
     }
-    
     .product-name {
         text-align: left;
     }
     .product-price {
         text-align: right;
-    }
-    
-    
+    }    
 }
 
