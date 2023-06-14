@@ -80,9 +80,9 @@
                                 <li class="menu-effect"><a href="about.html">About</i></a></li>
                                 <li class="menu-effect"><a href="{{ url('/product') }}">Products </a></li>
                                 <li class="menu-effect"><a href="{{ url('/contact') }}">Contact </a></li>
-                                <li class="login-link">
+                                {{-- <li class="login-link">
                                     <a href="{{ url('/login') }}">Login / Signup</a>
-                                </li> 
+                                </li>  --}}
                             </ul>
                         </div>
                          <?php
