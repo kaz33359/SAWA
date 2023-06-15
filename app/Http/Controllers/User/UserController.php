@@ -91,6 +91,7 @@ class UserController extends Controller
         ]);
 
         //insert data into database
+        
         $user1 = new user();
         $user1->name = $request->name;
         $user1->email = $request->email;
