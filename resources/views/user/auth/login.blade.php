@@ -95,6 +95,7 @@
                             <h1>Sign into Your Account</h1>
                             <form action="{{ route('auth.check') }}" method="post">
                                 @if (Session::get('fail'))
+                                
                                     <div class="alert alert-danger">
                                         {{ Session::get('fail') }}
                                     </div>
