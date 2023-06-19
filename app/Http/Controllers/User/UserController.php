@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Razorpay\Api\Api;
 use App\Models\Payment;
 use Session;
+use File;
 
 class UserController extends Controller
 {
@@ -71,9 +72,47 @@ class UserController extends Controller
     {
         return view('user/pages/privacy-policy');
     }
-    public function userprofile()
+    public function userprofile(Request $request)
     {
-        return view('user/pages/instructor-edit-profile');
+        // dd('hai');
+        $userid = $request->session()->get('LoggedUser');
+        // dd($userid);
+        $userDetails = DB::table('users')
+            ->where('id', '=', $userid)
+            ->first();
+        // dd($userDetails);
+        return view('user/pages/instructor-edit-profile', ['data' => $userDetails]);
+    }
+    public function updateProfile(Request $request)
+    {
+        $userid = $request->session()->get('LoggedUser');
+        
+        // dd($name.$email,$phone,$address,$city,$state,$zip);
+        $update = User::findOrFail($userid);
+        $update->name = $request->post('name');
+        $update->email = $request->post('email');
+        $update->mobile = $request->post('phone');
+        $update->address = $request->post('address');
+        $update->city = $request->post('city');
+        $update->state = $request->post('state');
+        $update->zip = $request->post('zip');
+        
+        if ($request->hasFile('image')) {
+            
+            $destination = 'user/assets/img/user'.$update->userImage;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('user/assets/img/user',$filename);
+            $update->userImage = $filename;
+        }
+        $update->update();
+        if ($update) {
+            return redirect()->back()->with('success', 'Details are Updated');
+        }
     }
     public function userorder()
     {
@@ -91,7 +130,7 @@ class UserController extends Controller
         ]);
 
         //insert data into database
-        
+
         $user1 = new user();
         $user1->name = $request->name;
         $user1->email = $request->email;
@@ -299,9 +338,9 @@ class UserController extends Controller
                     $check = DB::table('order_details')
                         ->where('id', '=', $latestOrder->id)
                         ->update([
-                            'paymentStatus' => 'Success',
-                            'orderStatus' => 'Placed'
-                        ]);
+                                'paymentStatus' => 'Success',
+                                'orderStatus' => 'Placed'
+                            ]);
                 }
 
                 if ($check) {
@@ -386,9 +425,9 @@ class UserController extends Controller
                 $check = DB::table('order_details')
                     ->where('id', '=', $latestOrder->id)
                     ->update([
-                        'paymentStatus' => 'Success',
-                        'orderStatus' => 'Placed'
-                    ]);
+                            'paymentStatus' => 'Success',
+                            'orderStatus' => 'Placed'
+                        ]);
             }
 
             if ($check) {

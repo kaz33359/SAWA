@@ -4,32 +4,32 @@
 
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
-  <!-- Primary Meta Tags -->
-	<title>INFODI</title>
-	<meta name="title" content="INFODI">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="INFODI">
+    <!-- Primary Meta Tags -->
+    <title>INFODI</title>
+    <meta name="title" content="INFODI">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="INFODI">
 
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://thedaxads.com/">
-	<meta property="og:title" content="INFODI">
-	<meta property="og:description" content="">
-	<meta property="og:image" content="{{ asset('user/assets/images/image.jpeg') }}"/>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thedaxads.com/">
+    <meta property="og:title" content="INFODI">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="{{ asset('user/assets/images/image.jpeg') }}" />
 
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://thedaxads.com/">
-	<meta property="twitter:title" content="INFODI">
-	<meta property="twitter:description" content="">
-	<meta property="twitter:image" content="{{ asset('user/assets/images/image.jpeg') }}"/>
-  <!-- Primary Meta Tags End -->
-	
-  <!-- Global Links -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thedaxads.com/">
+    <meta property="twitter:title" content="INFODI">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="{{ asset('user/assets/images/image.jpeg') }}" />
+    <!-- Primary Meta Tags End -->
+
+    <!-- Global Links -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('user/assets/img/Dax_black.png') }}">
     <link rel="stylesheet" href="{{ asset('user/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('user/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="{{ asset('user/assets/plugins/swiper/css/swiper.min.css') }}">
     <link rel="stylesheet" href="{{ asset('user/assets/plugins/aos/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('user/assets/css/style.css') }}">
-  <!-- Global Links End -->
+    <!-- Global Links End -->
 </head>
 
 <body class="home-two">
@@ -63,91 +63,108 @@
                                 </span>
                             </a>
                             <a href="index.html" class="navbar-brand logo">
-                                <img src="{{ asset('user/assets/img/logo.svg')}}" class="img-fluid" alt="Logo">
+                                <img src="{{ asset('user/assets/img/logo.svg') }}" class="img-fluid" alt="Logo">
                             </a>
                         </div>
                         <div class="main-menu-wrapper">
                             <div class="menu-header">
                                 <a href="index.html" class="menu-logo">
-                                    <img src="{{ asset('user/assets/img/logo.svg') }}" class="img-fluid" alt="Logo">
+                                    <img src="{{ asset('user/assets/img/logo.svg') }}" class="img-fluid"
+                                        alt="Logo">
                                 </a>
                                 <a id="menu_close" class="menu-close" href="javascript:void(0);">
                                     <i class="fas fa-times"></i>
                                 </a>
                             </div>
                             <?php
-                                $data = DB::table('users')->where('id', '=', session('LoggedUser'))->get();
-                                // print($data);
-                                ?>
-                                
+                            $data = DB::table('users')
+                                ->where('id', '=', session('LoggedUser'))
+                                ->get();
+                            // print($data);
+                            ?>
+
                             <ul class="main-nav">
                                 <li class="menu-effect"><a href="{{ url('/') }}">Home </a></li>
                                 <li class="menu-effect"><a href="about.html">About </a></li>
                                 <li class="menu-effect"><a href="{{ url('/product') }}">Products</a></li>
                                 <li class="menu-effect"><a href="{{ url('/contact') }}">Contact</a></li>
                                 @if (session()->has('LoggedUser'))
-                                @foreach ($data as $item)
-                                <li class="has-submenu">
-                                    <a href="#">Hi {{ $item->name }} <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu ">
-                                        <li class="">
-                                        <a href="students-list.html">Profile</a>
-                                        <a href="students-list.html">Logout</a>
+                                    @foreach ($data as $item)
+                                        <li class="has-submenu">
+                                            <a href="#">Hi {{ $item->name }} <i
+                                                    class="fas fa-chevron-down"></i></a>
+                                            <ul class="submenu ">
+                                                <li class="">
+                                                    <a href="students-list.html">Profile</a>
+                                                    <a href="students-list.html">Logout</a>
+                                                </li>
+                                            </ul>
                                         </li>
-                                    </ul>
-                                </li>
-                                @endforeach
+                                    @endforeach
                                 @else
-                                <li class="login-link">
-                                    <a href="{{ url('/login') }}">Login / Signup</a>
-                                </li>
+                                    <li class="login-link">
+                                        <a href="{{ url('/login') }}">Login / Signup</a>
+                                    </li>
                                 @endif
                             </ul>
                         </div>
-                         
-                       
+
+
                         <ul class="nav header-navbar-rht">
-                             @if (session()->has('LoggedUser'))
-                             @foreach ($data as $item)
-                            <li class="nav-item cart-nav">
-                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                                    <img src="{{ asset('user/assets/img/icon/cart.svg') }}" alt="img">
-                                </a>
-                                <div class="wishes-list dropdown-menu dropdown-menu-right">
-                                    <ul>
-                                        <li><a class="dropdown-item" href="{{ url('cart') }}">View Cart</a></li>
-                                        <li><a class="dropdown-item" href="{{ url('checkout') }}">Checkout</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item user-nav">
-                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                                    <span class="user-img">
-                                        <img src="{{ asset('user/assets/img/user/user11.jpg') }}" alt="">
-                                        <span class="status online"></span>
-                                    </span>
-                                </a>
-                                <div class="users dropdown-menu dropdown-menu-right" data-popper-placement="bottom-end">
-                                    <div class="user-header">
-                                        <div class="avatar avatar-sm">
-                                            <img src="{{ asset('user/assets/img/user/user11.jpg') }}" alt="User Image"
-                                                class="avatar-img rounded-circle">
+                            @if (session()->has('LoggedUser'))
+                                @foreach ($data as $item)
+                                    <li class="nav-item cart-nav">
+                                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                                            <img src="{{ asset('user/assets/img/icon/cart.svg') }}" alt="img">
+                                        </a>
+                                        <div class="wishes-list dropdown-menu dropdown-menu-right">
+                                            <ul>
+                                                <li><a class="dropdown-item" href="{{ url('cart') }}">View Cart</a>
+                                                </li>
+                                                <li><a class="dropdown-item"
+                                                        href="{{ url('checkout') }}">Checkout</a></li>
+                                            </ul>
                                         </div>
-                                        <div class="user-text">
-                                            <h6>Hi , {{ $item->name }}</h6>
-                                            <p class="text-muted mb-0">Student</p>
+                                    </li>
+                                    <li class="nav-item user-nav">
+                                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                                            <span class="user-img">
+
+                                                @if (!$item->userImage)
+                                                    <input type="file" name="image" class="form-control"><br>
+                                                    <img name="image"
+                                                        src="{{ asset('user/assets/img/user/default-avatar-Sawa.jpg') }}"
+                                                        alt="" class="img-fluid">
+                                                @elseif($item->userImage)
+                                                    <img src="{{ asset('user/assets/img/user/' . $item->userImage) }}"
+                                                        width="300" height="338" />
+                                                @endif
+                                                <span class="status online"></span>
+                                            </span>
+                                        </a>
+                                        <div class="users dropdown-menu dropdown-menu-right"
+                                            data-popper-placement="bottom-end">
+                                            <div class="user-header">
+                                                <div class="avatar avatar-sm">
+                                                    <img src="{{ asset('user/assets/img/user/default-avatar-Sawa.jpg') }}"
+                                                        alt="User Image" class="avatar-img rounded-circle">
+                                                </div>
+                                                <div class="user-text">
+                                                    <h6>Hi , {{ $item->name }}</h6>
+                                                    <p class="text-muted mb-0">Student</p>
+                                                </div>
+                                            </div>
+                                            <a class="dropdown-item" href="{{ url('/user-profile') }}"><i
+                                                    class="feather-user me-1"></i> Profile</a>
+                                            <a class="dropdown-item" href="{{ url('user/logout') }}"><i
+                                                    class="feather-log-out me-1"></i>
+                                                Logout</a>
                                         </div>
-                                    </div>
-                                    <a class="dropdown-item" href="{{ url('/user-profile')}}"><i
-                                            class="feather-user me-1"></i> Profile</a>                
-                                    <a class="dropdown-item" href="{{ url('user/logout') }}"><i class="feather-log-out me-1"></i>
-                                        Logout</a>
-                                </div>
-                            </li>
-                             @endforeach
+                                    </li>
+                                @endforeach
                         </ul>
-                          @else
-                           <ul class="nav header-navbar-rht">
+                    @else
+                        <ul class="nav header-navbar-rht">
                             <li class="nav-item">
                                 <a class="login-head button" href="{{ url('/login') }}">Login</a>
                             </li>
@@ -155,7 +172,7 @@
                                 <a class="signin-head" href="{{ url('/register') }}">Sign up</a>
                             </li>
                         </ul>
-                          @endif
+                        @endif
                     </div>
                 </nav>
             </div>
@@ -206,11 +223,13 @@
                 </div>
 
                 <div class="shapes">
-                    <img class="shapes-one" src="{{ asset('user/assets/img/bg/home-right.png')}}" alt="">
-                    <img class="shapes-two" src="{{ asset('user/assets/img/bg/home-right-bottom.png')}}" alt="">
-                    <img class="shapes-middle" src="{{ asset('user/assets/img/bg/home-middle.png')}}" alt="">
+                    <img class="shapes-one" src="{{ asset('user/assets/img/bg/home-right.png') }}" alt="">
+                    <img class="shapes-two" src="{{ asset('user/assets/img/bg/home-right-bottom.png') }}"
+                        alt="">
+                    <img class="shapes-middle" src="{{ asset('user/assets/img/bg/home-middle.png') }}"
+                        alt="">
                     <img class="shapes-four wow animate__animated animate__slideInLeft"
-                        src="{{ asset('user/assets/img/bg/home-left.png')}}" alt="">
+                        src="{{ asset('user/assets/img/bg/home-left.png') }}" alt="">
                 </div>
 
             </div>
@@ -246,7 +265,8 @@
                                         class="about-image count-one d-flex align-items-center justify-content-center flex-fill project-details">
                                         <div class="about-count">
                                             <div class="course-img">
-                                                <img src="{{ asset('user/assets/img/icon/count-one.svg')}}" alt="">
+                                                <img src="{{ asset('user/assets/img/icon/count-one.svg') }}"
+                                                    alt="">
                                             </div>
                                             <div class="count-content-three course-count ms-0">
                                                 <h4><span class="counterUp">10</span>K</h4>
@@ -260,7 +280,8 @@
                                         class="about-image count-two d-flex align-items-center justify-content-center flex-fill project-details">
                                         <div class="about-count">
                                             <div class="course-img">
-                                                <img src="{{ asset('user/assets/img/icon/count-two.svg')}}" alt="">
+                                                <img src="{{ asset('user/assets/img/icon/count-two.svg') }}"
+                                                    alt="">
                                             </div>
                                             <div class="count-content-three course-count ms-0">
                                                 <h4><span class="counterUp">215</span>+</h4>
@@ -275,7 +296,8 @@
                                         class="about-image count-three d-flex align-items-center justify-content-center flex-fill project-details">
                                         <div class="about-count">
                                             <div class="course-img">
-                                                <img src="{{ asset('user/assets/img/icon/count-three.svg')}}" alt="">
+                                                <img src="{{ asset('user/assets/img/icon/count-three.svg') }}"
+                                                    alt="">
                                             </div>
                                             <div class="count-content-three course-count ms-0">
                                                 <h4><span class="counterUp">10</span>K</h4>
@@ -290,7 +312,8 @@
                                         class="about-image count-four d-flex align-items-center justify-content-center flex-fill project-details">
                                         <div class="about-count">
                                             <div class="course-img">
-                                                <img src="{{ asset('user/assets/img/icon/count-four.svg')}}" alt="">
+                                                <img src="{{ asset('user/assets/img/icon/count-four.svg') }}"
+                                                    alt="">
                                             </div>
                                             <div class="count-content-three course-count ms-0">
                                                 <h4><span class="counterUp">10</span>K</h4>
@@ -322,7 +345,8 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex" data-aos="fade-down">
                             <div class="categories-item flex-fill">
                                 <div class="categories-icon">
-                                    <img src="{{ asset('user/assets/img/category/category-1.svg')}}" alt="Angular Development">
+                                    <img src="{{ asset('user/assets/img/category/category-1.svg') }}"
+                                        alt="Angular Development">
                                 </div>
                                 <div class="categories-content">
                                     <h3>Angular Development</h3>
@@ -333,7 +357,8 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex" data-aos="fade-down">
                             <div class="categories-item flex-fill">
                                 <div class="categories-icon">
-                                    <img src="{{ asset('user/assets/img/category/category-2.svg')}}" alt="Python Development">
+                                    <img src="{{ asset('user/assets/img/category/category-2.svg') }}"
+                                        alt="Python Development">
                                 </div>
                                 <div class="categories-content">
                                     <h3>Python Development</h3>
@@ -344,7 +369,8 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex" data-aos="fade-down">
                             <div class="categories-item flex-fill">
                                 <div class="categories-icon">
-                                    <img src="{{ asset('user/assets/img/category/category-3.svg')}}" alt="Node Js Development">
+                                    <img src="{{ asset('user/assets/img/category/category-3.svg') }}"
+                                        alt="Node Js Development">
                                 </div>
                                 <div class="categories-content">
                                     <h3>Node Js Development</h3>
@@ -355,7 +381,8 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex" data-aos="fade-down">
                             <div class="categories-item flex-fill">
                                 <div class="categories-icon">
-                                    <img src="{{ asset('user/assets/img/category/category-4.svg')}}" alt="PHP Development">
+                                    <img src="{{ asset('user/assets/img/category/category-4.svg') }}"
+                                        alt="PHP Development">
                                 </div>
                                 <div class="categories-content">
                                     <h3>PHP Development</h3>
@@ -366,7 +393,8 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex" data-aos="fade-down">
                             <div class="categories-item flex-fill">
                                 <div class="categories-icon">
-                                    <img src="{{ asset('user/assets/img/category/category-5.svg')}}" alt="Docker Development">
+                                    <img src="{{ asset('user/assets/img/category/category-5.svg') }}"
+                                        alt="Docker Development">
                                 </div>
                                 <div class="categories-content">
                                     <h3>Docker Development</h3>
@@ -377,7 +405,8 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex" data-aos="fade-down">
                             <div class="categories-item  flex-fill">
                                 <div class="categories-icon">
-                                    <img src="{{ asset('user/assets/img/category/category-6.svg')}}" alt="Swift Development">
+                                    <img src="{{ asset('user/assets/img/category/category-6.svg') }}"
+                                        alt="Swift Development">
                                 </div>
                                 <div class="categories-content">
                                     <h3>Swift Development</h3>
@@ -388,7 +417,8 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex" data-aos="fade-down">
                             <div class="categories-item  flex-fill">
                                 <div class="categories-icon">
-                                    <img src="{{ asset('user/assets/img/category/category-7.svg')}}" alt="Photography">
+                                    <img src="{{ asset('user/assets/img/category/category-7.svg') }}"
+                                        alt="Photography">
                                 </div>
                                 <div class="categories-content">
                                     <h3>Photography</h3>
@@ -399,7 +429,7 @@
                         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex">
                             <div class="categories-item  flex-fill" data-aos="fade-up">
                                 <div class="categories-icon">
-                                    <img src="{{ asset('user/assets/img/category/category-8.svg')}}" alt="Business">
+                                    <img src="{{ asset('user/assets/img/category/category-8.svg') }}" alt="Business">
                                 </div>
                                 <div class="categories-content">
                                     <h3>Business</h3>
@@ -412,7 +442,7 @@
 
                 <div class="col-lg-12">
                     <div class="more-details text-center" data-aos="fade-down">
-                        <a href="{{ url('/job-category')}}" class="discover-btn">View all Category <i
+                        <a href="{{ url('/job-category') }}" class="discover-btn">View all Category <i
                                 class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -442,7 +472,8 @@
                                 <div class="product-item-two">
                                     <div class="product-img-two">
                                         <a href="course-details.html">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/courses-01.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/course/courses-01.jpg') }}">
                                         </a>
                                         <div class="price-text">
                                             <h4><span>PHP</span></h4>
@@ -450,7 +481,8 @@
                                     </div>
                                     <div class="course-details-content">
                                         <div class="image-info">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/profiles/avatar-01.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/profiles/avatar-01.jpg') }}">
                                         </div>
                                         <div class="rating">
                                             <i class="fas fa-star filled"></i>
@@ -461,9 +493,11 @@
                                             <span class="ms-3">203 reviews</span>
                                         </div>
                                         <div class="name-text featured-info-two">
-                                            <h3 class="title instructor-text"><a href="course-details.html">The Complete
+                                            <h3 class="title instructor-text"><a href="course-details.html">The
+                                                    Complete
                                                     Web Developer PHP framework Course 2.0</a></h3>
-                                            <p class="me-3">By<span class="text-danger ms-2">Russell T. Johnson</span>
+                                            <p class="me-3">By<span class="text-danger ms-2">Russell T.
+                                                    Johnson</span>
                                             </p>
                                         </div>
                                         <div class="featured-info-time d-flex align-items-center">
@@ -488,7 +522,8 @@
                                 <div class="product-item-two">
                                     <div class="product-img-two">
                                         <a href="course-details.html">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/courses-02.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/course/courses-02.jpg') }}">
                                         </a>
                                         <div class="price-text">
                                             <h4><span>Wordpress</span></h4>
@@ -496,7 +531,8 @@
                                     </div>
                                     <div class="course-details-content">
                                         <div class="image-info">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/profiles/avatar-02.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/profiles/avatar-02.jpg') }}">
                                         </div>
                                         <div class="rating">
                                             <i class="fas fa-star filled"></i>
@@ -509,7 +545,8 @@
                                         <div class="name-text featured-info-two">
                                             <h3 class="title instructor-text"><a href="course-details.html">Wordpress
                                                     for Beginners - Master Wordpress Quickly</a></h3>
-                                            <p class="me-3">By<span class="text-danger ms-2">Cristofer Nolen</span></p>
+                                            <p class="me-3">By<span class="text-danger ms-2">Cristofer Nolen</span>
+                                            </p>
                                         </div>
                                         <div class="featured-info-time d-flex align-items-center">
                                             <div class="rating-img d-flex align-items-center">
@@ -533,7 +570,8 @@
                                 <div class="product-item-two">
                                     <div class="product-img-two">
                                         <a href="course-details.html">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/courses-03.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/course/courses-03.jpg') }}">
                                         </a>
                                         <div class="price-text">
                                             <h4><span>Angular</span></h4>
@@ -541,7 +579,8 @@
                                     </div>
                                     <div class="course-details-content">
                                         <div class="image-info">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/profiles/avatar-03.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/profiles/avatar-03.jpg') }}">
                                         </div>
                                         <div class="rating">
                                             <i class="fas fa-star filled"></i>
@@ -554,7 +593,8 @@
                                         <div class="name-text featured-info-two">
                                             <h3 class="title instructor-text"><a href="course-details.html">Learn
                                                     Angular Fundamentals From beginning to advance lavel</a></h3>
-                                            <p class="me-3">By<span class="text-danger ms-2">Cristofer Nolen</span></p>
+                                            <p class="me-3">By<span class="text-danger ms-2">Cristofer Nolen</span>
+                                            </p>
                                         </div>
                                         <div class="featured-info-time d-flex align-items-center">
                                             <div class="rating-img d-flex align-items-center">
@@ -578,7 +618,8 @@
                                 <div class="product-item-two">
                                     <div class="product-img-two">
                                         <a href="course-details.html">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/courses-04.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/course/courses-04.jpg') }}">
                                         </a>
                                         <div class="price-text">
                                             <h4><span>HTML5</span></h4>
@@ -586,7 +627,8 @@
                                     </div>
                                     <div class="course-details-content">
                                         <div class="image-info">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/profiles/avatar-04.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/profiles/avatar-04.jpg') }}">
                                         </div>
                                         <div class="rating">
                                             <i class="fas fa-star filled"></i>
@@ -599,7 +641,8 @@
                                         <div class="name-text featured-info-two">
                                             <h3 class="title instructor-text"><a href="course-details.html">Build
                                                     Responsive Real World Websites with HTML5 and CSS3</a></h3>
-                                            <p class="me-3">By<span class="text-danger ms-2">Cristofer Nolen</span></p>
+                                            <p class="me-3">By<span class="text-danger ms-2">Cristofer Nolen</span>
+                                            </p>
                                         </div>
                                         <div class="featured-info-time d-flex align-items-center">
                                             <div class="rating-img d-flex align-items-center">
@@ -623,7 +666,8 @@
                                 <div class="product-item-two">
                                     <div class="product-img-two">
                                         <a href="course-details.html">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/courses-05.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/course/courses-05.jpg') }}">
                                         </a>
                                         <div class="price-text">
                                             <h4><span>C#</span></h4>
@@ -631,7 +675,8 @@
                                     </div>
                                     <div class="course-details-content">
                                         <div class="image-info">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/profiles/avatar-05.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/profiles/avatar-05.jpg') }}">
                                         </div>
                                         <div class="rating">
                                             <i class="fas fa-star filled"></i>
@@ -645,7 +690,8 @@
                                         <div class="name-text featured-info-two">
                                             <h3 class="title instructor-text"><a href="course-details.html">C#
                                                     Developers Double Your Coding Speed with Visual Studio</a></h3>
-                                            <p class="me-3">By<span class="text-danger ms-2">Cristofer Nolen</span></p>
+                                            <p class="me-3">By<span class="text-danger ms-2">Cristofer Nolen</span>
+                                            </p>
                                         </div>
                                         <div class="featured-info-time d-flex align-items-center">
                                             <div class="rating-img d-flex align-items-center">
@@ -669,7 +715,8 @@
                                 <div class="product-item-two">
                                     <div class="product-img-two">
                                         <a href="course-details.html">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/course/courses-06.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/course/courses-06.jpg') }}">
                                         </a>
                                         <div class="price-text">
                                             <h4><span>UI/UX</span></h4>
@@ -677,7 +724,8 @@
                                     </div>
                                     <div class="course-details-content">
                                         <div class="image-info">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/profiles/avatar-06.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/profiles/avatar-06.jpg') }}">
                                         </div>
                                         <div class="rating">
                                             <i class="fas fa-star filled"></i>
@@ -688,9 +736,11 @@
                                             <span class="ms-2">243 reviews</span>
                                         </div>
                                         <div class="name-text featured-info-two">
-                                            <h3 class="title instructor-text"><a href="course-details.html">Information
+                                            <h3 class="title instructor-text"><a
+                                                    href="course-details.html">Information
                                                     About UI/UX Design Degree</a></h3>
-                                            <p class="me-3">By<span class="text-danger ms-2">Cristofer Nolen</span></p>
+                                            <p class="me-3">By<span class="text-danger ms-2">Cristofer Nolen</span>
+                                            </p>
                                         </div>
                                         <div class="featured-info-time d-flex align-items-center">
                                             <div class="rating-img d-flex align-items-center">
@@ -713,7 +763,7 @@
 
                 <div class="col-lg-12" data-aos="fade-up">
                     <div class="more-details text-center">
-                        <a href="{{ url('/product')}}" class="discover-btn">View all Products <i
+                        <a href="{{ url('/product') }}" class="discover-btn">View all Products <i
                                 class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -724,14 +774,15 @@
 
         <section class="growup-section">
             <div class="home-two-shapes">
-                <img src="{{ asset('user/assets/img/bg/home-right-bottom.png')}}" alt="">
+                <img src="{{ asset('user/assets/img/bg/home-right-bottom.png') }}" alt="">
             </div>
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-6 col-md-5 col-12" data-aos="fade-right">
                         <div class="growup-images-two">
                             <div class="growup-skills-img">
-                                <img class="" src="{{ asset('user/assets/img/skil-01.png')}}" alt="image-banner" title="image-banner">
+                                <img class="" src="{{ asset('user/assets/img/skil-01.png') }}"
+                                    alt="image-banner" title="image-banner">
                             </div>
                         </div>
                     </div>
@@ -749,7 +800,7 @@
                             </div>
                         </div>
                         <div class="about-button more-details">
-                            <a href="{{ url('/register')}}" class="discover-btn">Join Today <i
+                            <a href="{{ url('/register') }}" class="discover-btn">Join Today <i
                                     class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
@@ -789,10 +840,12 @@
                         <div class="col-lg-6 col-md-12 order-lg-1 order-md-1 order-1" data-aos="fade-up">
                             <div class="join-mentor-img">
                                 <div class="winning-two-one">
-                                    <img src="{{ asset('user/assets/img/skills/skills-01.jpg')}}" alt="" class="img-fluid">
+                                    <img src="{{ asset('user/assets/img/skills/skills-01.jpg') }}" alt=""
+                                        class="img-fluid">
                                 </div>
                                 <div class="joing-icon-award">
-                                    <img src="{{ asset('user/assets/img/bg/skill-icon-01.png')}}" alt="" class="joing-icon-one img-fluid">
+                                    <img src="{{ asset('user/assets/img/bg/skill-icon-01.png') }}" alt=""
+                                        class="joing-icon-one img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -801,11 +854,13 @@
                         <div class="col-xl-6 col-lg-7 col-md-12 order-lg-2 order-md-3 order-3" data-aos="fade-up">
                             <div class="join-mentor-img">
                                 <div class="winning-two-two">
-                                    <img src="{{ asset('user/assets/img/skills/skills-02.jpg')}}" alt="" class="img-fluid">
+                                    <img src="{{ asset('user/assets/img/skills/skills-02.jpg') }}" alt=""
+                                        class="img-fluid">
                                 </div>
                             </div>
                             <div class="joing-icon-award">
-                                <img src="{{ asset('user/assets/img/bg/skill-icon-02.png')}}" alt="" class="joing-icon-two img-fluid">
+                                <img src="{{ asset('user/assets/img/bg/skill-icon-02.png') }}" alt=""
+                                    class="joing-icon-two img-fluid">
                             </div>
                         </div>
 
@@ -839,11 +894,13 @@
                         <div class="col-xl-6 col-lg-5 col-md-12 order-lg-5 order-md-5 order-5" data-aos="fade-up">
                             <div class="join-mentor-img mb-0">
                                 <div class="winning-two-three">
-                                    <img src="{{ asset('user/assets/img/skills/skills-03.jpg')}}" alt="" class="img-fluid">
+                                    <img src="{{ asset('user/assets/img/skills/skills-03.jpg') }}" alt=""
+                                        class="img-fluid">
                                 </div>
                             </div>
                             <div class="joing-icon-award">
-                                <img src="{{ asset('user/assets/img/bg/skill-icon-03.png')}}" alt="" class="joing-icon-three img-fluid">
+                                <img src="{{ asset('user/assets/img/bg/skill-icon-03.png') }}" alt=""
+                                    class="joing-icon-three img-fluid">
                             </div>
                         </div>
 
@@ -857,7 +914,7 @@
         <section class="testimonial-sec">
             <div class="container">
                 <div class="testimonial-two-img">
-                    <img src="{{ asset('user/assets/img/bg/map-user.png')}}" alt="" class="img-fluid">
+                    <img src="{{ asset('user/assets/img/bg/map-user.png') }}" alt="" class="img-fluid">
                 </div>
                 <div class="testimonial-subhead-two">
                     <div class="col-xl-8 col-lg-10 col-md-10 mx-auto" data-aos="fade-down">
@@ -915,7 +972,8 @@
                                 <div class="trending-courses-two">
                                     <div class="product-img course-column-img">
                                         <a href="instructor-profile.html">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/skills/skill-01.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/skills/skill-01.jpg') }}">
                                         </a>
                                         <div class="trending-price">
                                             <h4><span>Node Js</span></h4>
@@ -957,7 +1015,8 @@
                                 <div class="trending-courses-two">
                                     <div class="product-img course-column-img">
                                         <a href="instructor-profile.html">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/skills/skill-02.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/skills/skill-02.jpg') }}">
                                         </a>
                                         <div class="trending-price">
                                             <h4><span>C#</span></h4>
@@ -999,7 +1058,8 @@
                                 <div class="trending-courses-two">
                                     <div class="product-img course-column-img">
                                         <a href="instructor-profile.html">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/skills/skill-03.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/skills/skill-03.jpg') }}">
                                         </a>
                                         <div class="trending-price">
                                             <h4><span>Angular</span></h4>
@@ -1041,7 +1101,8 @@
                                 <div class="trending-courses-two">
                                     <div class="product-img course-column-img">
                                         <a href="instructor-profile.html">
-                                            <img class="img-fluid" alt="" src="{{ asset('user/assets/img/skills/skill-04.jpg')}}">
+                                            <img class="img-fluid" alt=""
+                                                src="{{ asset('user/assets/img/skills/skill-04.jpg') }}">
                                         </a>
                                         <div class="trending-price">
                                             <h4><span>HTML5</span></h4>
@@ -1084,7 +1145,7 @@
 
                 <div class="col-lg-12" data-aos="fade-up">
                     <div class="more-details text-center">
-                        <a href="{{ url('/product')}}" class="discover-btn">View all Product <i
+                        <a href="{{ url('/product') }}" class="discover-btn">View all Product <i
                                 class="fas fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
@@ -1104,7 +1165,8 @@
                             <div class="section-title">
                                 <h2>Want to share your knowledge? Join us a Mentor</h2>
                                 <div class="joing-section-text">
-                                    <p class="mb-0">High-definition video is video of higher resolution and quality than
+                                    <p class="mb-0">High-definition video is video of higher resolution and quality
+                                        than
                                         standard-definition. While there is no standardized meaning for high-definition,
                                         generally any video.</p>
                                 </div>
@@ -1114,7 +1176,8 @@
                                     <li data-aos="fade-bottom">
                                         <div class="joing-header">
                                             <span class="joing-icon bg-blue">
-                                                <img src="{{ asset('user/assets/img/icon/joing-01.svg')}}" alt="" class="img-fluid">
+                                                <img src="{{ asset('user/assets/img/icon/joing-01.svg') }}"
+                                                    alt="" class="img-fluid">
                                             </span>
                                             <div class="joing-content">
                                                 <h5 class="joing-title">Stay motivated with engaging instructors</h5>
@@ -1130,7 +1193,8 @@
                                     <li data-aos="fade-bottom">
                                         <div class="joing-header">
                                             <span class="joing-icon bg-yellow">
-                                                <img src="{{ asset('user/assets/img/icon/joing-02.svg')}}" alt="" class="img-fluid">
+                                                <img src="{{ asset('user/assets/img/icon/joing-02.svg') }}"
+                                                    alt="" class="img-fluid">
                                             </span>
                                             <div class="joing-content">
                                                 <h5 class="joing-title">Keep up with in the latest in cloud</h5>
@@ -1146,10 +1210,12 @@
                                     <li data-aos="fade-bottom">
                                         <div class="joing-header">
                                             <span class="joing-icon bg-green">
-                                                <img src="{{ asset('user/assets/img/icon/joing-03.svg')}}" alt="" class="img-fluid">
+                                                <img src="{{ asset('user/assets/img/icon/joing-03.svg') }}"
+                                                    alt="" class="img-fluid">
                                             </span>
                                             <div class="joing-content aos">
-                                                <h5 class="joing-title">Build skills your way, from labs to courses</h5>
+                                                <h5 class="joing-title">Build skills your way, from labs to courses
+                                                </h5>
                                                 <div class="joing-para">
                                                     <p>High-definition video is video of higher resolution and quality
                                                         than standard-definition.</p>
@@ -1162,7 +1228,8 @@
                                     <li data-aos="fade-bottom" class="mb-0">
                                         <div class="joing-header">
                                             <span class="joing-icon bg-orange">
-                                                <img src="{{ asset('user/assets/img/icon/joing-04.svg')}}" alt="" class="img-fluid">
+                                                <img src="{{ asset('user/assets/img/icon/joing-04.svg') }}"
+                                                    alt="" class="img-fluid">
                                             </span>
                                             <div class="joing-content aos">
                                                 <h5 class="joing-title">Get certified with 100+ certification courses
@@ -1327,7 +1394,8 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6 col-md-12 col-sm-12" data-aos="fade-up">
                             <div class="reviews-img">
-                                <img src="{{ asset('user/assets/img/reviews-img-two.png')}}" alt="" class="img-fluid">
+                                <img src="{{ asset('user/assets/img/reviews-img-two.png') }}" alt=""
+                                    class="img-fluid">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 col-md-12" data-aos="fade-up">
@@ -1437,32 +1505,38 @@
                     <div class="lead-group-slider owl-carousel owl-theme">
                         <div class="item">
                             <div class="lead-img">
-                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/lead-01.png')}}">
+                                <img class="img-fluid" alt=""
+                                    src="{{ asset('user/assets/img/lead-01.png') }}">
                             </div>
                         </div>
                         <div class="item">
                             <div class="lead-img">
-                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/lead-02.png')}}">
+                                <img class="img-fluid" alt=""
+                                    src="{{ asset('user/assets/img/lead-02.png') }}">
                             </div>
                         </div>
                         <div class="item">
                             <div class="lead-img">
-                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/lead-03.png')}}">
+                                <img class="img-fluid" alt=""
+                                    src="{{ asset('user/assets/img/lead-03.png') }}">
                             </div>
                         </div>
                         <div class="item">
                             <div class="lead-img">
-                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/lead-04.png')}}">
+                                <img class="img-fluid" alt=""
+                                    src="{{ asset('user/assets/img/lead-04.png') }}">
                             </div>
                         </div>
                         <div class="item">
                             <div class="lead-img">
-                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/lead-05.png')}}">
+                                <img class="img-fluid" alt=""
+                                    src="{{ asset('user/assets/img/lead-05.png') }}">
                             </div>
                         </div>
                         <div class="item">
                             <div class="lead-img">
-                                <img class="img-fluid" alt="" src="{{ asset('user/assets/img/lead-06.png')}}">
+                                <img class="img-fluid" alt=""
+                                    src="{{ asset('user/assets/img/lead-06.png') }}">
                             </div>
                         </div>
                     </div>
@@ -1572,7 +1646,7 @@
 
                             <div class="footer-widget footer-about">
                                 <div class="footer-logo">
-                                    <img src="{{ asset('user/assets/img/logo.svg')}}" alt="logo">
+                                    <img src="{{ asset('user/assets/img/logo.svg') }}" alt="logo">
                                 </div>
                                 <div class="footer-about-content">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut consequat mauris
@@ -1587,7 +1661,8 @@
                                             <a href="#" target="_blank"><i class="feather-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" target="_blank"><i class="feather-instagram"></i></a>
+                                            <a href="#" target="_blank"><i
+                                                    class="feather-instagram"></i></a>
                                         </li>
                                         <li>
                                             <a href="#" target="_blank"><i class="feather-linkedin"></i></a>
@@ -1602,10 +1677,10 @@
                             <div class="footer-widget footer-menu footer-menu-two">
                                 <h2 class="footer-title">Explore</h2>
                                 <ul>
-                                     <li><a href="{{ url('/')}}">Home</a></li>
-                                    <li><a href="{{ url('/about')}}">About</a></li>
-                                    <li><a href="{{ url('/product')}}">Products</a></li>
-                                    <li><a href="{{ url('/contact')}}">Contact</a></li>
+                                    <li><a href="{{ url('/') }}">Home</a></li>
+                                    <li><a href="{{ url('/about') }}">About</a></li>
+                                    <li><a href="{{ url('/product') }}">Products</a></li>
+                                    <li><a href="{{ url('/contact') }}">Contact</a></li>
                                     <!-- <li><a href="deposit-instructor-dashboard.html"> Dashboard</a></li> -->
                                 </ul>
                             </div>
@@ -1616,10 +1691,10 @@
                             <div class="footer-widget footer-menu footer-menu-two">
                                 <h2 class="footer-title">Quick links</h2>
                                 <ul>
-                                    
-                                  <li><a href="{{ url('/term-condition')}}">Terms & Condition</a></li>
-                                    <li><a href="{{ url('/privacy-policy')}}">Privacy Policy</a></li>
-                                    <li><a href="{{ url('/faq')}}">FAQ</a></li>
+
+                                    <li><a href="{{ url('/term-condition') }}">Terms & Condition</a></li>
+                                    <li><a href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
+                                    <li><a href="{{ url('/faq') }}">FAQ</a></li>
                                     <!-- <li><a href="register.html">Register</a></li>
                                     <li><a href="students-list.html">Student</a></li>
                                     <li><a href="deposit-student-dashboard.html"> Dashboard</a></li> -->
@@ -1627,9 +1702,9 @@
                             </div>
 
                         </div>
-                       
 
-                            <div class="col-lg-4 col-md-6">
+
+                        <div class="col-lg-4 col-md-6">
 
                             <div class="footer-widget footer-contact">
                                 <h2 class="footer-title">Address</h2>
@@ -1641,17 +1716,20 @@
                                 </div>
                                 <div class="footer-contact-info">
                                     <div class="footer-address">
-                                        <img src="{{ asset('user/assets/img/icon/icon-20.svg') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset('user/assets/img/icon/icon-20.svg') }}" alt=""
+                                            class="img-fluid">
                                         <p> 3556 Beech Street, San Francisco,<br> California, CA 94108 </p>
                                     </div>
                                     <p>
-                                        <img src="{{ asset('user/assets/img/icon/icon-19.svg') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset('user/assets/img/icon/icon-19.svg') }}" alt=""
+                                            class="img-fluid">
                                         <a href="https://dreamslms.dreamguystech.com/cdn-cgi/l/email-protection"
                                             class="__cf_email__"
                                             data-cfemail="afcbddcacec2dcc3c2dcefcad7cec2dfc3ca81ccc0c2">[email&#160;protected]</a>
                                     </p>
                                     <p class="mb-0">
-                                        <img src="{{ asset('user/assets/img/icon/icon-21.svg') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset('user/assets/img/icon/icon-21.svg') }}" alt=""
+                                            class="img-fluid">
                                         +19 123-456-7890
                                     </p>
                                 </div>
@@ -1670,7 +1748,8 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
                                 <div class="copyright-text">
-                                    <p class="mb-0">&copy; 2023 <a style="color: red;" href="https://thedaxads.com">DaxAds</a>. All rights reserved.</p>
+                                    <p class="mb-0">&copy; 2023 <a style="color: red;"
+                                            href="https://thedaxads.com">DaxAds</a>. All rights reserved.</p>
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
@@ -1694,16 +1773,16 @@
 
 
     <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="{{ asset('user/assets/js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('user/assets/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{ asset('user/assets/js/owl.carousel.min.js')}}"></script>
-    <script src="{{ asset('user/assets/plugins/aos/aos.js')}}"></script>
-    <script src="{{ asset('user/assets/js/jquery.waypoints.js')}}"></script>
-    <script src="{{ asset('user/assets/js/jquery.counterup.min.js')}}"></script>
-    <script src="{{ asset('user/assets/plugins/select2/js/select2.min.js')}}"></script>
-    <script src="{{ asset('user/assets/plugins/slick/slick.js')}}"></script>
-    <script src="{{ asset('user/assets/plugins/swiper/js/swiper.min.js')}}"></script>
-    <script src="{{ asset('user/assets/js/script.js')}}"></script>
+    <script src="{{ asset('user/assets/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('user/assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('user/assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('user/assets/plugins/aos/aos.js') }}"></script>
+    <script src="{{ asset('user/assets/js/jquery.waypoints.js') }}"></script>
+    <script src="{{ asset('user/assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('user/assets/plugins/select2/js/select2.min.js') }}"></script>
+    <script src="{{ asset('user/assets/plugins/slick/slick.js') }}"></script>
+    <script src="{{ asset('user/assets/plugins/swiper/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('user/assets/js/script.js') }}"></script>
 
 </body>
 

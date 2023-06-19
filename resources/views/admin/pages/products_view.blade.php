@@ -45,7 +45,8 @@
                 </svg></a>
 
             <div class="nav-logo align-self-center">
-                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo" src="{{ asset('admin/assets/img/.png') }}">INFODI</a>
+                <a class="navbar-brand" href="{{ url('admin/index') }}"><img alt="logo"
+                        src="{{ asset('admin/assets/img/.png') }}">INFODI</a>
             </div>
 
 
@@ -55,9 +56,9 @@
                 <li class="nav-item dropdown notification-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" id="notificationDropdown"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="feather feather-bell">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="feather feather-bell">
                             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                         </svg><span class="badge badge-success"></span>
@@ -67,11 +68,14 @@
 
                             <div class="dropdown-item">
                                 <div class="media server-log">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-server">
-                                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-server">
+                                        <rect x="2" y="2" width="20" height="8"
+                                            rx="2" ry="2"></rect>
+                                        <rect x="2" y="14" width="20" height="8"
+                                            rx="2" ry="2"></rect>
                                         <line x1="6" y1="6" x2="6" y2="6"></line>
                                         <line x1="6" y1="18" x2="6" y2="18"></line>
                                     </svg>
@@ -83,11 +87,13 @@
 
                                         <div class="icon-status">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-x">
-                                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                                                <line x1="18" y1="6" x2="6" y2="18">
+                                                </line>
+                                                <line x1="6" y1="6" x2="18" y2="18">
+                                                </line>
                                             </svg>
                                         </div>
                                     </div>
@@ -96,9 +102,9 @@
 
                             <div class="dropdown-item">
                                 <div class="media ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-heart">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
                                         <path
                                             d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
                                         </path>
@@ -111,11 +117,13 @@
 
                                         <div class="icon-status">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-x">
-                                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                                                <line x1="18" y1="6" x2="6" y2="18">
+                                                </line>
+                                                <line x1="6" y1="6" x2="18" y2="18">
+                                                </line>
                                             </svg>
                                         </div>
                                     </div>
@@ -124,9 +132,10 @@
 
                             <div class="dropdown-item">
                                 <div class="media file-upload">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-file-text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="feather feather-file-text">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                         <polyline points="14 2 14 8 20 8"></polyline>
                                         <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -141,8 +150,8 @@
 
                                         <div class="icon-status">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                                 class="feather feather-check">
                                                 <polyline points="20 6 9 17 4 12"></polyline>
                                             </svg>
@@ -162,7 +171,8 @@
                                 <h6>Andy King</h6>
                                 <p>Manager</p>
                             </div>
-                            <img src="{{ asset('admin/assets/img/profile-7.jpg') }}" class="img-fluid" alt="admin-profile">
+                            <img src="{{ asset('admin/assets/img/profile-7.jpg') }}" class="img-fluid"
+                                alt="admin-profile">
                             <span class="badge badge-success"></span>
                         </div>
                     </a>
@@ -170,9 +180,9 @@
                     <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                         <div class="dropdown-item">
                             <a href="{{ url('admin/profile') }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-user">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg> <span> Profile</span>
@@ -180,9 +190,9 @@
                         </div>
                         <div class="dropdown-item">
                             <a href="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-inbox">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox">
                                     <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
                                     <path
                                         d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">
@@ -192,9 +202,9 @@
                         </div>
                         <div class="dropdown-item">
                             <a href="{{ url('admin/logout') }}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-log-out">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
                                     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                                     <polyline points="16 17 21 12 16 7"></polyline>
                                     <line x1="21" y1="12" x2="9" y2="12"></line>
@@ -220,7 +230,8 @@
                 <ul class="navbar-nav theme-brand flex-row  text-center">
                     <li class="nav-item theme-logo">
                         <a href="{{ url('admin/index') }}">
-                            <img src="{{ asset('admin/assets/img/.png') }}" class="navbar-logo" alt="logo">INFODI
+                            <img src="{{ asset('admin/assets/img/.png') }}" class="navbar-logo"
+                                alt="logo">INFODI
                         </a>
                     </li>
                     <li class="nav-item theme-text">
@@ -231,11 +242,12 @@
                 <ul class="list-unstyled menu-categories" id="topAccordion">
 
                     <li class="menu single-menu">
-                        <a href="{{ url('admin/index') }}" aria-expanded="true" class="dropdown-toggle autodroprown">
+                        <a href="{{ url('admin/index') }}" aria-expanded="true"
+                            class="dropdown-toggle autodroprown">
                             <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-home">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
                                 </svg>
@@ -245,11 +257,12 @@
                     </li>
 
                     <li class="menu single-menu">
-                        <a href="{{ url('admin/category') }}" aria-expanded="true" class="dropdown-toggle autodroprown">
+                        <a href="{{ url('admin/category') }}" aria-expanded="true"
+                            class="dropdown-toggle autodroprown">
                             <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-home">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
                                 </svg>
@@ -259,11 +272,12 @@
                     </li>
 
                     <li class="menu single-menu active">
-                        <a href="{{ url('admin/products') }}" aria-expanded="true" class="dropdown-toggle autodroprown">
+                        <a href="{{ url('admin/products') }}" aria-expanded="true"
+                            class="dropdown-toggle autodroprown">
                             <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-home">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
                                 </svg>
@@ -273,7 +287,8 @@
                     </li>
 
                     <li class="menu single-menu">
-                        <a href="{{ url('admin/customers') }}" aria-expanded="true" class="dropdown-toggle autodroprown">
+                        <a href="{{ url('admin/customers') }}" aria-expanded="true"
+                            class="dropdown-toggle autodroprown">
                             <div class="">
                                 <i data-feather="users"></i>
                                 <span>User Manager</span>
@@ -282,7 +297,8 @@
                     </li>
 
                     <li class="menu single-menu">
-                        <a href="{{ url('admin/orders') }}" aria-expanded="true" class="dropdown-toggle autodroprown">
+                        <a href="{{ url('admin/orders') }}" aria-expanded="true"
+                            class="dropdown-toggle autodroprown">
                             <div class="">
                                 <i data-feather="shopping-cart"></i>
                                 <span>Order Manager</span>
@@ -291,7 +307,8 @@
                     </li>
 
                     <li class="menu single-menu">
-                        <a href="{{ url('admin/enquiry') }}" aria-expanded="true" class="dropdown-toggle autodroprown">
+                        <a href="{{ url('admin/enquiry') }}" aria-expanded="true"
+                            class="dropdown-toggle autodroprown">
                             <div class="">
                                 <i data-feather="message-circle"></i>
                                 <span>Enquiries</span>
@@ -338,7 +355,8 @@
                                             </svg></a> --}}
                                     </div>
                                     <div class="text-center user-info">
-                                        <img src="{{ asset('product_image') }}/{{$product->product_image}}" alt="avatar">
+                                        <img src="{{ asset('product_image') }}/{{ $product->product_image }}"
+                                            alt="avatar">
                                         <p class="">Product Name</p>
                                     </div>
                                     <div class="user-info-list">
@@ -377,16 +395,18 @@
                             <div class="skills layout-spacing ">
                                 <div class="widget-content widget-content-area">
                                     <h3 class="">Edit Product Info</h3>
-                                    <form action="{{ route('admin.updateproduct', ['id' => $product->id ]) }}" method="POST" enctype="multipart/form-data">
-                                            @csrf
+                                    <form action="{{ route('admin.updateproduct', ['id' => $product->id]) }}"
+                                        method="POST" enctype="multipart/form-data">
+                                        @csrf
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-12">
                                                 <label for="inputEmail4">Product Name</label>
                                                 <input type="text" class="form-control" id="inputCategoryName"
-                                                    placeholder="Product Name" name="product_name" value="{{ $product->product_name }}" required>
+                                                    placeholder="Product Name" name="product_name"
+                                                    value="{{ $product->product_name }}" required>
                                             </div>
                                         </div>
-                                        
+
                                         {{-- <div class="form-group mb-4">
                                             <label for="inputState">Products Image</label>
                                             <div class="custom-file mb-4">
@@ -396,31 +416,35 @@
                                             </div>
                                         </div> --}}
                                         <div class="form-group">
-                                                            <label for="product_image" class="control-label mb-1">Products Image</label>
-                                                            <div class="custom-file mb-4">
-                                                            <input id="product_image" name="product_image" type="file"
-                                                                class="form-control" aria-required="true"
-                                                                aria-invalid="false" value="{{ $product->product_image }}">
-                                                            </div>
+                                            <label for="product_image" class="control-label mb-1">Products
+                                                Image</label>
+                                            <div class="custom-file mb-4">
+                                                <input id="product_image" name="product_image" type="file"
+                                                    class="form-control" aria-required="true" aria-invalid="false"
+                                                    value="{{ $product->product_image }}">
+                                            </div>
                                         </div>
                                         <div class="form-row mb-4">
                                             <div class="form-group col-md-12">
                                                 <label for="inputState">Category</label>
-                                                <select id="inputState" class="form-control" name="product_category" value="{{ $product->product_category }}" required>
+                                                <select id="inputState" class="form-control" name="product_category"
+                                                    value="{{ $product->product_category }}" required>
                                                     <option selected>Select Product Category</option>
-                                                   <?php
-                                                                $categories=DB::table('categories')->get();
-                                                                ?>
-                                                                @foreach($categories as $data)
-                                                                <option value="{{ $data->id }}">{{ $data->category_name }}</option>
-                                                                @endforeach
+                                                    <?php
+                                                    $categories = DB::table('categories')->get();
+                                                    ?>
+                                                    @foreach ($categories as $data)
+                                                        <option value="{{ $data->id }}">
+                                                            {{ $data->category_name }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
-                                           <div class="form-group col-md-3">
-                                                            <label for="inputEmail4">Price</label>
-                                                            <input type="number" class="form-control" name="product_price" id="inputCategoryName" placeholder="Price" required >
-                                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="inputEmail4">Price</label>
+                                            <input type="number" class="form-control" name="product_price"
+                                                id="inputCategoryName" placeholder="Price" required>
+                                        </div>
                                         {{-- <div class="form-group mb-4">
                                             <div id="basic" class="row layout-spacing  layout-top-spacing">
                                                 <div class="col-lg-12">
@@ -440,19 +464,19 @@
                                                 </div>
                                             </div>
                                         </div> --}}
-                                          <div class="form-row mb-4">
-                                                        <div class="form-group col-md-12">
-                                                            <label for="inputEmail4">Short Description</label>
-                                                            <input type="text" class="form-control"
-                                                                id="short_description" placeholder="{{ $product->product_desc1 }}" name="product_desc1"
-                                                                required>
-                                                        </div>
-                                                        {{-- <div class="form-group col-md-6">
+                                        <div class="form-row mb-4">
+                                            <div class="form-group col-md-12">
+                                                <label for="inputEmail4">Short Description</label>
+                                                <input type="text" class="form-control" id="short_description"
+                                                    placeholder="{{ $product->product_desc1 }}" name="product_desc1"
+                                                    required>
+                                            </div>
+                                            {{-- <div class="form-group col-md-6">
                                                             <label for="inputPassword4">Product Slug</label>
                                                             <input type="text" class="form-control" id="inputPassword4"
                                                                 placeholder="Product Slug" required>
                                                         </div> --}}
-                                                    </div>
+                                        </div>
 
                                         <div class="form-group mb-4">
                                             <div id="basic" class="row layout-spacing  layout-top-spacing">
@@ -469,7 +493,8 @@
                                                             {{-- <textarea id="description" name="product_desc2" rows="3" placeholder="{{ $product->product_desc2 }}">
                                                                                                             </textarea>
                                                                                                              --}}
-                                                                                                             <textarea class="form-control" name="product_desc2" id="description" rows="7" placeholder="{{ $product->product_desc2 }}"></textarea>
+                                                            <textarea class="form-control" name="product_desc2" id="description" rows="7"
+                                                                placeholder="{{ $product->product_desc2 }}"></textarea>
                                                         </div>
 
                                                     </div>
@@ -479,11 +504,11 @@
 
                                         <div class="form-group mb-4">
                                             <label for="exampleFormControlTextarea1">Keywords</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="product_keyword" placeholder="{{ $product->product_keyword }}"
-                                                rows="3" required></textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="product_keyword"
+                                                placeholder="{{ $product->product_keyword }}" rows="3" required></textarea>
                                         </div>
 
-                                        <button type="submit" value="submit" >Update</button>
+                                        <button type="submit" value="submit">Update</button>
                                     </form>
                                 </div>
                             </div>
@@ -498,9 +523,10 @@
                             All rights reserved.</p>
                     </div>
                     <div class="footer-section f-section-2">
-                        <p class="">Coded with <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                        <p class="">Coded with <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-heart">
                                 <path
                                     d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
                                 </path>
@@ -521,7 +547,7 @@
         <script src="{{ asset('admin/assets/js/app.js') }}"></script>
 
         <script>
-            $(document).ready(function () {
+            $(document).ready(function() {
                 App.init();
             });
         </script>
@@ -544,15 +570,29 @@
                     "<'table-responsive'tr>" +
                     "<'dt--bottom-section d-sm-flex justify-content-sm-between text-center'<'dt--pages-count  mb-sm-0 mb-3'i><'dt--pagination'p>>",
                 buttons: {
-                    buttons: [
-                        { extend: 'copy', className: 'btn btn-sm' },
-                        { extend: 'csv', className: 'btn btn-sm' },
-                        { extend: 'excel', className: 'btn btn-sm' },
-                        { extend: 'print', className: 'btn btn-sm' }
+                    buttons: [{
+                            extend: 'copy',
+                            className: 'btn btn-sm'
+                        },
+                        {
+                            extend: 'csv',
+                            className: 'btn btn-sm'
+                        },
+                        {
+                            extend: 'excel',
+                            className: 'btn btn-sm'
+                        },
+                        {
+                            extend: 'print',
+                            className: 'btn btn-sm'
+                        }
                     ]
                 },
                 "oLanguage": {
-                    "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
+                    "oPaginate": {
+                        "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>',
+                        "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'
+                    },
                     "sInfo": "Showing page _PAGE_ of _PAGES_",
                     "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
                     "sSearchPlaceholder": "Search...",

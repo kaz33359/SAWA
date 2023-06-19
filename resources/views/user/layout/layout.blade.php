@@ -6,32 +6,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <!-- Primary Meta Tags -->
-	<title>INFODI</title>
-	<meta name="title" content="INFODI">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="author" content="INFODI">
+    <title>INFODI</title>
+    <meta name="title" content="INFODI">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="INFODI">
 
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://thedaxads.com/">
-	<meta property="og:title" content="INFODI">
-	<meta property="og:description" content="">
-	<meta property="og:image" content="{{ asset('user/assets/images/image.jpeg') }}"/>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thedaxads.com/">
+    <meta property="og:title" content="INFODI">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="{{ asset('user/assets/images/image.jpeg') }}" />
 
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="https://thedaxads.com/">
-	<meta property="twitter:title" content="INFODI">
-	<meta property="twitter:description" content="">
-	<meta property="twitter:image" content="{{ asset('user/assets/images/image.jpeg') }}"/>
-  <!-- Primary Meta Tags End -->
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thedaxads.com/">
+    <meta property="twitter:title" content="INFODI">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="{{ asset('user/assets/images/image.jpeg') }}" />
+    <!-- Primary Meta Tags End -->
 
     <!-- CSS here -->
     @section('css')
     @show
 
-    </head>
+</head>
 
 <body>
 
@@ -63,98 +63,121 @@
                                 </a>
                             </div>
                             <?php
-                                $data = DB::table('users')->where('id', '=', session('LoggedUser'))->get();
-                                // print($data);
-                                ?>
-                                
+                            $data = DB::table('users')
+                                ->where('id', '=', session('LoggedUser'))
+                                ->get();
+                            // print($data);
+                            ?>
+
                             <ul class="main-nav">
                                 <li class="menu-effect"><a href="{{ url('/') }}">Home </a></li>
                                 <li class="menu-effect"><a href="about.html">About </a></li>
                                 <li class="menu-effect"><a href="{{ url('/product') }}">Products</a></li>
                                 <li class="menu-effect"><a href="{{ url('/contact') }}">Contact</a></li>
                                 @if (session()->has('LoggedUser'))
-                                @foreach ($data as $item)
-                                <li class="has-submenu">
-                                    <a href="#">Hi {{ $item->name }} <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="submenu ">
-                                        <li class="">
-                                        <a href="students-list.html">Profile</a>
-                                        <a href="students-list.html">Logout</a>
+                                    @foreach ($data as $item)
+                                        <li class="has-submenu">
+                                            <a href="#">Hi {{ $item->name }} <i
+                                                    class="fas fa-chevron-down"></i></a>
+                                            <ul class="submenu ">
+                                                <li class="">
+                                                    <a href="students-list.html">Profile</a>
+                                                    <a href="students-list.html">Logout</a>
+                                                </li>
+                                            </ul>
                                         </li>
-                                    </ul>
-                                </li>
-                                @endforeach
+                                    @endforeach
                                 @else
-                                <li class="login-link">
-                                    <a href="{{ url('/login') }}">Login / Signup</a>
-                                </li>
+                                    <li class="login-link">
+                                        <a href="{{ url('/login') }}">Login / Signup</a>
+                                    </li>
                                 @endif
                             </ul>
                         </div>
-                            
-                            <ul class="nav header-navbar-rht">
+
+                        <ul class="nav header-navbar-rht">
                             @if (session()->has('LoggedUser'))
                                 @foreach ($data as $item)
-                            <li class="nav-item cart-nav">
-                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                                    <img src="{{ asset('user/assets/img/icon/cart.svg') }}" alt="img">
-                                </a>
-                                <div class="wishes-list dropdown-menu dropdown-menu-right">
-                                    <ul>
-                                        <li><a class="dropdown-item" href="{{ url('cart') }}">View Cart</a></li>
-                                        <li><a class="dropdown-item" href="{{ url('checkout') }}">Checkout</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item user-nav">
-                                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-                                    <span class="user-img">
-                                        <img src="{{ asset('user/assets/img/user/user11.jpg') }}" alt="">
-                                        <span class="status online"></span>
-                                    </span>
-                                </a>
-                                <div class="users dropdown-menu dropdown-menu-right" data-popper-placement="bottom-end">
-                                    <div class="user-header">
-                                        <div class="avatar avatar-sm">
-                                            <img src="{{ asset('user/assets/img/user/user11.jpg') }}" alt="User Image"
-                                                class="avatar-img rounded-circle">
+                                    <li class="nav-item cart-nav">
+                                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                                            <img src="{{ asset('user/assets/img/icon/cart.svg') }}" alt="img">
+                                        </a>
+                                        <div class="wishes-list dropdown-menu dropdown-menu-right">
+                                            <ul>
+                                                <li><a class="dropdown-item" href="{{ url('cart') }}">View Cart</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="{{ url('checkout') }}">Checkout</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="user-text">
-                                            <h6>Hi , {{ $item->name }}</h6>
-                                            <p class="text-muted mb-0">Student</p>
+                                    </li>
+                                    <li class="nav-item user-nav">
+                                        <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                                            <span class="user-img">
+                                                @if (!$item->userImage)
+                                                    <input type="file" name="image" class="form-control"><br>
+                                                    <img name="image"
+                                                        src="{{ asset('user/assets/img/user/default-avatar-Sawa.jpg') }}"
+                                                        alt="" class="img-fluid">
+                                                @elseif($item->userImage)
+                                                    <img src="{{ asset('user/assets/img/user/' . $item->userImage) }}"
+                                                        width="300" height="338" />
+                                                @endif
+                                                <span class="status online"></span>
+                                            </span>
+                                        </a>
+                                        <div class="users dropdown-menu dropdown-menu-right"
+                                            data-popper-placement="bottom-end">
+                                            <div class="user-header">
+                                                <div class="avatar avatar-sm">
+                                                    @if (!$item->userImage)
+                                                        <input type="file" name="image"
+                                                            class="form-control"><br>
+                                                        <img name="image"
+                                                            src="{{ asset('user/assets/img/user/default-avatar-Sawa.jpg') }}"
+                                                            alt="" class="img-fluid">
+                                                    @elseif($item->userImage)
+                                                        <img src="{{ asset('user/assets/img/user/' . $item->userImage) }}"
+                                                            width="300" height="338" />
+                                                    @endif
+                                                </div>
+                                                <div class="user-text">
+                                                    <h6>Hi , {{ $item->name }}</h6>
+                                                    <p class="text-muted mb-0">Student</p>
+                                                </div>
+                                            </div>
+                                            <a class="dropdown-item" href="{{ url('/user-profile') }}"><i
+                                                    class="feather-user me-1"></i> Profile</a>
+                                            <a class="dropdown-item" href="{{ url('user/logout') }}"><i
+                                                    class="feather-log-out me-1"></i>
+                                                Logout</a>
                                         </div>
-                                    </div>
-                                    <a class="dropdown-item" href="{{ url('/user-profile')}}"><i
-                                            class="feather-user me-1"></i> Profile</a>
-                                    <a class="dropdown-item" href="{{ url('user/logout') }}"><i class="feather-log-out me-1"></i>
-                                        Logout</a>
-                                </div>
-                            </li>
+                                    </li>
                         </ul>
                         @endforeach
-                        @else
-                            <ul class="nav header-navbar-rht">
-                                <li class="nav-item">
+                    @else
+                        <ul class="nav header-navbar-rht">
+                            <li class="nav-item">
                                 <a class="nav-link header-sign" href="{{ url('/login') }}">Login</a>
-                                </li>
-                                <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link header-login" href="{{ url('/register') }}">Signup</a>
-                                </li>
-                            </ul>
+                            </li>
+                        </ul>
                         @endif
-                    
-                        
-                        
+
+
+
                     </div>
                 </nav>
             </div>
         </header>
-<!-- header area end  -->
+        <!-- header area end  -->
 
-    @section('container')
-    @show
+        @section('container')
+        @show
 
-<footer class="footer">
+        <footer class="footer">
 
             <div class="footer-top">
                 <div class="container">
@@ -177,10 +200,10 @@
                             <div class="footer-widget footer-menu">
                                 <h2 class="footer-title">Explore</h2>
                                 <ul>
-                                    <li><a href="{{ url('/')}}">Home</a></li>
-                                    <li><a href="{{ url('/about')}}">About</a></li>
-                                    <li><a href="{{ url('/product')}}">Products</a></li>
-                                    <li><a href="{{ url('/contact')}}">Contact</a></li>
+                                    <li><a href="{{ url('/') }}">Home</a></li>
+                                    <li><a href="{{ url('/about') }}">About</a></li>
+                                    <li><a href="{{ url('/product') }}">Products</a></li>
+                                    <li><a href="{{ url('/contact') }}">Contact</a></li>
                                     <!-- <li><a href="deposit-instructor-dashboard.html"> Dashboard</a></li> -->
                                 </ul>
                             </div>
@@ -191,10 +214,10 @@
                             <div class="footer-widget footer-menu">
                                 <h2 class="footer-title">Quick links</h2>
                                 <ul>
-                                
-                                    <li><a href="{{ url('/term-condition')}}">Terms & Condition</a></li>
-                                    <li><a href="{{ url('/privacy-policy')}}">Privacy Policy</a></li>
-                                    <li><a href="{{ url('/faq')}}">FAQ</a></li>
+
+                                    <li><a href="{{ url('/term-condition') }}">Terms & Condition</a></li>
+                                    <li><a href="{{ url('/privacy-policy') }}">Privacy Policy</a></li>
+                                    <li><a href="{{ url('/faq') }}">FAQ</a></li>
                                     <!-- <li><a href="register.html">Register</a></li>
                                  <li><a href="students-list.html">Student</a></li>
                                  <li><a href="deposit-student-dashboard.html"> Dashboard</a></li> -->
@@ -214,17 +237,20 @@
                                 </div>
                                 <div class="footer-contact-info">
                                     <div class="footer-address">
-                                        <img src="{{ asset('user/assets/img/icon/icon-20.svg') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset('user/assets/img/icon/icon-20.svg') }}" alt=""
+                                            class="img-fluid">
                                         <p> 3556 Beech Street, San Francisco,<br> California, CA 94108 </p>
                                     </div>
                                     <p>
-                                        <img src="{{ asset('user/assets/img/icon/icon-19.svg') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset('user/assets/img/icon/icon-19.svg') }}" alt=""
+                                            class="img-fluid">
                                         <a href="https://dreamslms.dreamguystech.com/cdn-cgi/l/email-protection"
                                             class="__cf_email__"
                                             data-cfemail="afcbddcacec2dcc3c2dcefcad7cec2dfc3ca81ccc0c2">[email&#160;protected]</a>
                                     </p>
                                     <p class="mb-0">
-                                        <img src="{{ asset('user/assets/img/icon/icon-21.svg') }}" alt="" class="img-fluid">
+                                        <img src="{{ asset('user/assets/img/icon/icon-21.svg') }}" alt=""
+                                            class="img-fluid">
                                         +19 123-456-7890
                                     </p>
                                 </div>
@@ -251,7 +277,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="copyright-text">
-                                    <p class="mb-0">&copy; 2023 <a style="color: red;" href="https://thedaxads.com">DaxAds</a>. All rights reserved.</p>
+                                    <p class="mb-0">&copy; 2023 <a style="color: red;"
+                                            href="https://thedaxads.com">DaxAds</a>. All rights reserved.</p>
                                 </div>
                             </div>
                         </div>
@@ -264,12 +291,12 @@
 
     </div>
 
-     <!-- footer area end -->
+    <!-- footer area end -->
 
     @section('javascript')
     @show
-    
-    </body>
+
+</body>
 
 
 </html>

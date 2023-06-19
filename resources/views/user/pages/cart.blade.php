@@ -57,6 +57,7 @@
                                     @php
                                         // dd($car);
                                     @endphp
+                                    @if($car)
                                     @foreach ($car as $cart)
                                         @php
                                             $pdt = DB::table('products')
@@ -121,7 +122,10 @@
                                             </div>
                                         </div>
                                     @endforeach
-
+                                    @else<div>
+                                        <p>The product doesn't exist</p>
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
                             <div class="cart-total">

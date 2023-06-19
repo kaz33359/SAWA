@@ -57,6 +57,7 @@ Route::group(['middleware' => ['UserAuth']], function () {
 
     Route::post('user/enquiry', [ContactController::class, 'enquiry'])->name('user.enquiry');
     Route::get('/user-profile', [UserController::class, 'userprofile']);
+    Route::post('updateProfile',[UserController::class, 'updateProfile']);
     Route::get('/user-order', [UserController::class, 'userorder']);
     Route::get('user/logout', [UserController::class, 'logout'])->name('auth.logout');
     Route::post('/addtocart/{id}', [CartController::class, 'addtocart']);
